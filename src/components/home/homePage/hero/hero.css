@@ -1,0 +1,8 @@
+.owl-next,
+.owl-prev {
+	font-size: 3rem !important;
+	color: white !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

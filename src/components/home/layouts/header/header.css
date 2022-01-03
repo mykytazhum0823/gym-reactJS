@@ -1,0 +1,40 @@
+.header-wrap {
+	background-color: black !important;
+}
+
+.lang-sel {
+	padding: 3px;
+	width: fit-content;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+
+.la-globe {
+	margin-right: 5px;
+	color: red;
+}
+
+.select {
+	background-color: transparent;
+	width: 100%;
+	min-width: 10ch;
+	color: white;
+	max-width: 30ch;
+	border: none;
+	font-size: 1.25rem;
+	cursor: pointer;
+	line-height: 2.1;
+}
+
+option {
+	color: #777;
+	min-height: 10ch !important;
+	margin-top: 1.5rem !important;
+	font-size: 1.2rem !important;
+	line-height: 5.5 !important;
+}
+
+option:checked {
+	color: #000;
+}
