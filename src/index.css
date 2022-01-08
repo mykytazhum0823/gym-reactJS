@@ -14,6 +14,14 @@ body {
 a{
 	text-decoration: none !important;
 }
-.header-btn .btn{
-	line-height: 42px !important;
+
+.btn{
+	padding:10px 25px !important;
+}
+
+.owl-prev span{
+	margin-top: -0.6rem;
+}
+.owl-next span{
+	margin-top: -0.6rem;
 }
