@@ -1,7 +1,7 @@
 import React from "react";
 // import "./header.css";
 import {Outlet} from "react-router-dom";
-
+import {Link} from "react-router-dom";
 const Header = () => {
 	return (
 		<>
@@ -50,12 +50,16 @@ const Header = () => {
                                     <nav id="menu" className="main-menu  text-center">
                                         <ul>
                                             <li className="has-child">
-												<a className="active" href="#!">Home</a>
-
+                                                <Link to="/" className="active">
+                                                    Home
+                                                </Link>
+												
                                             </li>
 											<li className="has-child">
-												<a  href="/login">Login</a>
-
+                                                <Link to="/login">
+                                                    Login
+                                                </Link>
+												
                                             </li>
                                         </ul>
                                     </nav>
@@ -70,7 +74,10 @@ const Header = () => {
                                         </div>
 
                                         <div className="header-btn md-none">
-                                            <a href="class.html" className="btn v1">Contact Us</a>
+                                            <Link to="/contact" className="btn v1">
+                                                Contact Us
+                                            </Link>
+                                            
                                         </div>
                                     </div>
                                 </div>

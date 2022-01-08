@@ -1,6 +1,6 @@
 import React from "react";
 
-const Contact = () => {
+const ContactPage = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log("submit");
@@ -117,4 +117,4 @@ const Contact = () => {
 	);
 };
 
-export default Contact;
+export default ContactPage;

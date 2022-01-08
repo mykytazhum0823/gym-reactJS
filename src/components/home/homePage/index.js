@@ -1,16 +1,3 @@
-// export { default as Hero } from "./hero/Hero";
-// export { default as Promo } from "./promo/Promo";
-// export { default as Cta } from "./cta/Cta";
-// export { default as Pricing } from "./pricing/Pricing";
-// export { default as Featured } from "./featured/Featured";
-// export { default as Trainers } from "./trainers/Trainers";
-// export { default as Classes } from "./classes/Classes";
-// export { default as Testimonial } from "./testimonial/Testimonial";
-// export { default as Blog } from "./blog/Blog";
-// export { default as Clients } from "./clients/Clients";
-// export { default as DownloadApp } from "./app/DownloadApp";
-// export { default as Faqs } from "./faqs/Faqs";
-
 import React from "react";
 
 import Cta from "./cta/Cta";
@@ -22,7 +9,7 @@ import About from "../about/About";
 import Pricing from "./pricing/Pricing";
 import Classes from "./classes/Classes";
 import Clients from "./clients/Clients";
-import Contact from "../contact/Contact";
+// import Contact from "../contact/Contact";
 import Featured from "./featured/Featured";
 import Trainers from "./trainers/Trainers";
 import DownloadApp from "./app/DownloadApp";
@@ -45,7 +32,7 @@ const HomePage = () => {
       <Clients />
       <DownloadApp />
       <Faqs />
-      <Contact />
+      {/* <Contact /> */}
       <a href="#!" className="back-to-top bounce">
         <i className="las la-arrow-up"></i>
       </a>
