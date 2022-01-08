@@ -205,27 +205,27 @@ a {
 }
 
 .btn.v1 {
-  background-color: #E31C25;
-  border: 1px solid transparent;
-  color: #fff;
+  background-color: #E31C25 !important;
+  border: 1px solid transparent !important;
+  color: #fff !important;
 }
 
 .btn.v1:hover {
-  background: transparent;
-  border-color: #E31C25;
-  color: #E31C25;
+  background: transparent !important;
+  border-color: #E31C25 !important;
+  color: #E31C25 !important;
 }
 
 .btn.v2 {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid #E5E53B;
-  color: #fff;
-  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid #E5E53B !important;
+  color: #fff !important;
+  font-weight: 600 !important;
 }
 
 .btn.v2:hover {
-  background: #E31C25;
-  border-color: transparent;
+  background: #E31C25 !important;
+  border-color: transparent !important;
 }
 
 .btn.v3 {

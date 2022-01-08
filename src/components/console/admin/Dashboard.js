@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-
+import {Chart} from 'chart';
 const Dashboard = () => {
+	useEffect(()=>{
+		const script = document.createElement("script");
+		script.src = "../../assets/js/page.instructor-dashboard.js";
+		script.async = true;
+		document.body.appendChild(script);
+	}, []);
 	return (
 		<div className="layout-default">
 			<div className="mdk-header-layout js-mdk-header-layout">
@@ -126,6 +132,7 @@ const Dashboard = () => {
 													<canvas
 														id="ordersChart"
 														className="chart-canvas"></canvas>
+    												
 												</div>
 											</div>
 										</div>

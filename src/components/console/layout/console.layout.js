@@ -6,8 +6,8 @@ const ConsoleLayout = () => {
   return (
     <div className="console-wrapper">
       <HeaderConsole />
-      <Outlet />
-      <FooterConsole />
+      {/* <Outlet /> */}
+      {/* <FooterConsole /> */}
     </div>
   );
 };
