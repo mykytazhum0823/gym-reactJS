@@ -14,7 +14,7 @@ const AdminReporting = () => {
 							<div className="container-fluid page__heading-container">
 								<div className="page__heading d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
 									<h1 className="m-lg-0">Report Information</h1>
-									<a href="#" className="btn btn-primary ml-lg-3">
+									<a href="#!" className="btn btn-primary ml-lg-3">
 										Download Report
 									</a>
 								</div>
@@ -223,7 +223,7 @@ const AdminReporting = () => {
 									<div className="sidebar-block p-0 m-0">
 										<div className="d-flex align-items-center sidebar-p-a border-bottom bg-light">
 											<a
-												href="#"
+												href="#!"
 												className="flex d-flex align-items-center text-body text-underline-0">
 												<span className="avatar avatar-sm mr-2">
 													<span className="avatar-title rounded-circle bg-soft-secondary text-muted">
@@ -239,7 +239,7 @@ const AdminReporting = () => {
 											</a>
 											<div className="dropdown ml-auto">
 												<a
-													href="#"
+													href="#!"
 													data-toggle="dropdown"
 													data-caret="false"
 													className="text-muted">
@@ -437,7 +437,7 @@ const AdminReporting = () => {
 									</div>
 									<div className="col">
 										<div className="d-flex flex-column flex">
-											<a href="#" className="text-body">
+											<a href="#!" className="text-body">
 												<strong className="text-15pt">
 													Marketing Team Meeting
 												</strong>
@@ -493,7 +493,7 @@ const AdminReporting = () => {
 									</div>
 									<div className="col">
 										<div className="d-flex flex-column flex">
-											<a href="#" className="text-body">
+											<a href="#!" className="text-body">
 												<strong className="text-15pt">Call Alex</strong>
 											</a>
 
@@ -520,7 +520,7 @@ const AdminReporting = () => {
 									</div>
 									<div className="col">
 										<div className="d-flex flex-column flex">
-											<a href="#" className="text-body">
+											<a href="#!" className="text-body">
 												<strong className="text-15pt">
 													Design Team Meeting
 												</strong>
@@ -584,7 +584,7 @@ const AdminReporting = () => {
 									</div>
 									<div className="col d-flex">
 										<div className="d-flex flex-column flex">
-											<a href="#" className="text-body">
+											<a href="#!" className="text-body">
 												<strong className="text-15pt">Call Wendy</strong>
 											</a>
 

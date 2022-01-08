@@ -3,22 +3,22 @@ import React from "react";
 const Signup = () => {
 	return (
 		<div className="layout-login-centered-box">
-			<div class="layout-login-centered-boxed__form">
-				<div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-4 navbar-light">
-					<a href="index-2.html" class="text-center text-light-gray mb-4">
+			<div className="layout-login-centered-boxed__form">
+				<div className="d-flex flex-column justify-content-center align-items-center mt-2 mb-4 navbar-light">
+					<a href="index-2.html" className="text-center text-light-gray mb-4">
 						<h2>Vigory</h2>
 					</a>
 				</div>
-				<div class="card card-body">
-					<a href="#" class="btn btn-light btn-block">
-						<span class="mr-2">
+				<div className="card card-body">
+					<a href="#!" className="btn btn-light btn-block">
+						<span className="mr-2">
 							<svg
 								version="1.1"
 								xmlns="http://www.w3.org/2000/svg"
 								width="18px"
 								height="18px"
 								viewBox="0 0 48 48"
-								class="abcRioButtonSvg">
+								className="abcRioButtonSvg">
 								<g>
 									<path
 										fill="#EA4335"
@@ -39,91 +39,91 @@ const Signup = () => {
 						Continue with Google
 					</a>
 
-					<div class="page-separator">
-						<div class="page-separator__text">or</div>
+					<div className="page-separator">
+						<div className="page-separator__text">or</div>
 					</div>
 
 					<form action="https://lema.frontted.com/index.html" novalidate>
-						<div class="form-group">
-							<label class="text-label" for="name_2">
+						<div className="form-group">
+							<label className="text-label" for="name_2">
 								Name:
 							</label>
-							<div class="input-group input-group-merge">
+							<div className="input-group input-group-merge">
 								<input
 									id="name_2"
 									type="text"
 									required=""
-									class="form-control form-control-prepended"
+									className="form-control form-control-prepended"
 									placeholder="John Doe"
 								/>
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<span class="far fa-user"></span>
+								<div className="input-group-prepend">
+									<div className="input-group-text">
+										<span className="far fa-user"></span>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
-							<label class="text-label" for="email_2">
+						<div className="form-group">
+							<label className="text-label" for="email_2">
 								Email Address:
 							</label>
-							<div class="input-group input-group-merge">
+							<div className="input-group input-group-merge">
 								<input
 									id="email_2"
 									type="email"
 									required=""
-									class="form-control form-control-prepended"
+									className="form-control form-control-prepended"
 									placeholder="john@doe.com"
 								/>
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<span class="far fa-envelope"></span>
+								<div className="input-group-prepend">
+									<div className="input-group-text">
+										<span className="far fa-envelope"></span>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
-							<label class="text-label" for="password_2">
+						<div className="form-group">
+							<label className="text-label" for="password_2">
 								Password:
 							</label>
-							<div class="input-group input-group-merge">
+							<div className="input-group input-group-merge">
 								<input
 									id="password_2"
 									type="password"
 									required=""
-									class="form-control form-control-prepended"
+									className="form-control form-control-prepended"
 									placeholder="Enter your password"
 								/>
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<span class="material-icons">lock</span>
+								<div className="input-group-prepend">
+									<div className="input-group-text">
+										<span className="material-icons">lock</span>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="form-group mb-2 text-center">
-							<div class="custom-control custom-checkbox">
+						<div className="form-group mb-2 text-center">
+							<div className="custom-control custom-checkbox">
 								<input
 									type="checkbox"
 									checked=""
-									class="custom-control-input"
+									className="custom-control-input"
 									id="terms"
 								/>
-								<label class="custom-control-label" for="terms">
-									I accept <a href="#">Terms and Conditions</a>
+								<label className="custom-control-label" for="terms">
+									I accept <a href="#!">Terms and Conditions</a>
 								</label>
 							</div>
 						</div>
-						<div class="form-group text-center">
+						<div className="form-group text-center">
 							<button
-								class="btn btn-success btn-lg btn-block mb-3"
+								className="btn btn-success btn-lg btn-block mb-3"
 								type="submit">
 								Create Account
 							</button>
 						</div>
-						<div class="text-center">
+						<div className="text-center">
 							<span>Have an account?</span>{" "}
-							<a class="text-body text-underline" href="login.html">
+							<a className="text-body text-underline" href="login.html">
 								{" "}
 								Login
 							</a>

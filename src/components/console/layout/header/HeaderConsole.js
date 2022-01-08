@@ -26,7 +26,7 @@ const HeaderConsole = () => {
 
               <ul className="ml-auto nav navbar-nav mr-2 d-none d-lg-flex">
                 <li className="nav-item">
-                  <a href="#" className="nav-link">
+                  <a href="#!" className="nav-link">
                     Get Help
                   </a>
                 </li>

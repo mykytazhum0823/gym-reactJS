@@ -2,7 +2,7 @@ import React from "react";
 
 const Classes = () => {
 	return (
-		<section class="class-wrap v1 section-padding">
+		<section className="class-wrap v1 section-padding">
 			<div className="container">
 				<div className="row align-items-start mb-5">
 					<div className="col-md-6">
@@ -12,14 +12,14 @@ const Classes = () => {
 					</div>
 					<div className="col-md-6 sm-none">
 						<div className="text-md-end">
-							<a href="class.html" class="btn v3">
+							<a href="class.html" className="btn v3">
 								View All Classes
 							</a>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+				<div className="row">
+					<div className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
 						<div className="class-item">
 							<div className="class-img">
 								<div className="overlay op-8 bg-red"></div>
@@ -28,7 +28,7 @@ const Classes = () => {
 									src="assets/img/class/class-1.jpg"
 									alt=""
 								/>
-								<a href="class.html" class="btn v9">
+								<a href="class.html" className="btn v9">
 									Join Now
 								</a>
 							</div>
@@ -36,7 +36,7 @@ const Classes = () => {
 								<h5>Abs Of Steel</h5>
 								<p>With Chris Rodrigues</p>
 								<span>Sunday To Saturday (9:00 AM - 9:50 AM)</span>
-								<a href="class-details.html" class="link v1">
+								<a href="class-details.html" className="link v1">
 									View Details
 								</a>
 							</div>
@@ -51,7 +51,7 @@ const Classes = () => {
 									src="assets/img/class/class-2.jpg"
 									alt=""
 								/>
-								<a href="class.html" class="btn v9">
+								<a href="class.html" className="btn v9">
 									Join Now
 								</a>
 							</div>
@@ -59,7 +59,7 @@ const Classes = () => {
 								<h5>Total Body Conditioning</h5>
 								<p>With Chris Rodrigues</p>
 								<span>Sunday To Saturday (9:00 AM - 9:50 AM)</span>
-								<a href="class-details.html" class="link v1">
+								<a href="class-details.html" className="link v1">
 									View Details
 								</a>
 							</div>
@@ -74,7 +74,7 @@ const Classes = () => {
 									src="assets/img/class/class-3.jpg"
 									alt=""
 								/>
-								<a href="class.html" class="btn v9">
+								<a href="class.html" className="btn v9">
 									Join Now
 								</a>
 							</div>
@@ -82,7 +82,7 @@ const Classes = () => {
 								<h5>Body Blast</h5>
 								<p>With Chris Rodrigues</p>
 								<span>Sunday To Saturday (9:00 AM - 9:50 AM)</span>
-								<a href="class-details.html" class="link v1">
+								<a href="class-details.html" className="link v1">
 									View Details
 								</a>
 							</div>
@@ -97,7 +97,7 @@ const Classes = () => {
 									src="assets/img/class/class-4.jpg"
 									alt=""
 								/>
-								<a href="class-details.html" class="btn v9">
+								<a href="class-details.html" className="btn v9">
 									Join Now
 								</a>
 							</div>
@@ -105,7 +105,7 @@ const Classes = () => {
 								<h5>Flow & Restore Yoga</h5>
 								<p>With Chris Rodrigues</p>
 								<span>Sunday To Saturday (9:00 AM - 9:50 AM)</span>
-								<a href="class.html" class="link v1">
+								<a href="class.html" className="link v1">
 									View Details
 								</a>
 							</div>
@@ -115,7 +115,7 @@ const Classes = () => {
 				<div className="row lg-none mb-30">
 					<div className="col-12">
 						<div className="text-center">
-							<a href="class.html" class="btn v3">
+							<a href="class.html" className="btn v3">
 								View All Classes
 							</a>
 						</div>

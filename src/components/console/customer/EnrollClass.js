@@ -13,7 +13,7 @@ const EnrollClass = () => {
 						<div className="container-fluid page__heading-container">
 							<div className="page__heading d-flex align-items-center justify-content-between">
 								<h1 className="m-0">className Name</h1>
-								<a href="#" className="btn btn-success ml-3">
+								<a href="#!" className="btn btn-success ml-3">
 									Go to Profile<i className="material-icons">arrow_forward</i>
 								</a>
 							</div>
@@ -36,7 +36,7 @@ const EnrollClass = () => {
 
 									<div className="form-inline  mb-3 ml-auto">
 										<div className="form-group mr-3">
-											<label for="custom-select" className="form-label mr-1">
+											<label htmlFor="custom-select" className="form-label mr-1">
 												Category
 											</label>
 											<select
@@ -50,7 +50,7 @@ const EnrollClass = () => {
 											</select>
 										</div>
 										<div className="form-group">
-											<label for="published01" className="form-label mr-1">
+											<label htmlFor="published01" className="form-label mr-1">
 												Status
 											</label>
 											<select
@@ -72,7 +72,7 @@ const EnrollClass = () => {
 										<div className="card-header card-header-large card-header-dark bg-dark d-flex justify-content-center">
 											<a
 												className="card-header__title  justify-content-center align-self-center d-flex flex-column"
-												href="#">
+												href="#!">
 												<span className="course__title">className Name </span>
 												<span className="course__subtitle">
 													className triner name & description
@@ -82,19 +82,19 @@ const EnrollClass = () => {
 										<div className="p-3">
 											<div className="mb-2">
 												<span className="mr-2">
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">
 															star_half
 														</i>
@@ -106,7 +106,7 @@ const EnrollClass = () => {
 											</div>
 											<div className="d-flex align-items-center">
 												<strong className="h4 m-0">$49</strong>
-												<a href="#" className="btn btn-primary ml-auto">
+												<a href="#!" className="btn btn-primary ml-auto">
 													<i className="material-icons">add_shopping_cart</i>
 												</a>
 											</div>
@@ -119,7 +119,7 @@ const EnrollClass = () => {
 										<div className="card-header card-header-large card-header-dark bg-dark d-flex justify-content-center">
 											<a
 												className="card-header__title  justify-content-center align-self-center d-flex flex-column"
-												href="#">
+												href="#!">
 												<span className="course__title">className Name </span>
 												<span className="course__subtitle">
 													className triner name & description
@@ -129,19 +129,19 @@ const EnrollClass = () => {
 										<div className="p-3">
 											<div className="mb-2">
 												<span className="mr-2">
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">
 															star_half
 														</i>
@@ -153,7 +153,7 @@ const EnrollClass = () => {
 											</div>
 											<div className="d-flex align-items-center">
 												<strong className="h4 m-0">$49</strong>
-												<a href="#" className="btn btn-primary ml-auto">
+												<a href="#!" className="btn btn-primary ml-auto">
 													<i className="material-icons">add_shopping_cart</i>
 												</a>
 											</div>
@@ -166,7 +166,7 @@ const EnrollClass = () => {
 										<div className="card-header card-header-large card-header-dark bg-dark d-flex justify-content-center">
 											<a
 												className="card-header__title  justify-content-center align-self-center d-flex flex-column"
-												href="#">
+												href="#!">
 												<span className="course__title">className Name </span>
 												<span className="course__subtitle">
 													className triner name & description
@@ -176,19 +176,19 @@ const EnrollClass = () => {
 										<div className="p-3">
 											<div className="mb-2">
 												<span className="mr-2">
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">
 															star_half
 														</i>
@@ -200,7 +200,7 @@ const EnrollClass = () => {
 											</div>
 											<div className="d-flex align-items-center">
 												<strong className="h4 m-0">$49</strong>
-												<a href="#" className="btn btn-primary ml-auto">
+												<a href="#!" className="btn btn-primary ml-auto">
 													<i className="material-icons">add_shopping_cart</i>
 												</a>
 											</div>
@@ -213,7 +213,7 @@ const EnrollClass = () => {
 										<div className="card-header card-header-large card-header-dark bg-dark d-flex justify-content-center">
 											<a
 												className="card-header__title  justify-content-center align-self-center d-flex flex-column"
-												href="#">
+												href="#!">
 												<span className="course__title">className Name </span>
 												<span className="course__subtitle">
 													className triner name & description
@@ -223,19 +223,19 @@ const EnrollClass = () => {
 										<div className="p-3">
 											<div className="mb-2">
 												<span className="mr-2">
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">
 															star_half
 														</i>
@@ -247,7 +247,7 @@ const EnrollClass = () => {
 											</div>
 											<div className="d-flex align-items-center">
 												<strong className="h4 m-0">$49</strong>
-												<a href="#" className="btn btn-primary ml-auto">
+												<a href="#!" className="btn btn-primary ml-auto">
 													<i className="material-icons">add_shopping_cart</i>
 												</a>
 											</div>
@@ -260,7 +260,7 @@ const EnrollClass = () => {
 										<div className="card-header card-header-large card-header-dark bg-dark d-flex justify-content-center">
 											<a
 												className="card-header__title  justify-content-center align-self-center d-flex flex-column"
-												href="#">
+												href="#!">
 												<span className="course__title">className Name </span>
 												<span className="course__subtitle">
 													className triner name & description
@@ -270,19 +270,19 @@ const EnrollClass = () => {
 										<div className="p-3">
 											<div className="mb-2">
 												<span className="mr-2">
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">
 															star_half
 														</i>
@@ -294,7 +294,7 @@ const EnrollClass = () => {
 											</div>
 											<div className="d-flex align-items-center">
 												<strong className="h4 m-0">$49</strong>
-												<a href="#" className="btn btn-primary ml-auto">
+												<a href="#!" className="btn btn-primary ml-auto">
 													<i className="material-icons">add_shopping_cart</i>
 												</a>
 											</div>
@@ -307,7 +307,7 @@ const EnrollClass = () => {
 										<div className="card-header card-header-large card-header-dark bg-dark d-flex justify-content-center">
 											<a
 												className="card-header__title  justify-content-center align-self-center d-flex flex-column"
-												href="#">
+												href="#!">
 												<span className="course__title">className Name </span>
 												<span className="course__subtitle">
 													className triner name & description
@@ -317,19 +317,19 @@ const EnrollClass = () => {
 										<div className="p-3">
 											<div className="mb-2">
 												<span className="mr-2">
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">
 															star_half
 														</i>
@@ -341,7 +341,7 @@ const EnrollClass = () => {
 											</div>
 											<div className="d-flex align-items-center">
 												<strong className="h4 m-0">$49</strong>
-												<a href="#" className="btn btn-primary ml-auto">
+												<a href="#!" className="btn btn-primary ml-auto">
 													<i className="material-icons">add_shopping_cart</i>
 												</a>
 											</div>
@@ -353,7 +353,7 @@ const EnrollClass = () => {
 										<div className="card-header card-header-large card-header-dark bg-dark d-flex justify-content-center">
 											<a
 												className="card-header__title  justify-content-center align-self-center d-flex flex-column"
-												href="#">
+												href="#!">
 												<span className="course__title">className Name </span>
 												<span className="course__subtitle">
 													className triner name & description
@@ -363,19 +363,19 @@ const EnrollClass = () => {
 										<div className="p-3">
 											<div className="mb-2">
 												<span className="mr-2">
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">star</i>
 													</a>
-													<a href="#" className="rating-link active">
+													<a href="#!" className="rating-link active">
 														<i className="material-icons icon-16pt">
 															star_half
 														</i>
@@ -387,7 +387,7 @@ const EnrollClass = () => {
 											</div>
 											<div className="d-flex align-items-center">
 												<strong className="h4 m-0">$49</strong>
-												<a href="#" className="btn btn-primary ml-auto">
+												<a href="#!" className="btn btn-primary ml-auto">
 													<i className="material-icons">add_shopping_cart</i>
 												</a>
 											</div>
@@ -410,7 +410,7 @@ const EnrollClass = () => {
 								</div>
 								<div className="ml-auto">
 									20 <span className="text-muted">of 100</span>{" "}
-									<a href="#" className="icon-muted">
+									<a href="#!" className="icon-muted">
 										<i className="material-icons float-right">arrow_forward</i>
 									</a>
 								</div>
@@ -430,7 +430,7 @@ const EnrollClass = () => {
 								<div className="sidebar-block p-0 m-0">
 									<div className="d-flex align-items-center sidebar-p-a border-bottom bg-light">
 										<a
-											href="#"
+											href="#!"
 											className="flex d-flex align-items-center text-body text-underline-0">
 											<span className="avatar avatar-sm mr-2">
 												<span className="avatar-title rounded-circle bg-soft-secondary text-muted">
@@ -446,7 +446,7 @@ const EnrollClass = () => {
 										</a>
 										<div className="dropdown ml-auto">
 											<a
-												href="#"
+												href="#!"
 												data-toggle="dropdown"
 												data-caret="false"
 												className="text-muted">

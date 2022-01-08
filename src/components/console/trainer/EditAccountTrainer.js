@@ -37,7 +37,7 @@ const EditAccountTraier = () => {
 											<div className="row">
 												<div className="col">
 													<div className="form-group">
-														<label for="fname">First name</label>
+														<label htmlFor="fname">First name</label>
 														<input
 															id="fname"
 															type="text"
@@ -49,7 +49,7 @@ const EditAccountTraier = () => {
 												</div>
 												<div className="col">
 													<div className="form-group">
-														<label for="lname">Last name</label>
+														<label htmlFor="lname">Last name</label>
 														<input
 															id="lname"
 															type="text"
@@ -61,7 +61,7 @@ const EditAccountTraier = () => {
 												</div>
 											</div>
 											<div className="form-group">
-												<label for="desc">Bio / Description</label>
+												<label htmlFor="desc">Bio / Description</label>
 												<textarea
 													id="desc"
 													rows="4"
@@ -69,7 +69,7 @@ const EditAccountTraier = () => {
 													placeholder="Bio / description ..."></textarea>
 											</div>
 											<div className="form-group">
-												<label for="country">Country</label>
+												<label htmlFor="country">Country</label>
 												<br />
 												<select id="country" className="custom-select w-auto">
 													<option value="usa">United States</option>
@@ -80,7 +80,7 @@ const EditAccountTraier = () => {
 												</small>
 											</div>
 											<div className="form-group">
-												<label for="subscribe">Subscribe to newsletter</label>
+												<label htmlFor="subscribe">Subscribe to newsletter</label>
 												<br />
 												<div className="custom-control custom-checkbox-toggle custom-control-inline mr-1">
 													<input
@@ -95,7 +95,7 @@ const EditAccountTraier = () => {
 														Yes
 													</label>
 												</div>
-												<label for="subscribe" className="mb-0">
+												<label htmlFor="subscribe" className="mb-0">
 													Yes
 												</label>
 											</div>
@@ -117,7 +117,7 @@ const EditAccountTraier = () => {
 											<div className="row">
 												<div className="col-md-6">
 													<div className="form-group">
-														<label for="opass">Old Password</label>
+														<label htmlFor="opass">Old Password</label>
 														<input
 															id="opass"
 															type="password"
@@ -127,7 +127,7 @@ const EditAccountTraier = () => {
 														/>
 													</div>
 													<div className="form-group">
-														<label for="npass">New Password</label>
+														<label htmlFor="npass">New Password</label>
 														<input
 															id="npass"
 															type="password"
@@ -138,7 +138,7 @@ const EditAccountTraier = () => {
 														</small>
 													</div>
 													<div className="form-group">
-														<label for="cpass">Confirm Password</label>
+														<label htmlFor="cpass">Confirm Password</label>
 														<input
 															id="cpass"
 															type="password"
@@ -192,7 +192,7 @@ const EditAccountTraier = () => {
 												</div>
 											</div>
 											<div className="form-group">
-												<label for="desc2">Description</label>
+												<label htmlFor="desc2">Description</label>
 												<textarea
 													id="desc2"
 													rows="4"
@@ -200,7 +200,7 @@ const EditAccountTraier = () => {
 													placeholder="Description ..."></textarea>
 											</div>
 											<div className="form-group">
-												<label for="social1">Social links</label>
+												<label htmlFor="social1">Social links</label>
 												<div className="row">
 													<div className="col-md-6">
 														<div className="input-group input-group-merge mb-2">
@@ -246,7 +246,7 @@ const EditAccountTraier = () => {
 												</div>
 											</div>
 											<div className="form-group">
-												<label for="customCheck1">
+												<label htmlFor="customCheck1">
 													Available for freelance?
 												</label>
 												<div className="custom-control custom-checkbox">
@@ -267,7 +267,7 @@ const EditAccountTraier = () => {
 									</div>
 								</div>
 								<div className="text-right mb-5">
-									<a href="#" className="btn btn-success">
+									<a href="#!" className="btn btn-success">
 										Save
 									</a>
 								</div>
@@ -285,7 +285,7 @@ const EditAccountTraier = () => {
 									<div className="sidebar-block p-0 m-0">
 										<div className="d-flex align-items-center sidebar-p-a border-bottom bg-light">
 											<a
-												href="#"
+												href="#!"
 												className="flex d-flex align-items-center text-body text-underline-0">
 												<span className="avatar avatar-sm mr-2">
 													<span className="avatar-title rounded-circle bg-soft-secondary text-muted">
@@ -301,7 +301,7 @@ const EditAccountTraier = () => {
 											</a>
 											<div className="dropdown ml-auto">
 												<a
-													href="#"
+													href="#!"
 													data-toggle="dropdown"
 													data-caret="false"
 													className="text-muted">

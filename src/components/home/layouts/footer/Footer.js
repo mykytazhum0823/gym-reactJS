@@ -24,7 +24,7 @@ const Footer = () => {
 										</div>
 										<div className="comp-address-info">
 											<p>Email Address:</p>
-											<a href="#">
+											<a href="#!">
 												<span className="__cf_email__">gmail.com</span>
 											</a>
 										</div>

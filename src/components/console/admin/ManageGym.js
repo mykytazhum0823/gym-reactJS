@@ -36,7 +36,7 @@ const ManageGym = () => {
 									<div className="row">
 										<div className="col-md-6 col-lg-4">
 											<div className="card card__course card__course__animate">
-												<a href="#" className="card-img-top">
+												<a href="#!" className="card-img-top">
 													<img
 														src="adminAssets/images/course_lms.jpg"
 														style={{ width: "100%" }}
@@ -105,7 +105,7 @@ const ManageGym = () => {
 
 										<div className="col-md-6 col-lg-4">
 											<div className="card card__course card__course__animate">
-												<a href="#" className="card-img-top">
+												<a href="#!" className="card-img-top">
 													<img
 														src="adminAssets/images/course_lms.jpg"
 														style={{ width: "100%" }}
@@ -133,7 +133,7 @@ const ManageGym = () => {
 
 												<div className="p-3 text-center border-bottom">
 													<div className="bold mb-2">
-														<a href="#" className="text-body">
+														<a href="#!" className="text-body">
 															<span className="course__title">
 																{" "}
 																Gym's Name{" "}
@@ -174,7 +174,7 @@ const ManageGym = () => {
 
 										<div className="col-md-6 col-lg-4">
 											<div className="card card__course card__course__animate">
-												<a href="#" className="card-img-top">
+												<a href="#!" className="card-img-top">
 													<img
 														src="adminAssets/images/course_lms.jpg"
 														style={{ width: "100%" }}
@@ -202,7 +202,7 @@ const ManageGym = () => {
 
 												<div className="p-3 text-center border-bottom">
 													<div className="bold mb-2">
-														<a href="#" className="text-body">
+														<a href="#!" className="text-body">
 															<span className="course__title">
 																{" "}
 																Gym's Name{" "}
@@ -243,7 +243,7 @@ const ManageGym = () => {
 
 										<div className="col-md-6 col-lg-4">
 											<div className="card card__course card__course__animate">
-												<a href="#" className="card-img-top">
+												<a href="#!" className="card-img-top">
 													<img
 														src="adminAssets/images/course_lms.jpg"
 														style={{ width: "100%" }}
@@ -271,7 +271,7 @@ const ManageGym = () => {
 
 												<div className="p-3 text-center border-bottom">
 													<div className="bold mb-2">
-														<a href="#" className="text-body">
+														<a href="#!" className="text-body">
 															<span className="course__title">
 																{" "}
 																Gym's Name{" "}
@@ -311,7 +311,7 @@ const ManageGym = () => {
 										</div>
 										<div className="col-md-6 col-lg-4">
 											<div className="card card__course card__course__animate">
-												<a href="#" className="card-img-top">
+												<a href="#!" className="card-img-top">
 													<img
 														src="adminAssets/images/course_lms.jpg"
 														style={{ width: "100%" }}
@@ -339,7 +339,7 @@ const ManageGym = () => {
 
 												<div className="p-3 text-center border-bottom">
 													<div className="bold mb-2">
-														<a href="#" className="text-body">
+														<a href="#!" className="text-body">
 															<span className="course__title">
 																{" "}
 																Gym's Name{" "}
@@ -379,7 +379,7 @@ const ManageGym = () => {
 										</div>
 										<div className="col-md-6 col-lg-4">
 											<div className="card card__course card__course__animate">
-												<a href="#" className="card-img-top">
+												<a href="#!" className="card-img-top">
 													<img
 														src="adminAssets/images/course_lms.jpg"
 														style={{ width: "100%" }}
@@ -407,7 +407,7 @@ const ManageGym = () => {
 
 												<div className="p-3 text-center border-bottom">
 													<div className="bold mb-2">
-														<a href="#" className="text-body">
+														<a href="#!" className="text-body">
 															<span className="course__title">
 																{" "}
 																Gym's Name{" "}
@@ -462,7 +462,7 @@ const ManageGym = () => {
 									<div className="sidebar-block p-0 m-0">
 										<div className="d-flex align-items-center sidebar-p-a border-bottom bg-light">
 											<a
-												href="#"
+												href="#!"
 												className="flex d-flex align-items-center text-body text-underline-0">
 												<span className="avatar avatar-sm mr-2">
 													<span className="avatar-title rounded-circle bg-soft-secondary text-muted">
@@ -478,7 +478,7 @@ const ManageGym = () => {
 											</a>
 											<div className="dropdown ml-auto">
 												<a
-													href="#"
+													href="#!"
 													data-toggle="dropdown"
 													data-caret="false"
 													className="text-muted">
@@ -677,7 +677,7 @@ const ManageGym = () => {
 
 								<form action="#">
 									<div className="form-group">
-										<label for="username"> Gym's Name:</label>
+										<label htmlFor="username"> Gym's Name:</label>
 										<input
 											className="form-control"
 											type="text"
@@ -687,7 +687,7 @@ const ManageGym = () => {
 										/>
 									</div>
 									<div className="form-group">
-										<label for="username"> Gym's Address:</label>
+										<label htmlFor="username"> Gym's Address:</label>
 										<input
 											className="form-control"
 											type="text"
@@ -697,7 +697,7 @@ const ManageGym = () => {
 										/>
 									</div>
 									<div className="form-group">
-										<label for="username"> Gym's Owner:</label>
+										<label htmlFor="username"> Gym's Owner:</label>
 										<input
 											className="form-control"
 											type="text"
@@ -707,7 +707,7 @@ const ManageGym = () => {
 										/>
 									</div>
 									<div className="form-group">
-										<label for="username"> Gym's contact:</label>
+										<label htmlFor="username"> Gym's contact:</label>
 										<input
 											className="form-control"
 											type="text"
@@ -724,7 +724,7 @@ const ManageGym = () => {
 												id="terms"
 											/>
 											<label className="custom-control-label" for="terms">
-												I accept <a href="#">Terms and Conditions</a>
+												I accept <a href="#!">Terms and Conditions</a>
 											</label>
 										</div>
 									</div>

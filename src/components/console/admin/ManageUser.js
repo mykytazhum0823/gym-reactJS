@@ -213,7 +213,7 @@ const ManageUser = () => {
 									<div className="sidebar-block p-0 m-0">
 										<div className="d-flex align-items-center sidebar-p-a border-bottom bg-light">
 											<a
-												href="#"
+												href="#!"
 												className="flex d-flex align-items-center text-body text-underline-0">
 												<span className="avatar avatar-sm mr-2">
 													<span className="avatar-title rounded-circle bg-soft-secondary text-muted">
@@ -229,7 +229,7 @@ const ManageUser = () => {
 											</a>
 											<div className="dropdown ml-auto">
 												<a
-													href="#"
+													href="#!"
 													data-toggle="dropdown"
 													data-caret="false"
 													className="text-muted">
@@ -430,7 +430,7 @@ const ManageUser = () => {
 
 								<form action="#">
 									<div className="form-group">
-										<label for="username">Name:</label>
+										<label htmlFor="username">Name:</label>
 										<input
 											className="form-control"
 											type="text"
@@ -440,7 +440,7 @@ const ManageUser = () => {
 										/>
 									</div>
 									<div className="form-group">
-										<label for="email">Email Address:</label>
+										<label htmlFor="email">Email Address:</label>
 										<input
 											className="form-control"
 											type="email"
@@ -450,7 +450,7 @@ const ManageUser = () => {
 										/>
 									</div>
 									<div className="form-group">
-										<label for="username">COntact:</label>
+										<label htmlFor="username">COntact:</label>
 										<input
 											className="form-control"
 											type="text"
@@ -467,7 +467,7 @@ const ManageUser = () => {
 												id="terms"
 											/>
 											<label className="custom-control-label" for="terms">
-												I accept <a href="#">Terms and Conditions</a>
+												I accept <a href="#!">Terms and Conditions</a>
 											</label>
 										</div>
 									</div>

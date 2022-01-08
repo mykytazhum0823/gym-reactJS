@@ -37,7 +37,7 @@ const Payout = () => {
 										</div>
 
 										<div className="form-group m-0">
-											<a href="#" className="btn btn-success">
+											<a href="#!" className="btn btn-success">
 												Change
 											</a>
 										</div>
@@ -57,7 +57,7 @@ const Payout = () => {
 									</div>
 									<div className="col-lg-8 card-form__body card-body">
 										<div className="form-group">
-											<label for="fname">Account Type</label>
+											<label htmlFor="fname">Account Type</label>
 											<br />
 											<div
 												className="btn-group btn-group-toggle"
@@ -82,7 +82,7 @@ const Payout = () => {
 										<div className="row">
 											<div className="col">
 												<div className="form-group">
-													<label for="fname">First name</label>
+													<label htmlFor="fname">First name</label>
 													<input
 														id="fname"
 														type="text"
@@ -94,7 +94,7 @@ const Payout = () => {
 											</div>
 											<div className="col">
 												<div className="form-group">
-													<label for="lname">Last name</label>
+													<label htmlFor="lname">Last name</label>
 													<input
 														id="lname"
 														type="text"
@@ -106,7 +106,7 @@ const Payout = () => {
 											</div>
 										</div>
 										<div className="form-group">
-											<label for="desc">Address</label>
+											<label htmlFor="desc">Address</label>
 											<textarea
 												id="desc"
 												rows="4"
@@ -114,7 +114,7 @@ const Payout = () => {
 												placeholder="Enter invoice address"></textarea>
 										</div>
 										<div className="form-group">
-											<label for="country">Country</label>
+											<label htmlFor="country">Country</label>
 											<br />
 											<select id="country" className="custom-select w-auto">
 												<option value="usa">United States</option>
@@ -125,7 +125,7 @@ const Payout = () => {
 											</small>
 										</div>
 										<div className="form-group m-0">
-											<a href="#" className="btn btn-outline-primary">
+											<a href="#!" className="btn btn-outline-primary">
 												Update
 											</a>
 										</div>
@@ -261,7 +261,7 @@ const Payout = () => {
 								<div className="sidebar-block p-0 m-0">
 									<div className="d-flex align-items-center sidebar-p-a border-bottom bg-light">
 										<a
-											href="#"
+											href="#!"
 											className="flex d-flex align-items-center text-body text-underline-0">
 											<span className="avatar avatar-sm mr-2">
 												<span className="avatar-title rounded-circle bg-soft-secondary text-muted">
@@ -277,7 +277,7 @@ const Payout = () => {
 										</a>
 										<div className="dropdown ml-auto">
 											<a
-												href="#"
+												href="#!"
 												data-toggle="dropdown"
 												data-caret="false"
 												className="text-muted">

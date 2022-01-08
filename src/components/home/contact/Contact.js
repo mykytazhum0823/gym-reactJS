@@ -7,35 +7,35 @@ const Contact = () => {
 	};
 	return (
 		<>
-			<section class="breadcrumb-wrap bg-f br-bg-1">
-				<div class="section_subtext v3 trans_text">
+			<section className="breadcrumb-wrap bg-f br-bg-1">
+				<div className="section_subtext v3 trans_text">
 					<span>Contact Us</span>
 				</div>
-				<div class="overlay bg-charcole op-8"></div>
-				<div class="breadcrumb-title">
+				<div className="overlay bg-charcole op-8"></div>
+				<div className="breadcrumb-title">
 					<h2>
 						Contact <span>Us</span>
 					</h2>
 				</div>
 			</section>
 			<section className="contact-wrap section-padding">
-				<div class="container">
-					<div class="row gx-4">
-						<div class="col-lg-6">
-							<div class="contact-box v1">
-								<div class="contact-box-title">
+				<div className="container">
+					<div className="row gx-4">
+						<div className="col-lg-6">
+							<div className="contact-box v1">
+								<div className="contact-box-title">
 									<h5>Contact Us</h5>
 								</div>
 								<form
-									class="review-form"
+									className="review-form"
 									onSubmit={handleSubmit}
 									id="contact_form">
 									<div
 										id="message"
-										class="alert alert-danger alert-dismissible fade"></div>
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="form-group v1">
+										className="alert alert-danger alert-dismissible fade"></div>
+									<div className="row">
+										<div className="col-lg-6">
+											<div className="form-group v1">
 												<input
 													id="name"
 													name="name"
@@ -44,7 +44,7 @@ const Contact = () => {
 													required
 												/>
 											</div>
-											<div class="form-group v1">
+											<div className="form-group v1">
 												<input
 													id="email"
 													name="email"
@@ -53,7 +53,7 @@ const Contact = () => {
 													required
 												/>
 											</div>
-											<div class="form-group v1">
+											<div className="form-group v1">
 												<input
 													id="phone"
 													name="phone"
@@ -61,7 +61,7 @@ const Contact = () => {
 													placeholder="Phone Number"
 												/>
 											</div>
-											<div class="form-group v1">
+											<div className="form-group v1">
 												<input
 													type="text"
 													id="subj"
@@ -70,8 +70,8 @@ const Contact = () => {
 												/>
 											</div>
 										</div>
-										<div class="col-lg-6">
-											<div class="form-group v1">
+										<div className="col-lg-6">
+											<div className="form-group v1">
 												<textarea
 													name="comment"
 													id="comment"
@@ -80,12 +80,12 @@ const Contact = () => {
 													placeholder="Your Messages.."></textarea>
 											</div>
 										</div>
-										<div class="col-lg-12">
-											<div class="form-group checkbox">
+										<div className="col-lg-12">
+											<div className="form-group checkbox">
 												<input type="checkbox" id="ts" />
-												<label for="ts">I Accept Your Terms & Conditions</label>
+												<label htmlFor="ts">I Accept Your Terms & Conditions</label>
 											</div>
-											<button type="submit" class="btn v7">
+											<button type="submit" className="btn v7">
 												Send Message
 											</button>
 										</div>
@@ -93,9 +93,9 @@ const Contact = () => {
 								</form>
 							</div>
 						</div>
-						<div class="col-lg-6">
-							<div class="contact-box v2">
-								<div class="contact-box-title">
+						<div className="col-lg-6">
+							<div className="contact-box v2">
+								<div className="contact-box-title">
 									<h5>Find Us On Goolge Map</h5>
 								</div>
 								<div id="map">
@@ -105,7 +105,7 @@ const Contact = () => {
 										width="600"
 										height="450"
 										style={{ border: 0 }}
-										allowfullscreen=""
+										allowFullScreen=""
 										loading="lazy"></iframe>
 								</div>
 							</div>

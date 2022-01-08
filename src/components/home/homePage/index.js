@@ -28,7 +28,7 @@ import Trainers from "./trainers/Trainers";
 import DownloadApp from "./app/DownloadApp";
 import Testimonial from "./testimonial/Testimonial";
 import HomepageLayout from "../layouts/homepage.layout";
-import './css/style.module.css';
+
 const HomePage = () => {
   return (
     <HomepageLayout>
@@ -46,7 +46,7 @@ const HomePage = () => {
       <DownloadApp />
       <Faqs />
       <Contact />
-      <a href="#" className="back-to-top bounce">
+      <a href="#!" className="back-to-top bounce">
         <i className="las la-arrow-up"></i>
       </a>
     </HomepageLayout>

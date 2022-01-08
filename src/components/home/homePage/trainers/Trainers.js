@@ -55,22 +55,22 @@ const Trainers = () => {
 												<div className="team-social-center">
 													<ul className="team-social-bar">
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-facebook"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-twitter"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-linkedin"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-pinterest"></i>
 															</a>
 														</li>
@@ -94,22 +94,22 @@ const Trainers = () => {
 												<div className="team-social-center">
 													<ul className="team-social-bar">
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-facebook"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-twitter"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-linkedin"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-pinterest"></i>
 															</a>
 														</li>
@@ -135,22 +135,22 @@ const Trainers = () => {
 												<div className="team-social-center">
 													<ul className="team-social-bar">
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-facebook"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-twitter"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-linkedin"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-pinterest"></i>
 															</a>
 														</li>
@@ -174,22 +174,22 @@ const Trainers = () => {
 												<div className="team-social-center">
 													<ul className="team-social-bar">
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-facebook"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-twitter"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-linkedin"></i>
 															</a>
 														</li>
 														<li>
-															<a href="javascript:void(0);">
+															<a href="#!">
 																<i className="fa fa-pinterest"></i>
 															</a>
 														</li>
@@ -215,22 +215,22 @@ const Trainers = () => {
 										<div className="team-social-center">
 											<ul className="team-social-bar">
 												<li>
-													<a href="javascript:void(0);">
+													<a href="#!">
 														<i className="fa fa-facebook"></i>
 													</a>
 												</li>
 												<li>
-													<a href="javascript:void(0);">
+													<a href="#!">
 														<i className="fa fa-twitter"></i>
 													</a>
 												</li>
 												<li>
-													<a href="javascript:void(0);">
+													<a href="#!">
 														<i className="fa fa-linkedin"></i>
 													</a>
 												</li>
 												<li>
-													<a href="javascript:void(0);">
+													<a href="#!">
 														<i className="fa fa-pinterest"></i>
 													</a>
 												</li>
