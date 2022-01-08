@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Page from "./components/home/pages";
 import HomePage from "./components/home/homePage";
 import { Login, Signup } from "./components/console";
-import Contact from "./components/home/contact/Contact";
+import Contact from "./components/home/contact";
 import ConsoleRoute from "./components/console/console.route";
 
 const App = () => {

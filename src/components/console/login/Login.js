@@ -98,7 +98,7 @@ const Login = () => {
 									checked
 									id="remember"
 								/>
-								<label className="custom-control-label" htmlfor="remember">
+								<label className="custom-control-label" htmlFor="remember">
 									Remember me for 30 days
 								</label>
 							</div>
