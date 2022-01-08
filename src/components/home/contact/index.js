@@ -6,6 +6,9 @@ const Contact = ()=>{
     return(
         <HomepageLayout>
             <ContactPage/>
+            <a href="#!" className="back-to-top bounce">
+                <i className="las la-arrow-up"></i>
+            </a>
         </HomepageLayout>
     );
 }
