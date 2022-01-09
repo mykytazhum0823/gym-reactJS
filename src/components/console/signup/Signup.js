@@ -45,7 +45,7 @@ const Signup = () => {
 
 					<form action="https://lema.frontted.com/index.html" novalidate>
 						<div className="form-group">
-							<label className="text-label" for="name_2">
+							<label className="text-label" htmlFor="name_2">
 								Name:
 							</label>
 							<div className="input-group input-group-merge">
@@ -64,7 +64,7 @@ const Signup = () => {
 							</div>
 						</div>
 						<div className="form-group">
-							<label className="text-label" for="email_2">
+							<label className="text-label" htmlFor="email_2">
 								Email Address:
 							</label>
 							<div className="input-group input-group-merge">
@@ -83,7 +83,7 @@ const Signup = () => {
 							</div>
 						</div>
 						<div className="form-group">
-							<label className="text-label" for="password_2">
+							<label className="text-label" htmlFor="password_2">
 								Password:
 							</label>
 							<div className="input-group input-group-merge">
@@ -109,7 +109,7 @@ const Signup = () => {
 									className="custom-control-input"
 									id="terms"
 								/>
-								<label className="custom-control-label" for="terms">
+								<label className="custom-control-label" htmlFor="terms">
 									I accept <a href="#!">Terms and Conditions</a>
 								</label>
 							</div>

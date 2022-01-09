@@ -91,7 +91,7 @@ const EditAccountTraier = () => {
 													/>
 													<label
 														className="custom-control-label"
-														for="subscribe">
+														htmlFor="subscribe">
 														Yes
 													</label>
 												</div>
@@ -258,7 +258,7 @@ const EditAccountTraier = () => {
 													/>
 													<label
 														className="custom-control-label"
-														for="customCheck1">
+														htmlFor="customCheck1">
 														Yes, show me as available for freelance!
 													</label>
 												</div>

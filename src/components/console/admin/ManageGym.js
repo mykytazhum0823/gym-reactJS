@@ -723,7 +723,7 @@ const ManageGym = () => {
 												className="custom-control-input"
 												id="terms"
 											/>
-											<label className="custom-control-label" for="terms">
+											<label className="custom-control-label" htmlFor="terms">
 												I accept <a href="#!">Terms and Conditions</a>
 											</label>
 										</div>
