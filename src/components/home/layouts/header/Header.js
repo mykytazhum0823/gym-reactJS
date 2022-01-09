@@ -65,6 +65,12 @@ const Header = () => {
                                                 </Link>
 												
                                             </li>
+                                            <li className="has-child">
+                                                <Link to="/signup">
+                                                    Signup
+                                                </Link>
+												
+                                            </li>
                                         </ul>
                                     </nav>
                                     <div className="mobile-menu">
