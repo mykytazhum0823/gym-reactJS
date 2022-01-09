@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Footer, Header } from "./index";
+import useScript from 'usescript-hook';
 import '../assets/css/style.scoped.css';
 import '../assets/css/swiper-min.css';
 import '../assets/css/mmenu.css';
@@ -11,25 +12,10 @@ import '../assets/css/magnific-popup.css';
 import '../assets/css/nice-select.css';
 
 const HomepageLayout = ({ children }) => {
+  useScript("../assets/js/owl.carousel.js");
+  useScript("../assets/js/comparison-slider.js");
+  useScript("../assets/js/main.js");
 
-  useEffect(()=>{
-    var script;
-    script= document.createElement("script");
-		script.src = "../assets/js/owl.carousel.js";
-		script.async = true;
-		document.body.appendChild(script);
-
-    script= document.createElement("script");
-		script.src = "../assets/js/main.js";
-		script.async = true;
-		document.body.appendChild(script);
-
-    script = document.createElement("script");
-		script.src = "../assets/js/comparison-slider.js";
-		script.async = true;
-		document.body.appendChild(script);
-    
-  }, []);
 
   return (
     <div className="homepage-wrapper">

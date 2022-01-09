@@ -12,12 +12,15 @@ import '../assets/css/vendor-flatpickr.css';
 import '../assets/css/vendor-flatpickr.rtl.css';
 import '../assets/css/vendor-flatpickr-airbnb.css';
 import '../assets/css/vendor-flatpickr-airbnb.rtl.css';
+import useScript from 'usescript-hook';
 
 
-const ConsoleLayout = () => {
+const ConsoleLayout = ({child}) => {
+  useScript('../assets/vendor/bootstrap.min.js');
   return (
     <div className="console-wrapper">
       <HeaderConsole />
+      {child}
       {/* <Outlet /> */}
       {/* <FooterConsole /> */}
     </div>
