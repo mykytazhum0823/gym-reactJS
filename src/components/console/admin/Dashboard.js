@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import {Chart} from 'chart';
 import "../assets/css/app.scoped.css";
+import "./admin.scoped.scss";
 
 const Dashboard = () => {
 	useEffect(()=>{
 		var script;
-		
+
 		script = document.createElement("script");
 		script.src = "../assets/js/page.instructor-dashboard.js";
 		script.async = true;
