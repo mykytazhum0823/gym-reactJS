@@ -15,9 +15,23 @@ body {
 	padding: 20px;
 }
 
-/* h2 {
+h2 {
 	font-weight: 500;
 	font-family: inherit;
 	color: #212529;
 	margin: 3rem 0;
-} */
+}
+.fa {
+    font-family: Font Awesome\ 5 Free;
+}
+.far {
+    font-family: Font Awesome\ 5 Free;
+}
+.fa-envelope:before {
+    content: "\F0E0";
+	font-family: Font Awesome\ 5 Free;
+}
+.fa-key:before {
+    content: "\F084";
+	font-family: Font Awesome\ 5 Free;
+}

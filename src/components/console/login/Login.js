@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import "./login.css";
+import "./login.scoped.css";
 import '../assets/css/app.scoped.css';
 
 const Path = styled.path`
@@ -102,7 +102,7 @@ const Login = () => {
 								<input
 									type="checkbox"
 									className="custom-control-input"
-									checked
+									defaultChecked
 									id="remember"
 								/>
 								<label className="custom-control-label" htmlFor="remember">
