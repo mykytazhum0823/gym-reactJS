@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import {Chart} from 'chart';
+import "../assets/css/app.scoped.css";
+
 const Dashboard = () => {
 	useEffect(()=>{
-		const script = document.createElement("script");
-		script.src = "../../assets/js/page.instructor-dashboard.js";
+		var script;
+		
+		script = document.createElement("script");
+		script.src = "../assets/js/page.instructor-dashboard.js";
 		script.async = true;
 		document.body.appendChild(script);
 	}, []);
@@ -113,7 +117,7 @@ const Dashboard = () => {
 														data-flatpickr-alt-format="d/m/Y"
 														data-flatpickr-date-format="d/m/Y">
 														<a
-															href="javascript:void(0)"
+															href="#"
 															className="link-date"
 															data-toggle>
 															01/03/2020 to 20/03/2020
@@ -255,7 +259,11 @@ const Dashboard = () => {
 						<div
 							className="mdk-drawer  js-mdk-drawer"
 							id="default-drawer"
-							data-align="start">
+							data-align="start"
+							data-position="left"
+							data-domfactory-upgraded="mdk-drawer"
+							data-persistent=""
+							data-opened="">
 							<div className="mdk-drawer__content">
 								<div
 									className="sidebar sidebar-light sidebar-left bg-white"

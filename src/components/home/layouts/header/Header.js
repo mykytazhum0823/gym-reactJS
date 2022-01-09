@@ -57,19 +57,21 @@ const Header = () => {
                                                 <Link to="/" className="active">
                                                     Home
                                                 </Link>
-												
                                             </li>
 											<li className="has-child">
                                                 <Link to="/login">
                                                     Login
                                                 </Link>
-												
                                             </li>
                                             <li className="has-child">
                                                 <Link to="/signup">
                                                     Signup
                                                 </Link>
-												
+                                            </li>
+                                            <li className="has-child">
+                                                <Link to="/console/admin">
+                                                    Admin
+                                                </Link>
                                             </li>
                                         </ul>
                                     </nav>
