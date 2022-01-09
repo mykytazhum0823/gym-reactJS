@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import { Modal } from "react-bootstrap";
 
 const ManageTrainer = () => {
 	return (
@@ -358,7 +359,7 @@ const ManageTrainer = () => {
 			<div
 				id="modal-signup"
 				className="modal fade"
-				tabindex="-1"
+				tabIndex="-1"
 				role="dialog"
 				aria-hidden="true">
 				<div className="modal-dialog modal-dialog-centered">
