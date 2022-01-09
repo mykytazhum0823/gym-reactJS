@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import './signup.scoped.css';
 import '../assets/css/app.scoped.css';
+import { Link } from "react-router-dom";
 
 const Path = styled.path`
 	fill: ${({ fill }) => fill || 'none'};
@@ -131,10 +132,10 @@ const Signup = () => {
 						</div>
 						<div className="text-center">
 							<span>Have an account?</span>{" "}
-							<a className="text-body text-underline" href="login.html">
-								{" "}
+							<Link to="/login" className="text-body text-underline">
 								Login
-							</a>
+							</Link> 
+							
 						</div>
 					</form>
 				</div>
