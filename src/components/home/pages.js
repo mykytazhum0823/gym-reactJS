@@ -1,5 +1,4 @@
 import React from "react";
-
 import About from "./about/About";
 import Cta from "./homePage/cta/Cta";
 import Blog from "./homePage/blog/Blog";

@@ -15,7 +15,7 @@ import Trainers from "./trainers/Trainers";
 import DownloadApp from "./app/DownloadApp";
 import Testimonial from "./testimonial/Testimonial";
 import HomepageLayout from "../layouts/homepage.layout";
-
+import '../assets/css/style.scoped.css';
 const HomePage = () => {
   return (
     <HomepageLayout>

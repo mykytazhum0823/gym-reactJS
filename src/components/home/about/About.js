@@ -4,7 +4,8 @@ import React from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import "./about.css";
+import "./about.scss";
+import '../assets/css/style.scoped.css';
 
 const options = {
 	margin: 30,

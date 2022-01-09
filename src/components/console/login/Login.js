@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./login.css";
-
+import '../assets/css/app.scoped.css';
 const Login = () => {
 	return (
 		<div className="layout-login-centered-boxed container-v1">

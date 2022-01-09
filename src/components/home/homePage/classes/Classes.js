@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../assets/css/style.scoped.css';
 const Classes = () => {
 	return (
 		<section className="class-wrap v1 section-padding">

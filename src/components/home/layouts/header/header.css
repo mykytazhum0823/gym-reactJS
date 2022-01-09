@@ -1,5 +1,4 @@
 
-
 .lang-sel {
 	padding: 3px;
 	width: fit-content;
@@ -35,4 +34,40 @@ option {
 
 option:checked {
 	color: #000;
+}
+
+.nice-select{
+	background: transparent !important;
+    width: auto !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: black !important;
+    height: 49px !important;
+    padding: 10px 15px !important;
+    line-height: 27px !important;
+}
+.nice-select:hover, .nice-select.open, .nice-select:focus{
+	border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.nice-select>span {
+    color: #fff !important;
+    font-weight: 400 !important;
+    line-height: 30px !important;
+}
+.nice-select:after {
+    border-bottom: 2px solid #fff !important;
+    border-right: 2px solid #fff !important;
+    width: 7px !important;
+    height: 7px !important;
+    right: 2px !important;
+    top: 52% !important;
+}
+.nice-select .option.focus, .nice-select .option.selected.focus {
+    color: #112A56 !important;
+}
+.lang_selctor .nice-select .option {
+    padding-left: 13px !important;
+    padding-right: 10px !important;
 }

@@ -1,7 +1,11 @@
 import React from "react";
-// import "./header.css";
+import styled from 'styled-components'
+import "./header.css";
+import '../../assets/css/style.scoped.css';
 import {Outlet} from "react-router-dom";
 import {Link} from "react-router-dom";
+
+
 const Header = () => {
 	return (
 		<>

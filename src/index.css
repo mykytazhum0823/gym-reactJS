@@ -6,25 +6,3 @@
 body {
 	scroll-behavior: smooth;
 }
-@media only screen and (min-width: 1200px){
-.container {
-    max-width: 1320px !important;
-}
-}
-a{
-	text-decoration: none !important;
-}
-
-.btn{
-	padding:10px 25px !important;
-}
-
-.owl-prev span{
-	margin-top: -0.6rem;
-}
-.owl-next span{
-	margin-top: -0.6rem;
-}
-.bounce {
-    animation: float 1500ms infinite ease-in-out !important;
-}

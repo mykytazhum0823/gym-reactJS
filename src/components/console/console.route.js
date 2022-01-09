@@ -7,6 +7,7 @@ import ConsoleLayout from "./layout/console.layout";
 import GymDashboard from "./gym/GymDashboard";
 import EditAccountTrainer from "./trainer/EditAccountTrainer";
 
+
 const ConsoleRoute = () => {
   return (
     <Routes>

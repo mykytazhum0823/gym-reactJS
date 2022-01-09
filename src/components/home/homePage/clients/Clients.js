@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../assets/css/style.scoped.css';
 const Clients = () => {
 	return (
 		<div className="section-full site-bg-gray-light p-tb120">

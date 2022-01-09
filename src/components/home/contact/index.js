@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactPage from './ContactPage.js';
 import HomepageLayout from "../layouts/homepage.layout";
-
+import '../assets/css/style.scoped.css';
 const Contact = ()=>{
     return(
         <HomepageLayout>

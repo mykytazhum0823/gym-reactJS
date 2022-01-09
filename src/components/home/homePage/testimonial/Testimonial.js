@@ -1,5 +1,6 @@
 import React from "react";
-
+import '../../assets/css/style.scoped.css';
+import './testimonial.scss';
 //Owl Carousel Libraries and Module
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";

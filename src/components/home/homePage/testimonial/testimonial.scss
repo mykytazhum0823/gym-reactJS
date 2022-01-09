@@ -1,0 +1,25 @@
+.testimonial-slider-v2{
+    .owl-dots {
+        position:absolute;
+        bottom: -30px;
+        left: calc(50% - 40px);
+        transform: translateX(-50%);
+        .owl-dot.active span {
+            background-color: #fff;
+            border: 1px solid #E31C25;
+        
+            position: relative;
+            top: 3px;
+        }
+        .owl-dot span {
+            margin: 0 5px 0;
+            background: #E31C25;
+            width: 12px;
+            height: 12px;
+            border: 1px solid #fff;
+            display: block;
+            transition: opacity 200ms ease;
+            border-radius: 50%;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../assets/css/style.scoped.css';
 const Footer = () => {
 	return (
 		<footer className="footer-wrap v1">

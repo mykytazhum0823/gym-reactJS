@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../assets/css/style.scoped.css';
 const Cta = () => {
 	return (
 		<section className="cta-wrap v1 bg-f section-padding cta-bg-1">

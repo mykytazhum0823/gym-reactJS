@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../assets/css/style.scoped.css';
 const DownloadApp = () => {
 	return (
 		<section className="time-table-banner bg-f tb-bg-1">

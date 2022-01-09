@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Footer, Header } from "./index";
-import '../assets/css/style.css';
+import '../assets/css/style.scoped.css';
 import '../assets/css/swiper-min.css';
 import '../assets/css/mmenu.css';
 import '../assets/css/line-awesome.min.css';

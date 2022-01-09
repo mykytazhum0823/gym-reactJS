@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { FooterConsole, HeaderConsole } from ".";
+import '../assets/css/app.scoped.css';
 
 const ConsoleLayout = () => {
   return (

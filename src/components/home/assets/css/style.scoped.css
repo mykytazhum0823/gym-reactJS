@@ -331,6 +331,7 @@ a {
   background-color: #E31C25;
   border: 1px solid transparent;
   color: #fff;
+  margin-right:0.1rem;
 }
 
 .btn.v10:hover {
