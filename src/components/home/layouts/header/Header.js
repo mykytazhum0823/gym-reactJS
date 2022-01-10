@@ -73,6 +73,21 @@ const Header = () => {
                                                     Admin
                                                 </Link>
                                             </li>
+                                            <li className="has-child">
+                                                <Link to="/console/trainer">
+                                                    Trainer
+                                                </Link>
+                                            </li>
+                                            <li className="has-child">
+                                                <Link to="/console/customer">
+                                                    Customer
+                                                </Link>
+                                            </li>
+                                            <li className="has-child">
+                                                <Link to="/console/gym">
+                                                    Gym
+                                                </Link>
+                                            </li>
                                         </ul>
                                     </nav>
                                     <div className="mobile-menu">
