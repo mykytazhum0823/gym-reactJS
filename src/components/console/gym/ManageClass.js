@@ -34,7 +34,7 @@ const ManageClass = () => {
 								<div className="row">
 									<div className="col-md-6 col-lg-4">
 										<div className="card card__course card__course__animate">
-											<a href="#!" className="card-img-top">
+											<a href="#" className="card-img-top">
 												<img
 													src="gymAssets/images/course_lms.jpg"
 													style={{ width: "100%" }}
@@ -100,7 +100,7 @@ const ManageClass = () => {
 
 									<div className="col-md-6 col-lg-4">
 										<div className="card card__course card__course__animate">
-											<a href="#!" className="card-img-top">
+											<a href="#" className="card-img-top">
 												<img
 													src="gymAssets/images/course_lms.jpg"
 													style={{ width: "100%" }}
@@ -166,7 +166,7 @@ const ManageClass = () => {
 
 									<div className="col-md-6 col-lg-4">
 										<div className="card card__course card__course__animate">
-											<a href="#!" className="card-img-top">
+											<a href="#" className="card-img-top">
 												<img
 													src="gymAssets/images/course_lms.jpg"
 													style={{ width: "100%" }}
@@ -231,7 +231,7 @@ const ManageClass = () => {
 									</div>
 									<div className="col-md-6 col-lg-4">
 										<div className="card card__course card__course__animate">
-											<a href="#!" className="card-img-top">
+											<a href="#" className="card-img-top">
 												<img
 													src="gymAssets/images/course_lms.jpg"
 													style={{ width: "100%" }}
@@ -296,7 +296,7 @@ const ManageClass = () => {
 									</div>
 									<div className="col-md-6 col-lg-4">
 										<div className="card card__course card__course__animate">
-											<a href="#!" className="card-img-top">
+											<a href="#" className="card-img-top">
 												<img
 													src="gymAssets/images/course_lms.jpg"
 													style={{ width: "100%" }}
@@ -361,7 +361,7 @@ const ManageClass = () => {
 									</div>
 									<div className="col-md-6 col-lg-4">
 										<div className="card card__course card__course__animate">
-											<a href="#!" className="card-img-top">
+											<a href="#" className="card-img-top">
 												<img
 													src="gymAssets/images/course_lms.jpg"
 													style={{ width: "100%" }}
@@ -440,7 +440,7 @@ const ManageClass = () => {
 								<div className="sidebar-block p-0 m-0">
 									<div className="d-flex align-items-center sidebar-p-a border-bottom bg-light">
 										<a
-											href="#!"
+											href="#"
 											className="flex d-flex align-items-center text-body text-underline-0">
 											<span className="avatar avatar-sm mr-2">
 												<span className="avatar-title rounded-circle bg-soft-secondary text-muted">
@@ -454,7 +454,7 @@ const ManageClass = () => {
 										</a>
 										<div className="dropdown ml-auto">
 											<a
-												href="#!"
+												href="#"
 												data-toggle="dropdown"
 												data-caret="false"
 												className="text-muted">

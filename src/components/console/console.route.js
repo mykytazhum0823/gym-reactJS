@@ -12,8 +12,12 @@ import ConsoleLayout from "./layout/console.layout";
 import GymDashboard from "./gym/GymDashboard";
 import EditAccountTrainer from "./trainer/EditAccountTrainer";
 import AdminLayout from "./admin/layout/admin.layout";
+
 import TrainerLayout from './trainer/layout/trainer.layout';
 import Payout from './trainer/Payout';
+
+import CustomerLayout from './customer/layout/customer.layout';
+
 
 
 const ConsoleRoute = () => {
@@ -32,7 +36,7 @@ const ConsoleRoute = () => {
         <Route path="trainer/pay" element={<TrainerLayout><Payout /></TrainerLayout>} />
         
 
-        <Route path="customer" element={<EnrollClass />} />
+        <Route path="customer" element={<CustomerLayout><EnrollClass /></CustomerLayout>} />
         <Route path="gym" element={<GymDashboard />} />
       </Route>
     </Routes>

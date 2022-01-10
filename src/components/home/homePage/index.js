@@ -33,7 +33,7 @@ const HomePage = () => {
       <DownloadApp />
       <Faqs />
       {/* <Contact /> */}
-      <a href="#!" className="back-to-top bounce">
+      <a href="#" className="back-to-top bounce">
         <i className="las la-arrow-up"></i>
       </a>
     </HomepageLayout>

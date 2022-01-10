@@ -301,7 +301,7 @@ const EditAccount = () => {
 									</div>
 								</div>
 								<div className="text-right mb-5">
-									<a href="#!" className="btn btn-success">
+									<a href="#" className="btn btn-success">
 										Save
 									</a>
 								</div>
@@ -319,7 +319,7 @@ const EditAccount = () => {
 									<div className="sidebar-block p-0 m-0">
 										<div className="d-flex align-items-center sidebar-p-a border-bottom bg-light">
 											<a
-												href="#!"
+												href="#"
 												className="flex d-flex align-items-center text-body text-underline-0">
 												<span className="avatar avatar-sm mr-2">
 													<span className="avatar-title rounded-circle bg-soft-secondary text-muted">
@@ -335,7 +335,7 @@ const EditAccount = () => {
 											</a>
 											<div className="dropdown ml-auto">
 												<a
-													href="#!"
+													href="#"
 													data-toggle="dropdown"
 													data-caret="false"
 													className="text-muted">
@@ -451,7 +451,7 @@ const EditAccount = () => {
 									</div>
 									<div className="col">
 										<div className="d-flex flex-column flex">
-											<a href="#!" className="text-body">
+											<a href="#" className="text-body">
 												<strong className="text-15pt">
 													Marketing Team Meeting
 												</strong>
@@ -507,7 +507,7 @@ const EditAccount = () => {
 									</div>
 									<div className="col">
 										<div className="d-flex flex-column flex">
-											<a href="#!" className="text-body">
+											<a href="#" className="text-body">
 												<strong className="text-15pt">Call Alex</strong>
 											</a>
 
@@ -534,7 +534,7 @@ const EditAccount = () => {
 									</div>
 									<div className="col">
 										<div className="d-flex flex-column flex">
-											<a href="#!" className="text-body">
+											<a href="#" className="text-body">
 												<strong className="text-15pt">
 													Design Team Meeting
 												</strong>
@@ -598,7 +598,7 @@ const EditAccount = () => {
 									</div>
 									<div className="col d-flex">
 										<div className="d-flex flex-column flex">
-											<a href="#!" className="text-body">
+											<a href="#" className="text-body">
 												<strong className="text-15pt">Call Wendy</strong>
 											</a>
 

@@ -20,7 +20,7 @@ const Sidebar  = ()=>{
                 <div className="sidebar-block p-0 m-0">
                     <div className="d-flex align-items-center sidebar-p-a border-bottom bg-light">
                         <a
-                            href="#!"
+                            href="#"
                             className="flex d-flex align-items-center text-body text-underline-0">
                             <span className="avatar avatar-sm mr-2">
                                 <span className="avatar-title rounded-circle bg-soft-secondary text-muted">

@@ -40,7 +40,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w4.png" alt="" />
 												</a>
 											</div>
@@ -53,7 +53,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w5.png" alt="" />
 												</a>
 											</div>
@@ -66,7 +66,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w6.png" alt="" />
 												</a>
 											</div>
@@ -79,7 +79,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w1.png" alt="" />
 												</a>
 											</div>
@@ -92,7 +92,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w2.png" alt="" />
 												</a>
 											</div>
@@ -105,7 +105,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w3.png" alt="" />
 												</a>
 											</div>
@@ -118,7 +118,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w4.png" alt="" />
 												</a>
 											</div>
@@ -131,7 +131,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w5.png" alt="" />
 												</a>
 											</div>
@@ -144,7 +144,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w6.png" alt="" />
 												</a>
 											</div>
@@ -157,7 +157,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w1.png" alt="" />
 												</a>
 											</div>
@@ -170,7 +170,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w2.png" alt="" />
 												</a>
 											</div>
@@ -183,7 +183,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w3.png" alt="" />
 												</a>
 											</div>
@@ -196,7 +196,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w4.png" alt="" />
 												</a>
 											</div>
@@ -209,7 +209,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w5.png" alt="" />
 												</a>
 											</div>
@@ -222,7 +222,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w6.png" alt="" />
 												</a>
 											</div>
@@ -235,7 +235,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w1.png" alt="" />
 												</a>
 											</div>
@@ -248,7 +248,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="assets/img/client-logo/w2.png" alt="" />
 												</a>
 											</div>
@@ -261,7 +261,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w3.png" alt="" />
 												</a>
 											</div>
@@ -274,7 +274,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w4.png" alt="" />
 												</a>
 											</div>
@@ -287,7 +287,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w5.png" alt="" />
 												</a>
 											</div>
@@ -300,7 +300,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w6.png" alt="" />
 												</a>
 											</div>
@@ -313,7 +313,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w1.png" alt="" />
 												</a>
 											</div>
@@ -326,7 +326,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w2.png" alt="" />
 												</a>
 											</div>
@@ -339,7 +339,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w3.png" alt="" />
 												</a>
 											</div>
@@ -352,7 +352,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w4.png" alt="" />
 												</a>
 											</div>
@@ -365,7 +365,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w5.png" alt="" />
 												</a>
 											</div>
@@ -378,7 +378,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w6.png" alt="" />
 												</a>
 											</div>
@@ -391,7 +391,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w1.png" alt="" />
 												</a>
 											</div>
@@ -404,7 +404,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w2.png" alt="" />
 												</a>
 											</div>
@@ -417,7 +417,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w3.png" alt="" />
 												</a>
 											</div>
@@ -430,7 +430,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w4.png" alt="" />
 												</a>
 											</div>
@@ -443,7 +443,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w5.png" alt="" />
 												</a>
 											</div>
@@ -456,7 +456,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w6.png" alt="" />
 												</a>
 											</div>
@@ -469,7 +469,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w1.png" alt="" />
 												</a>
 											</div>
@@ -482,7 +482,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w2.png" alt="" />
 												</a>
 											</div>
@@ -495,7 +495,7 @@ const Clients = () => {
 									<div className="item">
 										<div className="ow-client-logo">
 											<div className="client-logo client-logo-media">
-												<a href="#!">
+												<a href="#">
 													<img src="images/client-logo/w3.png" alt="" />
 												</a>
 											</div>

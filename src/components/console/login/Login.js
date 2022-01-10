@@ -20,7 +20,7 @@ const Login = () => {
 				</div>
 
 				<div className="card card-body box">
-					<a href="#!" className="btn btn-light btn-block">
+					<a href="#" className="btn btn-light btn-block">
 						<span className="mr-2">
 							<svg
 								version="1.1"
@@ -111,7 +111,7 @@ const Login = () => {
 							</div>
 						</div>
 						<div className="form-group text-center mb-0">
-							<a href="#!">Forgot password?</a> <br />
+							<a href="#">Forgot password?</a> <br />
 						</div>
 					</form>
 				</div>

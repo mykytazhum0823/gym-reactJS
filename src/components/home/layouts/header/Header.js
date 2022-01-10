@@ -42,7 +42,7 @@ const Header = () => {
                                             </select>
                                         </div>
                                         <div className="header_btn xl-none">
-                                            <a href="#!" className="btn v1">Make A Visit</a>
+                                            <a href="#" className="btn v1">Make A Visit</a>
                                         </div>
                                     </div>
                                 </div>

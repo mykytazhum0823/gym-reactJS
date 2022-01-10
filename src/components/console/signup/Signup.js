@@ -19,7 +19,7 @@ const Signup = () => {
 					</a>
 				</div>
 				<div className="card card-body">
-					<a href="#!" className="btn btn-light btn-block">
+					<a href="#" className="btn btn-light btn-block">
 						<span className="mr-2">
 							<svg
 								version="1.1"
@@ -119,7 +119,7 @@ const Signup = () => {
 									id="terms"
 								/>
 								<label className="custom-control-label" htmlFor="terms">
-									I accept <a href="#!">Terms and Conditions</a>
+									I accept <a href="#">Terms and Conditions</a>
 								</label>
 							</div>
 						</div>

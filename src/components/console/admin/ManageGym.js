@@ -38,7 +38,7 @@ const ManageGym = () => {
 						<div className="row">
 							<div className="col-md-6 col-lg-4">
 								<div className="card card__course card__course__animate">
-									<a href="#!" className="card-img-top">
+									<a href="#" className="card-img-top">
 										<img
 											src="/assets/images/course_lms.jpg"
 											style={{ width: "100%" }}
@@ -107,7 +107,7 @@ const ManageGym = () => {
 
 							<div className="col-md-6 col-lg-4">
 								<div className="card card__course card__course__animate">
-									<a href="#!" className="card-img-top">
+									<a href="#" className="card-img-top">
 										<img
 											src="/assets/images/course_lms.jpg"
 											style={{ width: "100%" }}
@@ -135,7 +135,7 @@ const ManageGym = () => {
 
 									<div className="p-3 text-center border-bottom">
 										<div className="bold mb-2">
-											<a href="#!" className="text-body">
+											<a href="#" className="text-body">
 												<span className="course__title">
 													{" "}
 													Gym's Name{" "}
@@ -176,7 +176,7 @@ const ManageGym = () => {
 
 							<div className="col-md-6 col-lg-4">
 								<div className="card card__course card__course__animate">
-									<a href="#!" className="card-img-top">
+									<a href="#" className="card-img-top">
 										<img
 											src="/assets/images/course_lms.jpg"
 											style={{ width: "100%" }}
@@ -204,7 +204,7 @@ const ManageGym = () => {
 
 									<div className="p-3 text-center border-bottom">
 										<div className="bold mb-2">
-											<a href="#!" className="text-body">
+											<a href="#" className="text-body">
 												<span className="course__title">
 													{" "}
 													Gym's Name{" "}
@@ -245,7 +245,7 @@ const ManageGym = () => {
 
 							<div className="col-md-6 col-lg-4">
 								<div className="card card__course card__course__animate">
-									<a href="#!" className="card-img-top">
+									<a href="#" className="card-img-top">
 										<img
 											src="/assets/images/course_lms.jpg"
 											style={{ width: "100%" }}
@@ -273,7 +273,7 @@ const ManageGym = () => {
 
 									<div className="p-3 text-center border-bottom">
 										<div className="bold mb-2">
-											<a href="#!" className="text-body">
+											<a href="#" className="text-body">
 												<span className="course__title">
 													{" "}
 													Gym's Name{" "}
@@ -313,7 +313,7 @@ const ManageGym = () => {
 							</div>
 							<div className="col-md-6 col-lg-4">
 								<div className="card card__course card__course__animate">
-									<a href="#!" className="card-img-top">
+									<a href="#" className="card-img-top">
 										<img
 											src="/assets/images/course_lms.jpg"
 											style={{ width: "100%" }}
@@ -341,7 +341,7 @@ const ManageGym = () => {
 
 									<div className="p-3 text-center border-bottom">
 										<div className="bold mb-2">
-											<a href="#!" className="text-body">
+											<a href="#" className="text-body">
 												<span className="course__title">
 													{" "}
 													Gym's Name{" "}
@@ -381,7 +381,7 @@ const ManageGym = () => {
 							</div>
 							<div className="col-md-6 col-lg-4">
 								<div className="card card__course card__course__animate">
-									<a href="#!" className="card-img-top">
+									<a href="#" className="card-img-top">
 										<img
 											src="/assets/images/course_lms.jpg"
 											style={{ width: "100%" }}
@@ -409,7 +409,7 @@ const ManageGym = () => {
 
 									<div className="p-3 text-center border-bottom">
 										<div className="bold mb-2">
-											<a href="#!" className="text-body">
+											<a href="#" className="text-body">
 												<span className="course__title">
 													{" "}
 													Gym's Name{" "}
@@ -519,7 +519,7 @@ const ManageGym = () => {
 												id="terms"
 											/>
 											<label className="custom-control-label" htmlFor="terms">
-												I accept <a href="#!">Terms and Conditions</a>
+												I accept <a href="#">Terms and Conditions</a>
 											</label>
 										</div>
 									</div>

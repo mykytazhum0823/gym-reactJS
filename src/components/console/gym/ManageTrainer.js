@@ -203,7 +203,7 @@ const ManageTrainer = () => {
 								<div className="sidebar-block p-0 m-0">
 									<div className="d-flex align-items-center sidebar-p-a border-bottom bg-light">
 										<a
-											href="#!"
+											href="#"
 											className="flex d-flex align-items-center text-body text-underline-0">
 											<span className="avatar avatar-sm mr-2">
 												<span className="avatar-title rounded-circle bg-soft-secondary text-muted">
@@ -217,7 +217,7 @@ const ManageTrainer = () => {
 										</a>
 										<div className="dropdown ml-auto">
 											<a
-												href="#!"
+												href="#"
 												data-toggle="dropdown"
 												data-caret="false"
 												className="text-muted">
@@ -414,7 +414,7 @@ const ManageTrainer = () => {
 												id="terms"
 											/>
 											<label className="custom-control-label" htmlFor="terms">
-												I accept <a href="#!">Terms and Conditions</a>
+												I accept <a href="#">Terms and Conditions</a>
 											</label>
 										</div>
 									</div>

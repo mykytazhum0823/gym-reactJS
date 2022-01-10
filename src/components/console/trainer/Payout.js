@@ -33,7 +33,7 @@ const Payout = () => {
 						</div>
 
 						<div className="form-group m-0">
-							<a href="#!" className="btn btn-success">
+							<a href="#" className="btn btn-success">
 								Change
 							</a>
 						</div>
@@ -121,7 +121,7 @@ const Payout = () => {
 							</small>
 						</div>
 						<div className="form-group m-0">
-							<a href="#!" className="btn btn-outline-primary">
+							<a href="#" className="btn btn-outline-primary">
 								Update
 							</a>
 						</div>

@@ -257,7 +257,7 @@ const EditAccountTraier = () => {
 				</div>
 			</div>
 			<div className="text-right mb-5">
-				<a href="#!" className="btn btn-success">
+				<a href="#" className="btn btn-success">
 					Save
 				</a>
 			</div>

@@ -15,7 +15,7 @@ const Dashboard = () => {
 		<div className="container-fluid page__heading-container">
 			<div className="page__heading d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
 				<h1 className="m-lg-0">Admin Dashboard</h1>
-				<a href="#!" className="btn btn-success ml-lg-3">
+				<a href="#" className="btn btn-success ml-lg-3">
 					Go to Settings{" "}
 					<i className="material-icons">arrow_forward</i>
 				</a>
@@ -145,7 +145,7 @@ const Dashboard = () => {
 								className="list-group-item"
 								style={{ zIndex: "initial" }}>
 								<div className="d-flex align-items-center">
-									<a href="#!" className="mr-3">
+									<a href="#" className="mr-3">
 										<img
 											src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=clamp&amp;w=35&amp;h=35"
 											alt="course"
@@ -153,7 +153,7 @@ const Dashboard = () => {
 										/>
 									</a>
 									<div className="flex">
-										<a href="#!" className="text-body">
+										<a href="#" className="text-body">
 											<strong>Basics </strong>
 										</a>
 										<div className="d-flex align-items-center">
@@ -170,7 +170,7 @@ const Dashboard = () => {
 								className="list-group-item"
 								style={{ zIndex: "initial" }}>
 								<div className="d-flex align-items-center">
-									<a href="#!" className="mr-3">
+									<a href="#" className="mr-3">
 										<img
 											src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=clamp&amp;w=35&amp;h=35"
 											alt="course"
@@ -178,7 +178,7 @@ const Dashboard = () => {
 										/>
 									</a>
 									<div className="flex">
-										<a href="#!" className="text-body">
+										<a href="#" className="text-body">
 											<strong>Basics </strong>
 										</a>
 										<div className="d-flex align-items-center">
@@ -195,7 +195,7 @@ const Dashboard = () => {
 								className="list-group-item"
 								style={{ zIndex: "initial" }}>
 								<div className="d-flex align-items-center">
-									<a href="#!" className="mr-3">
+									<a href="#" className="mr-3">
 										<img
 											src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=clamp&amp;w=35&amp;h=35"
 											alt="course"
@@ -203,7 +203,7 @@ const Dashboard = () => {
 										/>
 									</a>
 									<div className="flex">
-										<a href="#!" className="text-body">
+										<a href="#" className="text-body">
 											<strong>Basics </strong>
 										</a>
 										<div className="d-flex align-items-center">
@@ -219,7 +219,7 @@ const Dashboard = () => {
 								className="list-group-item"
 								style={{ zIndex: "initial" }}>
 								<div className="d-flex align-items-center">
-									<a href="#!" className="mr-3">
+									<a href="#" className="mr-3">
 										<img
 											src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=clamp&amp;w=35&amp;h=35"
 											alt="course"
@@ -227,7 +227,7 @@ const Dashboard = () => {
 										/>
 									</a>
 									<div className="flex">
-										<a href="#!" className="text-body">
+										<a href="#" className="text-body">
 											<strong>Basics </strong>
 										</a>
 										<div className="d-flex align-items-center">
