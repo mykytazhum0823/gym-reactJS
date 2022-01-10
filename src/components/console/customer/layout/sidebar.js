@@ -42,21 +42,22 @@ const Sidebar  = ()=>{
                                 <i className="material-icons">more_vert</i>
                             </a>
                             <div className="dropdown-menu dropdown-menu-right">
-                                <div className="dropdown-divider"></div>
-                                <a
+                                <Link
                                     className="dropdown-item"
                                     rel="nofollow"
                                     data-method="delete"
-                                    href="login.html">
-                                    Logout
-                                </a>
-                                <a
-                                    className="dropdown-item"
-                                    rel="nofollow"
-                                    data-method="delete"
-                                    href="edit-account.html">
+                                    to="/console/customer/edit">
                                     Edit Profile
-                                </a>
+                                </Link>
+                                <div className="dropdown-divider"></div>
+                                <Link
+                                    className="dropdown-item"
+                                    rel="nofollow"
+                                    data-method="delete"
+                                    to="/login">
+                                    Logout
+                                </Link>
+                                
                             </div>
                         </div>
                     </div>
@@ -64,9 +65,9 @@ const Sidebar  = ()=>{
                 <div className="sidebar-block p-0">
                     <ul className="sidebar-menu mt-0">
                         <li className="sidebar-menu-item">
-                            <a
+                            <Link
                                 className="sidebar-menu-button"
-                                href="enroll_class.html">
+                                to="/console/customer">
                                 <span className="sidebar-menu-icon sidebar-menu-icon--left">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -89,13 +90,13 @@ const Sidebar  = ()=>{
                                 <span className="sidebar-menu-text">
                                     Enroll className
                                 </span>
-                            </a>
+                            </Link>
                         </li>
 
                         <li className="sidebar-menu-item">
-                            <a
+                            <Link
                                 className="sidebar-menu-button"
-                                href="manage_traniner.html">
+                                to="/console/customer/membership">
                                 <span className="sidebar-menu-icon sidebar-menu-icon--left">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +117,7 @@ const Sidebar  = ()=>{
                                     </svg>
                                 </span>
                                 <span className="sidebar-menu-text">Scan QR</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

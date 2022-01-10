@@ -17,6 +17,8 @@ import TrainerLayout from './trainer/layout/trainer.layout';
 import Payout from './trainer/Payout';
 
 import CustomerLayout from './customer/layout/customer.layout';
+import EditAccount from './customer/EditAccount';
+import Membership from './customer/Membership';
 
 
 
@@ -37,6 +39,10 @@ const ConsoleRoute = () => {
         
 
         <Route path="customer" element={<CustomerLayout><EnrollClass /></CustomerLayout>} />
+        <Route path="customer/edit" element={<CustomerLayout><EditAccount/></CustomerLayout>}/>
+        <Route path="customer/membership" element={<CustomerLayout><Membership/></CustomerLayout>}/>
+
+
         <Route path="gym" element={<GymDashboard />} />
       </Route>
     </Routes>
