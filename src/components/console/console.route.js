@@ -12,13 +12,16 @@ import ConsoleLayout from "./layout/console.layout";
 import GymDashboard from "./gym/GymDashboard";
 import EditAccountTrainer from "./trainer/EditAccountTrainer";
 import AdminLayout from "./admin/layout/admin.layout";
-
 import TrainerLayout from './trainer/layout/trainer.layout';
 import Payout from './trainer/Payout';
-
 import CustomerLayout from './customer/layout/customer.layout';
 import EditAccount from './customer/EditAccount';
 import Membership from './customer/Membership';
+import GymLayout from './gym/layout/gym.layout';
+import ManageClass from './gym/ManageClass';
+import ManageTrainer from "./gym/ManageTrainer";
+import Reporting from './gym/Reporting';
+
 
 
 
@@ -32,18 +35,15 @@ const ConsoleRoute = () => {
         <Route path="admin/membership" element={<AdminLayout><ManageMembership /></AdminLayout>} />
         <Route path="admin/user" element={<AdminLayout><ManageUser /></AdminLayout>} />
         <Route path="admin/reporting" element={<AdminLayout><AdminReporting/></AdminLayout>} />
-
-
         <Route path="trainer" element={<TrainerLayout><EditAccountTrainer /></TrainerLayout>} />
         <Route path="trainer/pay" element={<TrainerLayout><Payout /></TrainerLayout>} />
-        
-
         <Route path="customer" element={<CustomerLayout><EnrollClass /></CustomerLayout>} />
         <Route path="customer/edit" element={<CustomerLayout><EditAccount/></CustomerLayout>}/>
         <Route path="customer/membership" element={<CustomerLayout><Membership/></CustomerLayout>}/>
-
-
-        <Route path="gym" element={<GymDashboard />} />
+        <Route path="gym" element={<GymLayout><GymDashboard /></GymLayout>} />
+        <Route path="gym/class" element={<GymLayout><ManageClass /></GymLayout>} />
+        <Route path="gym/trainer" element={<GymLayout><ManageTrainer /></GymLayout>} />
+        <Route path="gym/report" element={<GymLayout><Reporting /></GymLayout>} />
       </Route>
     </Routes>
   );
