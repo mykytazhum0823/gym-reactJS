@@ -17664,7 +17664,7 @@ html {
 [dir=ltr] .chart-legend-item {
     display: flex;
     align-items: center;
-    justify-content: start
+    justify-content: flex-start
 }
 
 [dir=ltr] .chart-legend:not(.chart-legend--vertical) .chart-legend-item+.chart-legend-item {
@@ -17860,7 +17860,7 @@ html {
 
 [dir=ltr] .trello-board__tasks {
     display: inline-flex;
-    align-items: start;
+    align-items: flex-start;
     width: 22rem;
     height: 100%
 }

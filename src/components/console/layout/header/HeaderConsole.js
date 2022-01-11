@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+
 
 import "../../assets/css/app.scoped.css";
 import "./header.scoped.scss";
@@ -54,7 +54,6 @@ const HeaderConsole = () => {
           </div>
         </div>
       </div>
-      <Outlet />
     </>
   );
 };

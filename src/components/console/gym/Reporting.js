@@ -7,7 +7,7 @@ const Reporting = () => {
 		<div className="container-fluid page__heading-container">
 			<div className="page__heading d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
 				<h1 className="m-lg-0">Report Visitor</h1>
-				<a href="#" className="btn btn-primary ml-lg-3">
+				<a href="# " className="btn btn-primary ml-lg-3">
 					Download Report
 				</a>
 			</div>

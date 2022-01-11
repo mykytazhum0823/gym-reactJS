@@ -12770,7 +12770,7 @@ THEMEFOREST REQUIRED CLASSES
 
 .wt-separator-two-part-row {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .wt-separator-two-part-left .section-head {

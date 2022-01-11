@@ -38,7 +38,7 @@ const ManageClass = () => {
 					<div className="row">
 						<div className="col-md-6 col-lg-4">
 							<div className="card card__course card__course__animate">
-								<a href="#" className="card-img-top">
+								<a href="# " className="card-img-top">
 									<img
 										src="/assets//images/course_lms.jpg"
 										style={{ width: "100%" }}
@@ -104,7 +104,7 @@ const ManageClass = () => {
 
 						<div className="col-md-6 col-lg-4">
 							<div className="card card__course card__course__animate">
-								<a href="#" className="card-img-top">
+								<a href="# " className="card-img-top">
 									<img
 										src="/assets//images/course_lms.jpg"
 										style={{ width: "100%" }}
@@ -170,7 +170,7 @@ const ManageClass = () => {
 
 						<div className="col-md-6 col-lg-4">
 							<div className="card card__course card__course__animate">
-								<a href="#" className="card-img-top">
+								<a href="# " className="card-img-top">
 									<img
 										src="/assets//images/course_lms.jpg"
 										style={{ width: "100%" }}
@@ -235,7 +235,7 @@ const ManageClass = () => {
 						</div>
 						<div className="col-md-6 col-lg-4">
 							<div className="card card__course card__course__animate">
-								<a href="#" className="card-img-top">
+								<a href="# " className="card-img-top">
 									<img
 										src="/assets//images/course_lms.jpg"
 										style={{ width: "100%" }}
@@ -300,7 +300,7 @@ const ManageClass = () => {
 						</div>
 						<div className="col-md-6 col-lg-4">
 							<div className="card card__course card__course__animate">
-								<a href="#" className="card-img-top">
+								<a href="# " className="card-img-top">
 									<img
 										src="/assets//images/course_lms.jpg"
 										style={{ width: "100%" }}
@@ -365,7 +365,7 @@ const ManageClass = () => {
 						</div>
 						<div className="col-md-6 col-lg-4">
 							<div className="card card__course card__course__animate">
-								<a href="#" className="card-img-top">
+								<a href="# " className="card-img-top">
 									<img
 										src="/assets//images/course_lms.jpg"
 										style={{ width: "100%" }}
@@ -468,7 +468,7 @@ const ManageClass = () => {
 							<div className="form-group">
 								<div className="custom-control custom-checkbox">
 									<input type="checkbox" className="custom-control-input" id="terms" />
-									<label className="custom-control-label" htmlFor="terms">I accept <a href="#">Terms and
+									<label className="custom-control-label" htmlFor="terms">I accept <a href="# ">Terms and
 											Conditions</a></label>
 								</div>
 							</div>

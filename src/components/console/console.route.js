@@ -1,49 +1,48 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-
 import Dashboard from "./admin/Dashboard";
 import ManageGym from './admin/ManageGym';
 import ManageMembership from './admin/ManageMembership';
 import ManageUser from './admin/ManageUser';
 import AdminReporting from './admin/AdminReporting';
-
 import EnrollClass from "./customer/EnrollClass";
 import ConsoleLayout from "./layout/console.layout";
 import GymDashboard from "./gym/GymDashboard";
 import EditAccountTrainer from "./trainer/EditAccountTrainer";
-import AdminLayout from "./admin/layout/admin.layout";
-import TrainerLayout from './trainer/layout/trainer.layout';
 import Payout from './trainer/Payout';
-import CustomerLayout from './customer/layout/customer.layout';
 import EditAccount from './customer/EditAccount';
 import Membership from './customer/Membership';
-import GymLayout from './gym/layout/gym.layout';
 import ManageClass from './gym/ManageClass';
 import ManageTrainer from "./gym/ManageTrainer";
 import Reporting from './gym/Reporting';
-
-
-
 
 const ConsoleRoute = () => {
   return (
     <Routes>
       <Route path="/" element={<ConsoleLayout />}>
-        <Route index element={<AdminLayout> <Dashboard/></AdminLayout>} />
-        <Route path="admin" element={<AdminLayout> <Dashboard/></AdminLayout>} />
-        <Route path="admin/gym" element={<AdminLayout><ManageGym /></AdminLayout>} />
-        <Route path="admin/membership" element={<AdminLayout><ManageMembership /></AdminLayout>} />
-        <Route path="admin/user" element={<AdminLayout><ManageUser /></AdminLayout>} />
-        <Route path="admin/reporting" element={<AdminLayout><AdminReporting/></AdminLayout>} />
-        <Route path="trainer" element={<TrainerLayout><EditAccountTrainer /></TrainerLayout>} />
-        <Route path="trainer/pay" element={<TrainerLayout><Payout /></TrainerLayout>} />
-        <Route path="customer" element={<CustomerLayout><EnrollClass /></CustomerLayout>} />
-        <Route path="customer/edit" element={<CustomerLayout><EditAccount/></CustomerLayout>}/>
-        <Route path="customer/membership" element={<CustomerLayout><Membership/></CustomerLayout>}/>
-        <Route path="gym" element={<GymLayout><GymDashboard /></GymLayout>} />
-        <Route path="gym/class" element={<GymLayout><ManageClass /></GymLayout>} />
-        <Route path="gym/trainer" element={<GymLayout><ManageTrainer /></GymLayout>} />
-        <Route path="gym/report" element={<GymLayout><Reporting /></GymLayout>} />
+        <Route index element={<Dashboard/>}/>
+        <Route path="admin">
+          <Route index element={<Dashboard/>}/>
+          <Route path="gym" element={<ManageGym />} />
+          <Route path="membership" element={<ManageMembership />} />
+          <Route path="user" element={<ManageUser />} />
+          <Route path="reporting" element={<AdminReporting/>} />
+        </Route>
+        <Route path="trainer">
+          <Route index element={<EditAccountTrainer />} />
+          <Route path="pay" element={<Payout />} />
+        </Route>
+        <Route path="customer">
+          <Route index element={<EnrollClass />} />
+          <Route path="edit" element={<EditAccount/>}/>
+          <Route path="membership" element={<Membership/>}/>
+        </Route>
+        <Route path="gym">
+          <Route index element={<GymDashboard />} />
+          <Route path="class" element={<ManageClass />} />
+          <Route path="trainer" element={<ManageTrainer />} />
+          <Route path="report" element={<Reporting />} />
+        </Route>
       </Route>
     </Routes>
   );

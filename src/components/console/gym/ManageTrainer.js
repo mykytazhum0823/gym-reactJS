@@ -250,7 +250,7 @@ const ManageTrainer = () => {
 										id="terms"
 									/>
 									<label className="custom-control-label" htmlFor="terms">
-										I accept <a href="#">Terms and Conditions</a>
+										I accept <a href="# ">Terms and Conditions</a>
 									</label>
 								</div>
 							</div>

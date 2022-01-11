@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React from "react";
 import useScript from 'usescript-hook';
-import {Chart} from 'chart';
 import "./admin.scoped.scss";
 import "../assets/css/app.scoped.css";
 
