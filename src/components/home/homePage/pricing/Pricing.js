@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../assets/css/style.scoped.css';
 const Pricing = () => {
 	return (
 		<div className="section-full p-t120 p-b90 site-bg-gray-light">

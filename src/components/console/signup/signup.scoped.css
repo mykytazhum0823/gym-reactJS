@@ -1,0 +1,36 @@
+.container-v1 {
+	width: fit-content;
+	height: 100%;
+	margin: auto;
+	position: relative;
+	/* background-color: #ccc9c9; */
+}
+body {
+	background-color: #eeeeee;
+}
+.layout-login-centered-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	padding: 20px;
+}
+
+h2 {
+	font-weight: 500;
+	font-family: inherit;
+	color: #212529;
+	margin: 3rem 0;
+}
+.custom-control-label a{
+    color: #3687e4;
+    text-decoration: none;
+    background-color: transparent;
+}
+.custom-control-input:checked~.custom-control-label:after {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3E%3C/svg%3E")
+}

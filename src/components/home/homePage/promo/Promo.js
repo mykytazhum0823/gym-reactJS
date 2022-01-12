@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../assets/css/style.scoped.css';
 const Promo = () => {
 	return (
 		<section className="promo-wrap v1">

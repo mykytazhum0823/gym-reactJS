@@ -1,27 +1,27 @@
 export const adminUser = {
 	type: "admin",
 	name: "Admin",
-	username: "admin",
+	email: "admin",
 	password: "admin21",
 };
 
 export const customerUser = {
 	type: "customer",
 	name: "Customer",
-	username: "customer",
+	email: "customer",
 	password: "customer21",
 };
 
 export const trainerUser = {
 	type: "trainer",
 	name: "Trainer",
-	username: "trainer",
+	email: "trainer",
 	password: "trainer21",
 };
 
 export const gymUser = {
 	type: "gym",
 	name: "Gym User",
-	username: "gymUser",
+	email: "gymUser",
 	password: "gymUser21",
 };
