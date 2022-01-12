@@ -13260,7 +13260,6 @@ html {
 }
 
 [dir=ltr] .mdk-drawer__content {
-    position: fixed;
     top: 0;
     bottom: 0;
     width: 250px;
@@ -13270,6 +13269,12 @@ html {
     left: 0;
     transform: translate3d(-100%, 0, 0)
         /*!rtl:end:ignore*/
+}
+[dir=ltr] .stick{
+    position: fixed;
+}
+[dir=ltr] .absolute{
+    position: absolute;
 }
 
 [dir=ltr] [data-position=right]>.mdk-drawer__content {
@@ -14494,7 +14499,7 @@ html {
 }
 
 [dir=ltr] .mdk-header-layout .mdk-drawer__content {
-    top: 60px
+    top: 130px
 }
 
 [dir=ltr] #events-drawer .mdk-drawer__content,

@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import "./header.css";
 import '../../assets/css/style.scoped.css';
-import {Outlet} from "react-router-dom";
-import {Link} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
+import useScript from "usescript-hook";
 
 
-const Header = () => {
+const Header = (props) => {
+    const [headerClass, setHeaderClass] = useState("header-wrap v1");
+    useEffect(()=>{
+        if(typeof props.sticky !== 'undefined'){
+            setHeaderClass("header-wrap v1 sticky");
+        }
+    },[props]);
+
 	return (
 		<React.Fragment>
-		<header className="header-wrap v1">
+		<header className={headerClass}>
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-1 col-md-4  col-5 mpx-0">
                         <div className="logo v1">
-                            <a href="index-2.html"><img src="assets/img/logo.png" alt="Image"/>
+                            <a href="index-2.html"><img  alt="Image" className="logoImg"/>
                                 <span>Vigory</span></a>
                         </div>
                     </div>
@@ -63,6 +70,11 @@ const Header = () => {
                                                     Login
                                                 </Link>
                                             </li>
+                                            <li className="has-child">
+                                                <Link to="/console/admin">
+                                                    Admin
+                                                </Link>
+                                            </li>
                                             
                                         </ul>
                                     </nav>
@@ -90,7 +102,6 @@ const Header = () => {
                 </div>
             </div>
         </header>
-		<Outlet/>
 		</React.Fragment>
 	);
 };

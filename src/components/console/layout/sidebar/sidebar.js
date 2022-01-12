@@ -12,7 +12,8 @@ const Sidebar  = (props)=>{
         data-domfactory-upgraded="mdk-drawer"
         data-persistent=""
         data-opened="">
-        <div className="mdk-drawer__content">
+        <div id="sticky-anchor"></div>
+        <div className="mdk-drawer__content stick" id="sidebar">
             <div
                 className="sidebar sidebar-light sidebar-left bg-white"
                 data-perfect-scrollbar>

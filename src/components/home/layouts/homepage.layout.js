@@ -11,6 +11,7 @@ import '../assets/css/owl.carousel.css';
 import '../assets/css/magnific-popup.css';
 import '../assets/css/nice-select.css';
 
+
 const HomepageLayout = ({ children }) => {
   useScript("../assets/js/owl.carousel.js");
   useScript("../assets/js/comparison-slider.js");

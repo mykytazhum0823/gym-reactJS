@@ -19,6 +19,7 @@ import '../assets/css/vendor-flatpickr-airbnb.rtl.css';
 
 
 const ConsoleLayout = ({children}) => {
+  useScript("../assets/js/console-main.js");
   useScript('../assets/vendor/bootstrap.min.js');
   const [userAvatar, setUserAvatar] = useState("");
   const [userName, setUserName] = useState("");
@@ -54,6 +55,7 @@ const ConsoleLayout = ({children}) => {
     {
       setSideBarContent('customer');
     }
+    window.setSidebarHeight();
   }, [pathname]);
   
 
@@ -75,7 +77,7 @@ const ConsoleLayout = ({children}) => {
           </div>
       </div>
     </div>
-    {/* <FooterConsole/> */}
+    <FooterConsole/>
     </React.Fragment>
   );
 };

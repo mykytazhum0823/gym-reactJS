@@ -71,3 +71,7 @@ option:checked {
     padding-left: 13px !important;
     padding-right: 10px !important;
 }
+
+.logoImg{
+	content: url('../../assets/img/logo.png');
+}

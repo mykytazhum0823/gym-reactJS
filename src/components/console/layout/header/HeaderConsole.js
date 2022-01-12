@@ -3,8 +3,11 @@ import React from "react";
 import "../../assets/css/app.scoped.css";
 import "./header.scoped.scss";
 import { Header } from "../../../home/layouts";
+import useScript from "usescript-hook";
 
 const HeaderConsole = () => {
+
+  
   return (
     /* // Header  */
     // <>
@@ -55,7 +58,7 @@ const HeaderConsole = () => {
     //     </div>
     //   </div>
     // </>
-    <Header/>
+    <Header sticky/>
   );
 };
 
