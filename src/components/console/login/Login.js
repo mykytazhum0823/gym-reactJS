@@ -1,15 +1,39 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import styled from "styled-components";
+import {useNavigate} from 'react-router-dom';
 import "./login.scoped.css";
 import '../assets/css/app.scoped.css';
+import {adminUser, customerUser, trainerUser, gymUser} from '../../../mockUser/MockUser';
+import UserContext from "../../../context/UserContext";
 
 const Path = styled.path`
 	fill: ${({ fill }) => fill || 'none'};
 	d: ${({ d }) => d || 'none'};
   `;
-  
+
 
 const Login = () => {
+
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const {user, setUser}  = useContext(UserContext);
+
+	//mock User for test. Only need to test
+	let users = [adminUser, customerUser, trainerUser, gymUser];
+	let navigate = useNavigate();
+	const handleLogin = (e)=>{
+		e.preventDefault();
+		for(let i = 0; i < 4; i++)
+		{
+			if(email == users[i].email && password == users[i].password)
+			{
+				setUser(users[i]);
+				navigate(`/console/${users[i].type}`);
+				break;
+			}
+		}
+	}
+
 	return (
 		<div className="layout-login-centered-boxed container-v1">
 			<div className="layout-login-centered-boxed__form container-v2">
@@ -70,6 +94,10 @@ const Login = () => {
 									required
 									className="form-control form-control-prepended"
 									placeholder="john@doe.com"
+									value={email}
+									onChange={(e)=>{
+										setEmail(e.target.value)
+									}}
 								/>
 							</div>
 						</div>
@@ -89,11 +117,15 @@ const Login = () => {
 									required
 									className="form-control form-control-prepended"
 									placeholder="Enter your password"
+									value={password}
+									onChange={(e) =>{
+										setPassword(e.target.value);
+									}}
 								/>
 							</div>
 						</div>
 						<div className="form-group mb-1">
-							<button className="btn btn-block btn-primary" type="submit">
+							<button className="btn btn-block btn-primary" type="submit" onClick={handleLogin}>
 								Login
 							</button>
 						</div>

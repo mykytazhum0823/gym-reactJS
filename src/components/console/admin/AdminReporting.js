@@ -2,7 +2,7 @@ import React from "react";
 import '../assets/css/app.scoped.css';
 const AdminReporting = () => {
 	return (
-		<>
+		<React.Fragment>
 			<div className="mdk-drawer-layout__content page" style={{paddingTop:'60px'}}>
 				<div className="container-fluid page__heading-container">
 					<div className="page__heading d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
@@ -396,7 +396,7 @@ const AdminReporting = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</React.Fragment>
 	);
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import '../../assets/css/style.scoped.css';
+import './footer.scoped.css';
 const Footer = () => {
 	return (
 		<footer className="footer-wrap v1">
@@ -136,8 +137,7 @@ const Footer = () => {
 										rel="noopener noreferrer"
 										className="instagram-photo">
 										<img
-											className="img-fluid"
-											src="assets/img/instagram/instagram-1.jpg"
+											className="img-fluid instagram-1"
 											alt=""
 										/>
 									</a>
@@ -147,8 +147,7 @@ const Footer = () => {
 										rel="noopener noreferrer"
 										className="instagram-photo">
 										<img
-											className="img-fluid"
-											src="assets/img/instagram/instagram-4.jpg"
+											className="img-fluid instagram-2"
 											alt=""
 										/>
 									</a>
@@ -158,8 +157,7 @@ const Footer = () => {
 										rel="noopener noreferrer"
 										className="instagram-photo">
 										<img
-											className="img-fluid"
-											src="assets/img/instagram/instagram-5.jpg"
+											className="img-fluid instagram-3"
 											alt=""
 										/>
 									</a>
@@ -169,8 +167,7 @@ const Footer = () => {
 										rel="noopener noreferrer"
 										className="instagram-photo">
 										<img
-											className="img-fluid"
-											src="assets/img/instagram/instagram-2.jpg"
+											className="img-fluid instagram-4"
 											alt=""
 										/>
 									</a>
@@ -180,8 +177,7 @@ const Footer = () => {
 										rel="noopener noreferrer"
 										className="instagram-photo">
 										<img
-											className="img-fluid"
-											src="assets/img/instagram/instagram-3.jpg"
+											className="img-fluid instagram-5"
 											alt=""
 										/>
 									</a>
@@ -191,8 +187,7 @@ const Footer = () => {
 										rel="noopener noreferrer"
 										className="instagram-photo">
 										<img
-											className="img-fluid"
-											src="assets/img/instagram/instagram-6.jpg"
+											className="img-fluid instagram-6"
 											alt=""
 										/>
 									</a>

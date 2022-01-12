@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../../assets/css/app.scoped.css';
 
 const Sidebar  = (props)=>{
-    console.log(props.menu);
     return(
     <div
         className="mdk-drawer  js-mdk-drawer"
@@ -45,21 +44,22 @@ const Sidebar  = (props)=>{
                             <div className="dropdown-menu dropdown-menu-right">
                                 {props.dropdownMenu.map((item, index)=>{
                                     return (index < props.dropdownMenu.length -1)?
-                                    <React.Fragment>
+                                    <React.Fragment key={index}>
                                         <Link
                                             className="dropdown-item"
-                                            key={`dropdown-${index}`}
                                             to={item.to}>
                                             {item.name}
                                         </Link>
                                         <div className="dropdown-divider"></div>
                                     </React.Fragment>
-                                    :<Link
-                                        className="dropdown-item"
-                                        key={`dropdown-${index}`}
-                                        to={item.to}>
-                                        {item.name}
-                                    </Link>
+                                    :
+                                    <React.Fragment key={index}>
+                                        <Link
+                                            className="dropdown-item"
+                                            to={item.to}>
+                                            {item.name}
+                                        </Link>
+                                    </React.Fragment>
                                 })}
             
                             </div>

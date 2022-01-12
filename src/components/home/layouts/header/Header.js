@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 
 const Header = () => {
 	return (
-		<>
+		<React.Fragment>
 		<header className="header-wrap v1">
             <div className="container">
                 <div className="row align-items-center">
@@ -63,31 +63,7 @@ const Header = () => {
                                                     Login
                                                 </Link>
                                             </li>
-                                            <li className="has-child">
-                                                <Link to="/signup">
-                                                    Signup
-                                                </Link>
-                                            </li>
-                                            <li className="has-child">
-                                                <Link to="/console/admin">
-                                                    Admin
-                                                </Link>
-                                            </li>
-                                            <li className="has-child">
-                                                <Link to="/console/trainer">
-                                                    Trainer
-                                                </Link>
-                                            </li>
-                                            <li className="has-child">
-                                                <Link to="/console/customer">
-                                                    Customer
-                                                </Link>
-                                            </li>
-                                            <li className="has-child">
-                                                <Link to="/console/gym">
-                                                    Gym
-                                                </Link>
-                                            </li>
+                                            
                                         </ul>
                                     </nav>
                                     <div className="mobile-menu">
@@ -115,7 +91,7 @@ const Header = () => {
             </div>
         </header>
 		<Outlet/>
-		</>
+		</React.Fragment>
 	);
 };
 

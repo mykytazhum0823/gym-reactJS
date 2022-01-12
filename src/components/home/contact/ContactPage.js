@@ -6,7 +6,7 @@ const ContactPage = () => {
 		console.log("submit");
 	};
 	return (
-		<>
+		<React.Fragment>
 			<section className="breadcrumb-wrap bg-f br-bg-1">
 				<div className="section_subtext v3 trans_text">
 					<span>Contact Us</span>
@@ -113,7 +113,7 @@ const ContactPage = () => {
 					</div>
 				</div>
 			</section>
-		</>
+		</React.Fragment>
 	);
 };
 

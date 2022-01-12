@@ -12,7 +12,7 @@ const ManageUser = () => {
 	}
 
 	return (
-		<>
+		<React.Fragment>
 			<div className="mdk-drawer-layout__content page" style={{paddingTop:'60px'}}>
 				<div className="container-fluid page__heading-container">
 					<div className="page__heading d-flex align-items-center justify-content-between">
@@ -40,7 +40,7 @@ const ManageUser = () => {
 											className="form-control search"
 											placeholder="Search"
 										/>
-										<button className="btn" type="button" role="button">
+										<button className="btn" type="button">
 											<i className="material-icons">search</i>
 										</button>
 									</div>
@@ -279,7 +279,7 @@ const ManageUser = () => {
 						</div>
 					</div>
 			</Modal>
-		</>
+		</React.Fragment>
 	);
 };
 

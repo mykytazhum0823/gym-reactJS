@@ -2,6 +2,9 @@ import React, {useEffect, useState} from "react";
 import { useLocation } from "react-router-dom";
 import { FooterConsole, HeaderConsole } from ".";
 import { Outlet } from "react-router-dom";
+import useScript from 'usescript-hook';
+import SidebarInfo from "./sidebar/sidebar.info";
+import Sidebar from "./sidebar/sidebar";
 import '../assets/css/app.scoped.css';
 import '../assets/css/vendor-material-icons.css';
 import '../assets/css/vendor-material-icons.rtl.css';
@@ -13,9 +16,6 @@ import '../assets/css/vendor-flatpickr.css';
 import '../assets/css/vendor-flatpickr.rtl.css';
 import '../assets/css/vendor-flatpickr-airbnb.css';
 import '../assets/css/vendor-flatpickr-airbnb.rtl.css';
-import useScript from 'usescript-hook';
-import SidebarInfo from "./sidebar/sidebar.info";
-import Sidebar from "./sidebar/sidebar";
 
 
 const ConsoleLayout = ({children}) => {
@@ -75,6 +75,7 @@ const ConsoleLayout = ({children}) => {
           </div>
       </div>
     </div>
+    {/* <FooterConsole/> */}
     </React.Fragment>
   );
 };
