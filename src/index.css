@@ -6,3 +6,33 @@
 body {
 	scroll-behavior: smooth;
 }
+.loading{
+	content:url('./components/home/assets/img/preloader.gif');
+}
+/*Proloader START CSS*/
+.proloader {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 9999;
+	background: #fff;
+  }
+
+  .proloader .loader_34 {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 100px;
+  }
+  .loader_34 img{
+	border-style: none;
+	  height: auto;
+	  max-width: 100%;
+	  vertical-align: middle
+  }

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../assets/css/app.scoped.css';
 
-const Sidebar  = (props)=>{
+const Sidebar  = React.forwardRef( (props, ref)=>{
     return(
     <div
         className="mdk-drawer  js-mdk-drawer"
@@ -12,8 +12,7 @@ const Sidebar  = (props)=>{
         data-domfactory-upgraded="mdk-drawer"
         data-persistent=""
         data-opened="">
-        <div id="sticky-anchor"></div>
-        <div className="mdk-drawer__content stick" id="sidebar">
+        <div className="mdk-drawer__content stick" id="sidebar" ref={ref} style={{height:props.height}}>
             <div
                 className="sidebar sidebar-light sidebar-left bg-white"
                 data-perfect-scrollbar>
@@ -88,6 +87,6 @@ const Sidebar  = (props)=>{
         </div>
     </div>
     );
-}
+});
 
 export default Sidebar;

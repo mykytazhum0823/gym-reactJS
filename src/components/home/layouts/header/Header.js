@@ -70,12 +70,7 @@ const Header = (props) => {
                                                     Login
                                                 </Link>
                                             </li>
-                                            <li className="has-child">
-                                                <Link to="/console/admin">
-                                                    Admin
-                                                </Link>
-                                            </li>
-                                            
+                                    
                                         </ul>
                                     </nav>
                                     <div className="mobile-menu">

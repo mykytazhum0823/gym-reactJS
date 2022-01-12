@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {createRef, useEffect, useLayoutEffect, useState} from "react";
 import { useLocation } from "react-router-dom";
 import { FooterConsole, HeaderConsole } from ".";
 import { Outlet } from "react-router-dom";
@@ -21,11 +21,18 @@ import '../assets/css/vendor-flatpickr-airbnb.rtl.css';
 const ConsoleLayout = ({children}) => {
   useScript("../assets/js/console-main.js");
   useScript('../assets/vendor/bootstrap.min.js');
+
+  const doc = document.documentElement;
+  const height = Math.max(doc.scrollHeight, doc.offsetHeight, doc.clientHeight);
+
   const [userAvatar, setUserAvatar] = useState("");
   const [userName, setUserName] = useState("");
   const [userRole, setUserRole] = useState("");
   const [dropdownMenu, setDropdownMenu] = useState([]);
   const [menu, setMenu] = useState([]);
+  const [sidebarHeight, setSidebarHeight] = useState(height);
+  const sidebarRef = createRef();
+  const footerRef = createRef();
 
   let location = useLocation();
   let {pathname} = {...location};
@@ -38,6 +45,10 @@ const ConsoleLayout = ({children}) => {
     setDropdownMenu(menu.dropdownMenu);
     setMenu(menu.menu);
   }
+  useLayoutEffect(()=>{
+    let footerHeight = footerRef.current.style.height;
+    setSidebarHeight(height - footerHeight - 130);
+  });
   useEffect(()=>{
     if(pathname === '/console' || pathname.startsWith('/console/admin'))
     {
@@ -55,7 +66,6 @@ const ConsoleLayout = ({children}) => {
     {
       setSideBarContent('customer');
     }
-    window.setSidebarHeight();
   }, [pathname]);
   
 
@@ -72,12 +82,12 @@ const ConsoleLayout = ({children}) => {
                   data-responsive-width="992px">
                   <Outlet/>
                   <Sidebar userAvatar={userAvatar} userName = {userName} userRole = {userRole} 
-                    dropdownMenu = {dropdownMenu} menu={menu}/>
+                    dropdownMenu = {dropdownMenu} menu={menu} ref={sidebarRef} height={sidebarHeight}/>
               </div>     
           </div>
       </div>
     </div>
-    <FooterConsole/>
+    <FooterConsole ref={footerRef}/>
     </React.Fragment>
   );
 };

@@ -15,6 +15,11 @@ const App = () => {
 
   return (
     <UserContext.Provider value={value}>
+      <div className="proloader">
+        <div className="loader_34">
+          <img className="loading" alt="" />
+        </div>
+      </div>
       <div className="page-wrapper">
         <BrowserRouter>
           <Routes>
