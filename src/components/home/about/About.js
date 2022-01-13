@@ -34,7 +34,7 @@ const options = {
 
 const About = () => {
 	return (
-		<section className="about-wrap v1 section-padding">
+		<section className="about-wrap v1 section-padding" style={{paddingTop: '50px'}}>
 			<div className="container">
 				<div className="row align-items-center mb-5">
 					<div className="col-lg-6 col-md-12">

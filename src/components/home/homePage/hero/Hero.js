@@ -94,7 +94,7 @@ const Hero = () => {
 								<div className="col-lg-10 offset-lg-1 col-md-12">
 									<div className="hero-content">
 										<h1>
-											Building <span>Confidence</span> <br /> Building{" "}
+											Building <span>Confidence</span> Building
 											<span>Fitness</span>
 										</h1>
 										<div className="hero-btn">

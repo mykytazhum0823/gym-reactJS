@@ -19,18 +19,15 @@ import '../assets/css/vendor-flatpickr-airbnb.rtl.css';
 
 
 const ConsoleLayout = ({children}) => {
-  useScript("../assets/js/console-main.js");
-  useScript('../assets/vendor/bootstrap.min.js');
-
-  const doc = document.documentElement;
-  const height = Math.max(doc.scrollHeight, doc.offsetHeight, doc.clientHeight);
+  useScript("../../assets/js/console-main.js");
+  useScript('../../assets/vendor/bootstrap.min.js');
 
   const [userAvatar, setUserAvatar] = useState("");
   const [userName, setUserName] = useState("");
   const [userRole, setUserRole] = useState("");
   const [dropdownMenu, setDropdownMenu] = useState([]);
   const [menu, setMenu] = useState([]);
-  const [sidebarHeight, setSidebarHeight] = useState(height);
+  const [sidebarHeight, setSidebarHeight] = useState(0);
   const sidebarRef = createRef();
   const footerRef = createRef();
 
@@ -46,8 +43,18 @@ const ConsoleLayout = ({children}) => {
     setMenu(menu.menu);
   }
   useLayoutEffect(()=>{
-    let footerHeight = footerRef.current.style.height;
-    setSidebarHeight(height - footerHeight - 130);
+    let doc = document.documentElement;
+    let height = Math.max(doc.scrollHeight, doc.offsetHeight, doc.clientHeight);
+    let footerHeight = footerRef.current.getBoundingClientRect().height;
+    let windowHeight = window.innerHeight;
+    var sidebarHeight = height - footerHeight - 130;
+    if((windowHeight - sidebarHeight) > 280)
+    {
+      sidebarHeight = windowHeight - 280;
+    }
+    setSidebarHeight(sidebarHeight);
+
+    sidebarRef.current.classList.add('stick');
   });
   useEffect(()=>{
     if(pathname === '/console' || pathname.startsWith('/console/admin'))
@@ -87,7 +94,7 @@ const ConsoleLayout = ({children}) => {
           </div>
       </div>
     </div>
-    <FooterConsole ref={footerRef}/>
+    <FooterConsole ref={footerRef} />
     </React.Fragment>
   );
 };

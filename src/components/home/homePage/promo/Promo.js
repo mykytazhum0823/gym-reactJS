@@ -1,8 +1,35 @@
 import React from "react";
 import '../../assets/css/style.scoped.css';
+import styled from 'styled-components';
+
+const Styles = styled('div')`
+	padding: 0px 20px;
+	.promo-content{
+		padding:10px 20px 10px;
+	}
+	.promo-icon{
+		width:40px !important; 
+		height:40px !important;
+	}
+	.promo-icon i{
+		font-size: 30px !important;
+	}
+	.promo-text{
+		margin-top:10px !important;
+	}
+	.promo-text h5{
+		font-size:18px;
+	}
+	.promo-content{
+		padding:1about-wrap0px 20px !important;
+	}
+
+`
+
 const Promo = () => {
 	return (
 		<section className="promo-wrap v1">
+			<Styles>
 			<div className="container-fluid px-0">
 				<div className="row gx-0">
 					<div className="col-lg-3 col-md-6 col-12">
@@ -14,10 +41,10 @@ const Promo = () => {
 								</div>
 								<div className="promo-text">
 									<h5>Offering Gym</h5>
-									<p>
+									{/* <p>
 										Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
 										diam nonumy eirmod.
-									</p>
+									</p> */}
 								</div>
 							</div>
 						</div>
@@ -31,10 +58,10 @@ const Promo = () => {
 								</div>
 								<div className="promo-text">
 									<h5>Fitness classes</h5>
-									<p>
+									{/* <p>
 										Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
 										diam nonumy eirmod.
-									</p>
+									</p> */}
 								</div>
 							</div>
 						</div>
@@ -48,10 +75,10 @@ const Promo = () => {
 								</div>
 								<div className="promo-text">
 									<h5>Guest Pass </h5>
-									<p>
+									{/* <p>
 										Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
 										diam nonumy eirmod.
-									</p>
+									</p> */}
 								</div>
 							</div>
 						</div>
@@ -65,16 +92,18 @@ const Promo = () => {
 								</div>
 								<div className="promo-text">
 									<h5>Personal Training</h5>
-									<p>
+									{/* <p>
 										Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
 										diam nonumy eirmod.
-									</p>
+									</p> */}
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				
 			</div>
+			</Styles>
 		</section>
 	);
 };

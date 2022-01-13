@@ -132,7 +132,7 @@ const Signup = () => {
 						</div>
 						<div className="text-center">
 							<span>Have an account?</span>{" "}
-							<Link to="/login" className="text-body text-underline">
+							<Link to='/logout' className="text-body text-underline">
 								Login
 							</Link> 
 							

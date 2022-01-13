@@ -4,15 +4,22 @@ import "./header.css";
 import '../../assets/css/style.scoped.css';
 import {Link, Outlet} from "react-router-dom";
 import useScript from "usescript-hook";
+import LoginModal from '../modal/login.modal';
 
 
 const Header = (props) => {
     const [headerClass, setHeaderClass] = useState("header-wrap v1");
+    const [loginShow, setLoginShow] = useState(false);
+
     useEffect(()=>{
         if(typeof props.sticky !== 'undefined'){
             setHeaderClass("header-wrap v1 sticky");
         }
     },[props]);
+
+    const closeLogin = ()=>{
+        setLoginShow(false);
+    }
 
 	return (
 		<React.Fragment>
@@ -66,9 +73,11 @@ const Header = (props) => {
                                                 </Link>
                                             </li>
 											<li className="has-child">
-                                                <Link to="/login">
+                                                <a onClick={(e)=>{e.preventDefault();
+                                                     setLoginShow(true);
+                                                     }}>
                                                     Login
-                                                </Link>
+                                                </a>
                                             </li>
                                     
                                         </ul>
@@ -97,6 +106,7 @@ const Header = (props) => {
                 </div>
             </div>
         </header>
+        <LoginModal show={loginShow} handleCloseLogin={closeLogin}/>
 		</React.Fragment>
 	);
 };
