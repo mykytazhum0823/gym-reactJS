@@ -72,6 +72,9 @@ const Styles = styled('div')`
         background-color:#b96e07;
         color:white;
     }
+    .error{
+        font-color:red;
+    }
     @media (max-width: 700px){
         .sign-mode{
             width:100%;
@@ -81,9 +84,14 @@ const Styles = styled('div')`
         }
     }
 `;
+
 const LoginModal  = (props)=>{
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+
     const [show, setShow] = useState(false);
-    const [loginData, setLoginData] = useState({})
+
     useEffect(()=>{
         setShow(props.show);
     }, [props]);
@@ -92,18 +100,22 @@ const LoginModal  = (props)=>{
         setShow(false);
         props.handleCloseLogin();
     }
-    const loginChangeHandler = (e) => {
-        const {name, value} = e.target;
-
-        setLoginData({
-            ...loginData,
-            [name]: value
-        })
-    }
-    const loginDataHandler = (e) => {
+    
+    const loginDataHandler = (e)=>{
         e.preventDefault();
-        console.log(loginData)
     }
+
+    const validateEmail = (email) =>{
+        return email.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    }
+
+    const isValid = 
+        !validateEmail(email) ||
+        password === '';
+    
+
     return(
         <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
             <Styles>
@@ -127,7 +139,8 @@ const LoginModal  = (props)=>{
                                     placeholder="Enter Email"
                                     name="email"
                                     aria-label="email"
-                                    onChange={loginChangeHandler}
+                                    value={email}
+                                    onChange={(e)=>{setEmail(e.target.value)}}
                                     aria-describedby="basic-addon1"
                                 />
                             </FormGroup>
@@ -138,11 +151,13 @@ const LoginModal  = (props)=>{
                                     placeholder="Enter Password"
                                     name="password"
                                     aria-label="password"
-                                    onChange={loginChangeHandler}
+                                    value={password}
+                                    onChange={(e)=>{setPassword(e.target.value)}}
                                     aria-describedby="basic-addon1"
                                 />
                             </FormGroup>
-                            <Button type="submit" className='primary'>LOGIN</Button>
+                            <Button type="submit" disabled={isValid} className='primary'>LOGIN</Button>
+                            {error && <p className='error'> {error}</p>}
                         </Form>
                     </div>
                 </div>

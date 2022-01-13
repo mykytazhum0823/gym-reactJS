@@ -5,25 +5,23 @@ import '../../assets/css/style.scoped.css';
 import {Link, Outlet} from "react-router-dom";
 import useScript from "usescript-hook";
 import LoginModal from '../modal/login.modal';
+import SignupModal from "../modal/signup.modal";
 
 
-const Header = (props) => {
-    const [headerClass, setHeaderClass] = useState("header-wrap v1");
+const Header = () => {
     const [loginShow, setLoginShow] = useState(false);
-
-    useEffect(()=>{
-        if(typeof props.sticky !== 'undefined'){
-            setHeaderClass("header-wrap v1 sticky");
-        }
-    },[props]);
+    const [signupShow, setSignupShow] = useState(false);
 
     const closeLogin = ()=>{
         setLoginShow(false);
     }
+    const closeSignup = ()=>{
+        setSignupShow(false);
+    }
 
 	return (
 		<React.Fragment>
-		<header className={headerClass}>
+		<header className="header-wrap v1 sticky">
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-1 col-md-4  col-5 mpx-0">
@@ -79,6 +77,13 @@ const Header = (props) => {
                                                     Login
                                                 </a>
                                             </li>
+                                            <li className="has-child">
+                                                <a onClick={(e)=>{e.preventDefault();
+                                                     setSignupShow(true);
+                                                     }}>
+                                                    SignUp
+                                                </a>
+                                            </li>
                                     
                                         </ul>
                                     </nav>
@@ -107,6 +112,7 @@ const Header = (props) => {
             </div>
         </header>
         <LoginModal show={loginShow} handleCloseLogin={closeLogin}/>
+        <SignupModal show={signupShow} handleCloseSignup={closeSignup}/>
 		</React.Fragment>
 	);
 };

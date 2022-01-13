@@ -1,5 +1,5 @@
 var wind = $(window);
-var sticky = $('.header-wrap');
+// var sticky = $('.header-wrap');
 
 function sticky_relocate() {
     var window_top = $(window).scrollTop();
@@ -17,12 +17,12 @@ function sticky_relocate() {
 
 $(function () {
     wind.on('scroll', function() {
-        var scroll = wind.scrollTop();
-        if (scroll < 100) {
-            sticky.addClass('sticky');
-        } else {
-            sticky.addClass('sticky');
-        }
+        // var scroll = wind.scrollTop();
+        // if (scroll < 100) {
+        //     sticky.addClass('sticky');
+        // } else {
+        //     sticky.addClass('sticky');
+        // }
         sticky_relocate();
     });
     $('select').niceSelect();

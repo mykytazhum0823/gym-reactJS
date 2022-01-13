@@ -61,14 +61,14 @@
     -------------------------------------- */
     var wind = $(window);
     var sticky = $('.header-wrap');
-    wind.on('scroll', function() {
-        var scroll = wind.scrollTop();
-        if (scroll < 100) {
-            sticky.removeClass('sticky');
-        } else {
-            sticky.addClass('sticky');
-        }
-    });
+    // wind.on('scroll', function() {
+    //     var scroll = wind.scrollTop();
+    //     if (scroll < 100) {
+    //         sticky.removeClass('sticky');
+    //     } else {
+    //         sticky.addClass('sticky');
+    //     }
+    // });
 
     /*---------------------------------
         Jquery mmenu
