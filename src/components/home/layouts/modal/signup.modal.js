@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import {Modal, Button, InputGroup, FormControl, Form, FormGroup, FormLabel} from 'react-bootstrap';
+import {Modal, Button, FormControl, Form, FormGroup, FormLabel, FormSelect, Alert} from 'react-bootstrap';
 import './signup.scoped.css';
+import {signUpWithEmailAndPassword} from '../../../../fiebaseImp/js/user';
+import { useNavigate } from 'react-router-dom';
 
 const SignupModal = (props)=>{
     const [show, setShow] = useState(false);
@@ -10,10 +12,14 @@ const SignupModal = (props)=>{
     const [mobile, setMobile] = useState('');
     const [type, setType] = useState(0);
     const [membership, setMembership] = useState('');
+    const [singupError, setSignupError] = useState('');
+    let navigate = useNavigate();
 
     useEffect(()=>{
         setShow(props.show);
     },[props]);
+
+    const userType = ["admin", "trainer", "customer", "gym"];
 
     const handleClose = ()=>{
         setShow(false);
@@ -21,7 +27,17 @@ const SignupModal = (props)=>{
     }
     const RegisterDataHandler = (e) => {
         e.preventDefault();
-
+        signUpWithEmailAndPassword(username, password,type,mobile, membership)
+        .then((data)=>{
+            if(data.token !== 0)
+            {
+                console.log('test');
+                navigate(`/console/${userType[type]}`);
+            }
+            else{
+                setSignupError(data.error.message);
+            }
+        });
     }
 
     const validateEmail = (email) =>{
@@ -108,17 +124,17 @@ const SignupModal = (props)=>{
                         </FormGroup>
                         <FormGroup className="mb-3">
                             <FormLabel>Type</FormLabel>
-                            <FormControl
-                                type="text"
-                                placeholder="Enter Type"
-                                aria-label="type"
-                                name="type"
+                            <FormSelect 
                                 value={type}
                                 onChange={(e)=>{
                                     setType(e.target.value);
-                                }}
-                                aria-describedby="basic-addon1"
-                            />
+                                }}>
+                                    <option defaultValue="0">Admin</option>
+                                    <option value="1">Trainer</option>
+                                    <option value="2">Customer</option>
+                                    <option value="3">gym</option>
+                            </FormSelect>
+                            
                         </FormGroup>
                         <FormGroup className="mb-3">
                             <FormLabel>Membership</FormLabel>
@@ -134,6 +150,7 @@ const SignupModal = (props)=>{
                                 aria-describedby="basic-addon1"
                             />
                         </FormGroup>
+                        {(singupError !== '') && <Alert variant='danger'>{singupError}</Alert>}
                         <Button type="submit" disabled={isValid} className='w-100 modal_btn mt-3'>REGISTER</Button>
                     </Form>
                 </Modal.Body>

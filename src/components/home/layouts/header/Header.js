@@ -8,9 +8,14 @@ import LoginModal from '../modal/login.modal';
 import SignupModal from "../modal/signup.modal";
 
 
-const Header = () => {
+const Header = (props) => {
     const [loginShow, setLoginShow] = useState(false);
     const [signupShow, setSignupShow] = useState(false);
+    const [isHome, setIsHome] = useState(false);
+
+    useEffect(()=>{
+        setIsHome(props.isHome);
+    }, [props])
 
     const closeLogin = ()=>{
         setLoginShow(false);
@@ -70,6 +75,8 @@ const Header = () => {
                                                     Home
                                                 </Link>
                                             </li>
+                                            { isHome &&
+                                            <React.Fragment>
 											<li className="has-child">
                                                 <a onClick={(e)=>{e.preventDefault();
                                                      setLoginShow(true);
@@ -84,6 +91,8 @@ const Header = () => {
                                                     SignUp
                                                 </a>
                                             </li>
+                                            </React.Fragment>
+                                            }
                                     
                                         </ul>
                                     </nav>

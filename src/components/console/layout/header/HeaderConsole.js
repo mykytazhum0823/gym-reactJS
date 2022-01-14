@@ -3,7 +3,7 @@ import { Header } from "../../../home/layouts";
 
 const HeaderConsole = () => {
   return (
-    <Header/>
+    <Header isHome={false}/>
   );
 };
 
