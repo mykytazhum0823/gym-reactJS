@@ -3,15 +3,18 @@ import {Modal, Button, FormControl, Form, FormGroup, FormLabel, FormSelect, Aler
 import './signup.scoped.css';
 import {signUpWithEmailAndPassword} from '../../../../fiebaseImp/js/user';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
+const Styles = styled('div')`
+    background:#121212;
+    color:white;
+`;
 const SignupModal = (props)=>{
     const [show, setShow] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmpwd, setConfirmpwd] = useState('');
     const [mobile, setMobile] = useState('');
-    const [type, setType] = useState(0);
-    const [membership, setMembership] = useState('');
     const [singupError, setSignupError] = useState('');
     let navigate = useNavigate();
 
@@ -19,7 +22,6 @@ const SignupModal = (props)=>{
         setShow(props.show);
     },[props]);
 
-    const userType = ["admin", "trainer", "customer", "gym"];
 
     const handleClose = ()=>{
         setShow(false);
@@ -27,12 +29,11 @@ const SignupModal = (props)=>{
     }
     const RegisterDataHandler = (e) => {
         e.preventDefault();
-        signUpWithEmailAndPassword(username, password,type,mobile, membership)
+        signUpWithEmailAndPassword(username, password,mobile)
         .then((data)=>{
             if(data.token !== 0)
             {
-                console.log('test');
-                navigate(`/console/${userType[type]}`);
+                navigate('/console/customer');
             }
             else{
                 setSignupError(data.error.message);
@@ -50,11 +51,11 @@ const SignupModal = (props)=>{
         password !== confirmpwd ||
         !validateEmail(username) ||
         username === '' ||
-        mobile === '' ||
-        membership === '';
+        mobile === '';
 
     return(
         <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} >
+            <Styles>
             <div className="modal_main_div">
                 <Modal.Header className="modal_header">
                     <Modal.Title>Register</Modal.Title>
@@ -122,39 +123,13 @@ const SignupModal = (props)=>{
                                 aria-describedby="basic-addon1"
                             />
                         </FormGroup>
-                        <FormGroup className="mb-3">
-                            <FormLabel>Type</FormLabel>
-                            <FormSelect 
-                                value={type}
-                                onChange={(e)=>{
-                                    setType(e.target.value);
-                                }}>
-                                    <option defaultValue="0">Admin</option>
-                                    <option value="1">Trainer</option>
-                                    <option value="2">Customer</option>
-                                    <option value="3">gym</option>
-                            </FormSelect>
-                            
-                        </FormGroup>
-                        <FormGroup className="mb-3">
-                            <FormLabel>Membership</FormLabel>
-                            <FormControl
-                                type="text"
-                                placeholder="Enter Membership"
-                                aria-label="membership"
-                                name="membership"
-                                value={membership}
-                                onChange={(e)=>{
-                                    setMembership(e.target.value);
-                                }}
-                                aria-describedby="basic-addon1"
-                            />
-                        </FormGroup>
+                        
                         {(singupError !== '') && <Alert variant='danger'>{singupError}</Alert>}
                         <Button type="submit" disabled={isValid} className='w-100 modal_btn mt-3'>REGISTER</Button>
                     </Form>
                 </Modal.Body>
             </div>
+            </Styles>
         </Modal>
     );
 }

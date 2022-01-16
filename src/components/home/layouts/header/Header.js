@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import "./header.css";
 import '../../assets/css/style.scoped.css';
-import {Link, Outlet} from "react-router-dom";
-import useScript from "usescript-hook";
+import {Link} from "react-router-dom";
 import LoginModal from '../modal/login.modal';
 import SignupModal from "../modal/signup.modal";
+import { useNavigate } from "react-router-dom";
+import { logOut } from "../../../../fiebaseImp/js/user";
 
 
 const Header = (props) => {
     const [loginShow, setLoginShow] = useState(false);
     const [signupShow, setSignupShow] = useState(false);
     const [isHome, setIsHome] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(()=>{
         setIsHome(props.isHome);
@@ -22,6 +24,10 @@ const Header = (props) => {
     }
     const closeSignup = ()=>{
         setSignupShow(false);
+    }
+    const signOut = ()=>{
+        logOut();
+        navigate("/");
     }
 
 	return (
@@ -75,6 +81,11 @@ const Header = (props) => {
                                                     Home
                                                 </Link>
                                             </li>
+                                            <li className="has-child">
+                                                <Link to="/console/admin" className="active">
+                                                    Admin
+                                                </Link>
+                                            </li>
                                             { isHome &&
                                             <React.Fragment>
 											<li className="has-child">
@@ -92,6 +103,17 @@ const Header = (props) => {
                                                 </a>
                                             </li>
                                             </React.Fragment>
+                                            }
+                                            {
+                                                !isHome && 
+                                                <li className="has-child">
+                                                    <a onClick={(e)=>{
+                                                        e.preventDefault();
+                                                        signOut();
+                                                        }}>
+                                                        LogOut
+                                                    </a>
+                                                </li>
                                             }
                                     
                                         </ul>

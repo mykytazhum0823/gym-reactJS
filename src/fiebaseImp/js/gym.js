@@ -1,49 +1,53 @@
+import firebase, {auth, db} from '../main';
+import { 
+    collection,
+    doc, 
+    addDoc,
+    updateDoc, 
+    setDoc, 
+    getDocs, 
+    getDoc, 
+    deleteDoc,
+    query,
+    where,
+    limit
+    } from 'firebase/firestore';
 
+const collection_gym = "gyms";
 
-// gym CRUD
-
-const getGyms = () => {
-    return db.collection(collection_gym).get();
+export const getGyms = () => {
+    return getDocs(collection(db, collection_gym));
 }
 
-const getGym = (id) => {
-    return db.collection(collection_gym).doc(id).get();
+export const getGym = (id) => {
+    return getDoc(doc(db, collection_gym, id));
 }
 
-const saveGym = (name, owner, trainers = [], classes = [], membership = [], qr = '', activated = true) => {
-    db.collection(collection_gym).add({
-        name,
-        owner,
-        trainers,
-        classes,
-        membership,
-        qr,
-        activated
-    }).then((docRef) => {
-
-    })
-    .catch((error) => {
-        console.error("Error adding document: ", error);
-    });
+export const createGymId =  ()=>{
+    return addDoc(collection(db, collection_gym),{})
+            .then((data)=>{
+                return {id:data.id};
+            })
+            .catch((error)=>{
+                console.log(error);
+            })
 }
 
-const updateGym = (id, updatedGym) => {
-    db.collection(collection_gym).doc(id).update(updatedGym);
+export const deleteGymById = async(id)=>{
+    await deleteDoc(doc(db, collection_gym, id));
 }
 
-const deleteGym = (id) => {
-    db.collection(collection_gym).doc(id).delete();
-}
-
-const isActivatedGym = async (id) => {
-    const gym = await getGym(id);
-    const gym_data = gym.data(); 
-    return gym_data.activated;
-}
-
-const deActivateGym = async (id) => {
-    const gym = await getGym(id);
-    const gym_data = gym.data(); 
-    gym_data.activated = !gym_data.activated;
-    updateGym(id, gym_data);
+export const saveGym = (id, name, lng, lat)=>{
+    return setDoc(doc(db, collection_gym, id),{
+                name:name,
+                lat:lat,
+                lng:lng,
+                activated:true,
+            })
+            .then(()=>{
+                return {success:'success', error:''};
+            })
+            .catch((error)=>{
+                return {error:error.message, success:''};
+            })
 }
