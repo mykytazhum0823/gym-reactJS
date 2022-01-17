@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const UserItem = (props)=>{
+const TrainerItem = (props)=>{
     const userType = ['','trainer', '', 'gym owner', 'admin', 'customer'];
 
     return(
@@ -22,18 +22,13 @@ const UserItem = (props)=>{
             </span>
             </td>
             <td>
-                <span className="badge badge-success">
-                    {props.membership}
-                </span>
-            </td>
-            <td>
-                <button
+                {/* <button
                     type="button"
                     className="btn btn-primary"
                     style={{marginRight:'10px'}}
                     onClick={()=>{props.showEdit(props.userId)}}>
                         Edit
-                </button>
+                </button> */}
                 <button
                     type="button"
                     className="btn btn-danger">
@@ -45,4 +40,4 @@ const UserItem = (props)=>{
     );
 }
 
-export default UserItem;
+export default TrainerItem;

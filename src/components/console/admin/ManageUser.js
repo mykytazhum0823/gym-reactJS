@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from "react";
 import "../assets/css/app.scoped.css";
-import {Modal, Form} from 'react-bootstrap';
-import { getUsers } from "../../../fiebaseImp/js/user";
+import {Modal, Form, Alert} from 'react-bootstrap';
+import { getUsers, changeUser, saveNewUser } from "../../../fiebaseImp/js/user";
+import { getMemberships} from "../../../fiebaseImp/js/membership";
 import UserItem from "./items/UserItem";
+import { useLocation } from "react-router-dom";
 
 const ManageUser = () => {
 	const userType = ['','trainer', '', 'gym owner', 'admin', 'customer'];
 	const [isOpen, setIsOpen] = useState(false);
 	const [users, setUsers] = useState([]);
+	const [memberships, setMemberships] = useState([]);
 	const [isEdit, setIsEdit] = useState(false);
 
 	const [username, setUsername] = useState('');
 	const [mobile, setMobile] = useState('');
 	const [type, setType] = useState(0);
 	const [membership, setMembership] = useState('');
+	const [userIndex, setUserIndex] = useState('');
+	const [saveError, setSaveError] = useState('');
+	const [tableIndex, setTableIndex] = useState(0);
+
+	const [search, setSearch] = useState('');
+	const [searchResult, setSearchResult] = useState([]);
+
+	const {path} = useLocation();
 
 	const showModal = ()=>{
 		setIsOpen(true);
@@ -31,22 +42,96 @@ const ManageUser = () => {
 				temp_users.push(temp);
 			});
 			setUsers(temp_users);
+			setSearchResult(temp_users);
+		})
+	}
+	const getMembershipsInfo = ()=>{
+		getMemberships()
+		.then((datas)=>{
+			let temp_memberships = [];
+			datas.forEach((data)=>{
+				temp_memberships.push({name:data.data().name, index:data.id});
+			})
+			setMemberships(temp_memberships);
 		})
 	}
 	const handleAddUserBtn = ()=>{
-		showModal();
 		setIsEdit(false);
+		emptyValues();
+		showModal();
 	}
-	const addUser = ()=>{
-
+	const emptyValues = ()=>{
+		setUsername('');
+		setMobile('');
+		setType('');
+		setMembership('');
+		setUserIndex('');
 	}
-	const changeUser = ()=>{
 
+	const showEdit = (index) =>{
+		setIsEdit(true);
+		setSaveError('');
+		let user = users[index];
+		setTableIndex(index);
+		setUsername(user.username);
+		setMobile(user.mobile);
+		setType(user.type);
+		setMembership(user.membership);
+		setUserIndex(user.docId);
+		showModal();
+	}
+	const addUser = (e)=>{
+		e.preventDefault();
+		saveNewUser(username, type, mobile, membership)
+		.then((data)=>{
+			if(data.error === '')
+			{
+				let temp = users;
+				let newItem = {docId:data.success, username:username, type:type,mobile:mobile, membership:membership};
+				temp.push(newItem);
+				setUsers([...temp]);
+				setSearchResult([...temp]);
+				hideModal();
+			}
+			else{
+				setSaveError(data.error);
+			}
+		})
+	}
+	const editUser = (e)=>{
+		e.preventDefault();
+		changeUser(userIndex, username, type, mobile, membership)
+		.then((data)=>{
+			if(data.success === 'success')
+			{
+				hideModal();
+				let temp = users;
+				temp[tableIndex] = {docId:userIndex, username:username, type:type,mobile:mobile, membership:membership};
+				setUsers([...temp]);
+				setSearchResult([...temp]);
+				setIsEdit(false);
+			}
+			else{
+				setSaveError(data.error);
+			}
+		})
+	}
+
+	const searchUsers = ()=>{
+		let temp = [];
+		users.map((item, index)=>{
+			if(item.username.includes(search))
+			{
+				temp.push(item);
+			}
+		})
+		setSearchResult([...temp]);
 	}
 	
 	useEffect(()=>{
 		getUsersInfo();
-	},[]);
+		getMembershipsInfo();
+	},[path]);
 	
 	const minHeight = window.innerHeight - 150;
 	return (
@@ -77,8 +162,10 @@ const ManageUser = () => {
 											type="text"
 											className="form-control search"
 											placeholder="Search"
+											value={search}
+											onChange={e=>{setSearch(e.target.value)}}
 										/>
-										<button className="btn" type="button">
+										<button className="btn" type="button" onClick={searchUsers}>
 											<i className="material-icons">search</i>
 										</button>
 									</div>
@@ -94,9 +181,9 @@ const ManageUser = () => {
 											</tr>
 										</thead>
 										<tbody className="list" id="staff02">
-											{users.map((item, index)=>(
+											{searchResult.map((item, index)=>(
 												<UserItem username={item.username} mobile={item.mobile}
-													type={item.type} membership={item.membership} key={index} showEdit={showEdit(index)}/> 
+													type={item.type} membership={item.membership} key={index} userId={index} showEdit={showEdit}/> 
 											))}
 										</tbody>
 									</table>
@@ -126,7 +213,7 @@ const ManageUser = () => {
                                 </a>
                             </div>
 
-                            <Form onSubmit={isEdit?changeUser:addUser}>
+                            <Form onSubmit={isEdit?editUser:addUser}>
                                 <div className="form-group">
                                     <label htmlFor="username">User Name:</label>
                                     <input
@@ -154,31 +241,31 @@ const ManageUser = () => {
                                         }}
                                     />
                                 </div>
-                                <div className="form-group">
-                                    <label htmlFor="username">Type:</label>
-                                    <input
-                                        className="form-control"
-                                        type="text"
-                                        required=""
-                                        placeholder=""
-                                        value={userType[type]}
-                                       
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="username">Membership:</label>
-                                    <input
-                                        className="form-control"
-                                        type="text"
-                                        required=""
-                                        placeholder=""
-                                        value={membership}
-                                    />
-                                </div>
-                                
+                                <Form.Group className="mb-3">
+									<Form.Label>Type</Form.Label>
+									<Form.Select 
+									onChange={(e)=>{setType(e.target.value)}}
+									value={type}>
+										<option value="1">Traniner</option>
+										<option value="3">Gym Owner</option>
+										<option value="4">Admin</option>
+										<option value="5">Customer</option>
+									</Form.Select>
+								</Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Membership</Form.Label>
+                                    <Form.Select 
+									onChange={(e)=>{setMembership(e.target.value)}}
+									value={membership}>
+										{memberships.map((item, index)=>
+											<option value={item.index} key={index}>{item.name}</option>
+										)}
+									</Form.Select>
+                                </Form.Group>
+                                {saveError !== '' && <Alert variant='danger'>{saveError}</Alert> }
                                 <div className="form-group text-center">
                                     <button className="btn btn-primary" type='submit'>
-                                        Change
+                                        {isEdit?'Change':'Add' }
                                     </button>
                                 </div>
                             </Form>

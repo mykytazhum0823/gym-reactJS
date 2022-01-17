@@ -34,14 +34,9 @@ const userType = ['','trainer', '', 'gym owner', 'admin', 'customer'];
  */
 const collection_user = "users";
 
-export const getUsers = () => {
-    return getDocs(collection(db, collection_user));
-}
-
 const getUser = (id) => {
     return getDoc(doc(db, collection_user, id));
 }
-
 
 const saveUser = async (uid, username,type, mobile, membership, activated = true) => {
     await setDoc(doc(db, collection_user, uid),{
@@ -81,6 +76,43 @@ const deActivatedUser = async (id) => {
     usr_data.activated = !usr_data.activated;
     updateUser(id, usr_data);
 }
+
+
+export const getUsers = () => {
+    return getDocs(collection(db, collection_user));
+}
+
+export const saveNewUser = async (username,type, mobile, membership)=>{
+    return addDoc(collection(db, collection_user),{
+        username,
+        type,
+        mobile,
+        membership,
+        activated:true
+    })
+    .then((data)=>{
+        return {success:data.id, error: ''};
+    })
+    .catch((error)=>{
+        return {success:'', error: error.message};
+    })
+}
+
+export const changeUser = (uid, username,type, mobile, membership)=>{
+    return setDoc(doc(db, collection_user, uid),{
+        username,
+        type,
+        mobile,
+        membership,
+        activated:true})
+        .then(()=>{
+            return {success:'success', error:''}
+        })
+        .catch((error)=>{
+            return {success:'', error:error.message}
+        })
+}
+
 
 export const signUpWithEmailAndPassword = (email, password, mobile) => {
     let token = 0, userId;
