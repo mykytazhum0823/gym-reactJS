@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 
 const GymItem = (props)=>{
     const name = props.name;
-
     const navigate = useNavigate();
 
     const handleEdit = ()=>{

@@ -12,3 +12,21 @@
     display:flex;
     justify-content: center;
 }
+.form-control.custom-toggle{
+    display:flex;
+    .custom-text{
+        flex-grow: 8;
+    }
+}
+.dropdown-menu.show{
+    width:100%;
+    input{
+        width:92% !important;
+    }
+}
+
+.qrcode-panel{
+    flex-grow: 8;
+    display: flex;
+    align-items: center;
+}

@@ -34,7 +34,7 @@ const userType = ['','trainer', '', 'gym owner', 'admin', 'customer'];
  */
 const collection_user = "users";
 
-const getUsers = () => {
+export const getUsers = () => {
     return getDocs(collection(db, collection_user));
 }
 

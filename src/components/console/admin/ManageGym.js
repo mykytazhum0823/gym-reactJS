@@ -8,6 +8,8 @@ import LocationMap from "./items/LocationMap";
 import { saveGym, createGymId, deleteGymById, getGyms } from "../../../fiebaseImp/js/gym";
 import EditGym from "./EditGym";
 import GymItem from "./items/GymItem";
+import { useLocation } from "react-router-dom";
+import Loading from 'react-loading-spinner';
 
 const ManageGym = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +18,13 @@ const ManageGym = () => {
 	const [error, setError] = useState('');
 	const [success, setSuccess] = useState('');
 	const [gyms, setGyms] = useState([]);
+
+	const [loading, setLoading] = useState(false);
 	
 	const [lng, setLng] = useState(52);
 	const [lat, setLat] = useState(-1.5);
+
+	const {path} = useLocation();
 
 	const showModal = ()=>{
 		setIsOpen(true);
@@ -64,26 +70,30 @@ const ManageGym = () => {
 		gyms.push(temp);
 		setGyms(gyms);
 	}
+
 	const getAllGyms = ()=>{
 		getGyms()
 		.then((datas)=>{
+			let temp_gyms  =[];
 			datas.forEach((data)=>{
 				let temp = {...data.data(), qrCode:data.id};
-				gyms.push(temp);
-				setGyms(gyms);
-			})
+				temp_gyms.push(temp);
+			});
+			setLoading(false);
+			setGyms(temp_gyms);
 		})
 	}
 
 	useEffect(()=>{
+		setLoading(true);
 		getAllGyms();
-	}, []);
+	}, [path]);
 
 	const isValid = name === '' || qrCode === '';
-	
+	const minHeight = window.innerHeight - 150;
 	return (
 		<React.Fragment>
-			<div className="mdk-drawer-layout__content page" style={{paddingTop:'130px'}}>
+			<div className="mdk-drawer-layout__content page" style={{paddingTop:'130px', minHeight:minHeight}}>
 				<div className="container-fluid page__heading-container">
 					<div className="page__heading d-flex align-items-center justify-content-between mb-0">
 						<h1 className="m-0">Gym's list</h1>
@@ -107,7 +117,7 @@ const ManageGym = () => {
 					<div className="d-flex row pb-4">
 						{gyms.map((item, index)=>(
 							<GymItem name={item.name} owner={item.owner} membership={item.membership}
-								trainers={item.trainers} classes={item.classes} qrcode={item.qrcode}/>
+								trainers={item.trainers} classes={item.classes} qrcode={item.qrcode} key={index}/>
 						))}
 					</div>
 				</div>
@@ -148,8 +158,8 @@ const ManageGym = () => {
 								<div>
 									<Button className="primary" onClick={genreateQRCode}> QR Code Generate</Button>
 								</div>
-								<div class="qrcode mt-2">
-									{(qrCode !== '') && <QRCode value={qrCode} size='90' class="ml-3"/>}
+								<div className="qrcode mt-2">
+									{(qrCode !== '') && <QRCode value={qrCode} size='90' className="ml-3"/>}
 								</div>
 							</FormGroup>
 							{(error !== '') && <Alert variant='danger'>{error}</Alert>}
