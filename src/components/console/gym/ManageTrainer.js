@@ -75,7 +75,7 @@ const ManageTrainer = () => {
 			if(data.error === '')
 			{
 				let temp = trainers;
-				let newItem = {docId:data.success, username:username, type:type,mobile:mobile, membership:''};
+				let newItem = {docId:data.success, username:username, type:1,mobile:mobile, membership:''};
 				temp.push(newItem);
 				setTrainers([...temp]);
 				setSearchResult([...temp]);
@@ -131,7 +131,7 @@ const ManageTrainer = () => {
 							className="btn btn-primary"
 							
 							onClick={handleAddTrainer}>
-							Add Trainer
+							Create Trainer
 						</button>
 					</div>
 				</div>
@@ -193,8 +193,11 @@ const ManageTrainer = () => {
                                     href="manage user.html"
                                     className="navbar-brand"
                                     style={{ minWidth: 0 }}>
-                                    <span className="ml-2">{isEdit?'Edit User':'Add User'}</span>
+                                    <span className="ml-2">{isEdit?'Edit Trainer':'Create User'}</span>
                                 </a>
+								<h3 onClick={hideModal} className="modal-close">
+									x
+								</h3>
                             </div>
 
                             <Form onSubmit={isEdit?editTrainer:addTrainer}>
@@ -225,7 +228,7 @@ const ManageTrainer = () => {
                                         }}
                                     />
                                 </div>
-                                <Form.Group className="mb-3">
+                                {/* <Form.Group className="mb-3">
 									<Form.Label>Type</Form.Label>
 									<Form.Select 
 									onChange={(e)=>{setType(e.target.value)}}
@@ -235,7 +238,7 @@ const ManageTrainer = () => {
 										<option value="4">Admin</option>
 										<option value="5">Customer</option>
 									</Form.Select>
-								</Form.Group>
+								</Form.Group> */}
 
                                 {saveError !== '' && <Alert variant='danger'>{saveError}</Alert> }
                                 <div className="form-group text-center">

@@ -34,3 +34,19 @@ export const saveClass = async (id, duration, begins, ends, capacity)=>{
         return {success:'', error: error.message};
     })
 }
+
+export const updateClass = (docId, id, duration, begins, ends, capacity) =>{
+    return updateDoc(doc(db, collection_classes, docId),{
+            id,
+            duration,
+            begins,
+            ends,
+            capacity
+        })
+        .then(()=>{
+            return {success:'success', error:''};
+        })
+        .catch((error)=>{
+            return {success:'', error:error.message};
+        })
+}

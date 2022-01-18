@@ -22,9 +22,7 @@ const UserItem = (props)=>{
             </span>
             </td>
             <td>
-                <span className="badge badge-success">
-                    {props.membership}
-                </span>
+                {props.membership}
             </td>
             <td>
                 <button

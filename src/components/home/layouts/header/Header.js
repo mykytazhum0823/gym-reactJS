@@ -81,7 +81,7 @@ const Header = (props) => {
                                                     Home
                                                 </Link>
                                             </li>
-                                            <li className="has-child">
+                                            {/* <li className="has-child">
                                                 <Link to="/console/admin" className="active">
                                                     Admin
                                                 </Link>
@@ -90,7 +90,7 @@ const Header = (props) => {
                                                 <Link to="/console/gym" className="active">
                                                     Gym
                                                 </Link>
-                                            </li>
+                                            </li> */}
                                             { isHome &&
                                             <React.Fragment>
 											<li className="has-child">

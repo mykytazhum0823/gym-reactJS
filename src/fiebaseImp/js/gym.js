@@ -51,3 +51,19 @@ export const saveGym = (id, name, lng, lat)=>{
                 return {error:error.message, success:''};
             })
 }
+
+export const updateGym = (id, name, owner, membsership, trainers, classes) =>{
+    return updateDoc(doc(db, collection_gym, id),{
+            name:name,
+            owner:owner,
+            membsership:membsership,
+            trainers:trainers,
+            classes:classes
+        })
+        .then(()=>{
+            return {success:'success', error:''};
+        })
+        .catch((error)=>{
+            return {success:'', error:error.message};
+        })
+}

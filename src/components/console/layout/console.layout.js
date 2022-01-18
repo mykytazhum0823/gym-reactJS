@@ -75,7 +75,7 @@ const ConsoleLayout = ({children}) => {
     }
   }, [pathname]);
   
-
+  
   
   return (
     <React.Fragment>
@@ -87,7 +87,7 @@ const ConsoleLayout = ({children}) => {
                   className="mdk-drawer-layout js-mdk-drawer-layout"
                   data-push
                   data-responsive-width="992px">
-                  <Outlet/>
+                  <Outlet />
                   <Sidebar userAvatar={userAvatar} userName = {userName} userRole = {userRole} 
                     dropdownMenu = {dropdownMenu} menu={menu} ref={sidebarRef} height={sidebarHeight}/>
               </div>     

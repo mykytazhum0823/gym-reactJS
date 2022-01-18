@@ -1,22 +1,55 @@
 import React, { useState } from 'react';
-import { FormControl, FormGroup, FormLabel, Dropdown, Form, Table, Button } from 'react-bootstrap';
+import { FormControl, FormGroup, FormLabel, Dropdown, Form, Table, Button, Alert} from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
+import DatePicker from "react-datepicker";
+import moment from 'moment';
 import "../assets/css/app.scoped.css";
+import "react-datepicker/dist/react-datepicker.css";
+import { updateClass } from '../../../fiebaseImp/js/class';
+
+
 
 const EditClass = (props)=>{
-	const {cname, cbegins, cends, cduration, ccustomers,ctrainers} = useLocation();
+	const {state} = useLocation();
+	const {cdocId, cname, cbegins, cends, cduration, ccustomers,ctrainers, ccapacity} = state;
 
 	const [name, setName] = useState(cname);
-	const [start, setStart] = useState(cbegins);
-	const [end, setEnd] = useState(cends);
+	const [start, setStart] = useState( cbegins !== ''? new Date(cbegins.seconds * 1000): '');
+	const [end, setEnd] = useState(cends !== ''? new Date(cends.seconds * 1000): '');
 	const [duration, setDuration] = useState(cduration);
 	const [customers, setCustomers] = useState(ccustomers);
 	const [trainers, setTrainers] = useState(ctrainers);
+	const [capacity, setCapacity] = useState(ccapacity);
+
+	const [error, setError] = useState('');
 
 	const navigate = useNavigate();
+	const minHeight = window.innerHeight - 150;
+
+	const handleStart = (value)=>{
+		setStart(value);
+	}
+	const handleEnd = (value)=>{
+		setEnd(value);
+	}
+
+	const handleSubmit = (e)=>{
+		e.preventDefault();
+		updateClass(cdocId, name, duration, start, end, capacity)
+		.then((data)=>{
+			if(data.success === 'success')
+			{
+				navigate(-1);
+				setError('');
+			}
+			else{
+				setError(data.error);
+			}
+		})
+	}
 
     return(
-    <div className="mdk-drawer-layout__content page" style={{paddingTop:'130px'}}>
+    <div className="mdk-drawer-layout__content page" style={{paddingTop:'130px', minHeight:minHeight}}>
 		<div className="container-fluid page__heading-container">
 			<div className="page__heading d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
 				<h1 className="m-lg-0">Edit Class</h1>
@@ -31,48 +64,62 @@ const EditClass = (props)=>{
 			<div className="row card-group-row">
 				<div className="col-lg-12 col-md-12 card-group-row__col">
 					<div className="card card-group-row__card card-body card-body-x-lg flex-row align-items-center">
-						<Form className='w-60'>
+						<Form onSubmit={handleSubmit}>
 							<FormGroup className="mb-3">
 								<FormLabel> Class Name:</FormLabel>
 								<FormControl
 									type="text"
 									value={name}
-									onClick={(e)=>{setName(e.target.value)}}
-									placeholder='Gym Name'
+									onChange={(e)=>{setName(e.target.value)}}
+									placeholder='Enter Name'
 									/>
 							</FormGroup>
 							<FormGroup className="mb-3">
 								<FormLabel> Start Time:</FormLabel>
-								<FormControl
-									type="text"
-									value={start}
-									onClick={(e)=>{setStart(e.target.value)}}
-									placeholder='Gym Name'
-									/>
+								<DatePicker 
+								selected={start}
+								defaultValue=''
+								onChange={handleStart}
+								
+								placeholderText="select start time"
+								className="form-control"></DatePicker>
 							</FormGroup>
 							<FormGroup>
 								<FormLabel>End Time:</FormLabel>
-								<FormControl
-									type="text"
-									value={end}
-									onClick={(e)=>{setEnd(e.target.value)}}
-									placeholder='Gym Name'
-									/>
+								<DatePicker 
+								selected={end}
+								defaultValue=''
+								onChange={handleEnd}
+								placeholderText="select end time"
+								className="form-control"></DatePicker>
 							</FormGroup>
                             <FormGroup>
 								<FormLabel>Duration:</FormLabel>
 								<FormControl
 									type="text"
 									value={duration}
-									onClick={(e)=>{setDuration(e.target.value)}}
-									placeholder='Gym Name'
+									onChange={(e)=>{setDuration(e.target.value)}}
+									placeholder='Enter Duration'
 									/>
 							</FormGroup>
+							<FormGroup>
+								<FormLabel>Duration:</FormLabel>
+								<FormControl
+									type="text"
+									value={capacity}
+									onChange={(e)=>{setCapacity(e.target.value)}}
+									placeholder='Enter Capacity'
+									/>
+							</FormGroup>
+							{(error !== '') && <Alert variant='danger'>{error}</Alert>}
+							<div className="form-group text-center">
+								<Button className="mt-3" type='submit'> Save </Button>
+							</div>
 						</Form>
 					</div>
 				</div>
 			</div>
-			<div className="row card-group-row">
+			{/* <div className="row card-group-row">
 				<div className="col-lg-6 col-md-6 card-group-row__col">
 					<div className="card card-group-row__card card-body card-body-x-lg flex-row align-items-center">
 						<Form className="w-100">
@@ -158,7 +205,7 @@ const EditClass = (props)=>{
 						</Form>
 					</div>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	</div>
     )

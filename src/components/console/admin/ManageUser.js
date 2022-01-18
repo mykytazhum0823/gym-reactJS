@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../assets/css/app.scoped.css";
-import {Modal, Form, Alert} from 'react-bootstrap';
+import {Modal, Form, Alert, Button} from 'react-bootstrap';
 import { getUsers, changeUser, saveNewUser } from "../../../fiebaseImp/js/user";
 import { getMemberships} from "../../../fiebaseImp/js/membership";
 import UserItem from "./items/UserItem";
@@ -46,13 +46,35 @@ const ManageUser = () => {
 		})
 	}
 	const getMembershipsInfo = ()=>{
+		let temp_memberships = [];
 		getMemberships()
 		.then((datas)=>{
-			let temp_memberships = [];
 			datas.forEach((data)=>{
 				temp_memberships.push({name:data.data().name, index:data.id});
 			})
 			setMemberships(temp_memberships);
+		})
+		.then(()=>{
+			getUsers()
+			.then((datas)=>{
+				let temp_users  =[];
+				datas.forEach((data)=>{
+					let temp = {...data.data(), docId:data.id};
+					let memName = '';
+					if(temp.membership !== ''){
+						temp_memberships.forEach((item)=>{
+						if(item.index === temp.membership)
+						{
+							memName = item.name;
+						}
+					})
+					}
+					temp = {...temp, membership: memName};
+					temp_users.push(temp);
+				});
+				setUsers(temp_users);
+				setSearchResult(temp_users);
+			})
 		})
 	}
 	const handleAddUserBtn = ()=>{
@@ -87,7 +109,14 @@ const ManageUser = () => {
 			if(data.error === '')
 			{
 				let temp = users;
-				let newItem = {docId:data.success, username:username, type:type,mobile:mobile, membership:membership};
+				let memName = '';
+				memberships.forEach((item)=>{
+					if(item.index == membership)
+					{
+						memName = item.name;
+					}
+				});
+				let newItem = {docId:data.success, username:username, type:type,mobile:mobile, membership:memName};
 				temp.push(newItem);
 				setUsers([...temp]);
 				setSearchResult([...temp]);
@@ -106,7 +135,14 @@ const ManageUser = () => {
 			{
 				hideModal();
 				let temp = users;
-				temp[tableIndex] = {docId:userIndex, username:username, type:type,mobile:mobile, membership:membership};
+				let memName = '';
+				memberships.forEach((item)=>{
+					if(item.index == membership)
+					{
+						memName = item.name;
+					}
+				});
+				temp[tableIndex] = {docId:userIndex, username:username, type:type,mobile:mobile, membership:memName};
 				setUsers([...temp]);
 				setSearchResult([...temp]);
 				setIsEdit(false);
@@ -129,9 +165,14 @@ const ManageUser = () => {
 	}
 	
 	useEffect(()=>{
-		getUsersInfo();
 		getMembershipsInfo();
+		// getUsersInfo();
 	},[path]);
+
+	const isValid = !isEdit &&  (username === '' ||
+					mobile === ''||
+					type === '' || type === '-1'||
+					membership === '' || membership === '-1');
 	
 	const minHeight = window.innerHeight - 150;
 	return (
@@ -174,9 +215,9 @@ const ManageUser = () => {
 										<thead>
 											<tr>
 												<th>Username</th>
-												<th style={{ width: "50px" }}>Mobile</th>
-												<th style={{ width: "50px" }}>Type</th>
-												<th style={{ width: "50px" }}>Membership</th>
+												<th style={{ width: "100px" }}>Mobile</th>
+												<th style={{ width: "80px" }}>Type</th>
+												<th style={{ width: "80px" }}>Membership</th>
 												<th style={{ width: "200px" }}>Action</th>
 											</tr>
 										</thead>
@@ -211,6 +252,9 @@ const ManageUser = () => {
                                     style={{ minWidth: 0 }}>
                                     <span className="ml-2">{isEdit?'Edit User':'Add User'}</span>
                                 </a>
+								<h3 onClick={hideModal} className="modal-close">
+									x
+								</h3>
                             </div>
 
                             <Form onSubmit={isEdit?editUser:addUser}>
@@ -246,6 +290,7 @@ const ManageUser = () => {
 									<Form.Select 
 									onChange={(e)=>{setType(e.target.value)}}
 									value={type}>
+										<option value="-1"></option>
 										<option value="1">Traniner</option>
 										<option value="3">Gym Owner</option>
 										<option value="4">Admin</option>
@@ -257,6 +302,7 @@ const ManageUser = () => {
                                     <Form.Select 
 									onChange={(e)=>{setMembership(e.target.value)}}
 									value={membership}>
+										<option key='-1' value='-1'></option>
 										{memberships.map((item, index)=>
 											<option value={item.index} key={index}>{item.name}</option>
 										)}
@@ -264,9 +310,9 @@ const ManageUser = () => {
                                 </Form.Group>
                                 {saveError !== '' && <Alert variant='danger'>{saveError}</Alert> }
                                 <div className="form-group text-center">
-                                    <button className="btn btn-primary" type='submit'>
+                                    <Button className="btn btn-primary" type='submit' disabled={isValid}>
                                         {isEdit?'Change':'Add' }
-                                    </button>
+                                    </Button>
                                 </div>
                             </Form>
                         </div>

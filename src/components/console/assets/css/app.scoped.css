@@ -18531,3 +18531,16 @@ html {
 [dir=ltr] .dp-preview:hover .dp-preview__overlay {
     opacity: 1
 }
+
+/* [dir=ltr] .mdk-drawer-layout__content.page{
+    padding-top:130px;
+    min-height: calc(100% - 150px) !important;
+} */
+
+.modal-close{
+    position: absolute;
+    padding:10px;
+    top: -1px;
+    right:20px;
+    cursor: pointer;
+}

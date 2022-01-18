@@ -3,6 +3,8 @@ import '../assets/css/app.scoped.css';
 import { Form, FormControl, FormLabel, Modal, Table, Alert } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { getClasses, saveClass } from "../../../fiebaseImp/js/class";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import ClassItem from './item/ClassItem';
 
 const ManageClass = () => {
@@ -33,7 +35,7 @@ const ManageClass = () => {
 				let temp = {id:name, duration:duration, begins:begins, ends:ends, 
 				capacity:capacity, docId:data.success};
 				let temp_classes = classes;
-				temp_classes.push(classes);
+				temp_classes.push(temp);
 				setClasses([...temp_classes]);
 				hideModal();
 			}
@@ -57,10 +59,11 @@ const ManageClass = () => {
 	useEffect(()=>{
 		getAllClasses();
 	}, [path]);
+	const minHeight = window.innerHeight - 150;
 
 	return (
 	<React.Fragment>
-		<div className="mdk-drawer-layout__content page" style={{paddingTop:'130px'}}>
+		<div className="mdk-drawer-layout__content page" style={{paddingTop:'130px', minHeight:minHeight}}>
 			<div className="container-fluid page__heading-container">
 				<div className="page__heading d-flex align-items-center justify-content-between mb-0">
 					<h1 className="m-0">class list</h1>
@@ -103,6 +106,9 @@ const ManageClass = () => {
 							<a href="manage_gym.html" className="navbar-brand" style={{minWidth: '0'}}>
 								<span className="ml-2">Add Class </span>
 							</a>
+							<h3 onClick={hideModal} className="modal-close">
+								x
+							</h3>
 						</div>
 
 						<Form onSubmit={createClass}>
@@ -128,23 +134,15 @@ const ManageClass = () => {
 							</Form.Group>
 							<Form.Group className="mb-3">
 								<FormLabel htmlFor="username"> Start Time:</FormLabel>
-								<FormControl
-									type="text"
-									placeholder="Enter Name"
-									name="start"
-									value={begins}
-									onChange = {(e)=>{setBegins(e.target.value)}}
-								/>
+								<DatePicker selected={begins} onChange={(val)=>{setBegins(val)}} 
+									className="form-control"></DatePicker>
+			
 							</Form.Group>
 							<Form.Group className="mb-3">
 								<FormLabel htmlFor="username"> End Time:</FormLabel>
-								<FormControl
-									type="text"
-									placeholder="Enter Name"
-									name="end"
-									value={ends}
-									onChange = {(e)=>{setEnds(e.target.value)}}
-								/>
+								<DatePicker selected={ends} onChange={(val)=>{setEnds(val)}} 
+									className="form-control"></DatePicker>
+					
 							</Form.Group>
 							<Form.Group className="mb-3">
 								<FormLabel htmlFor="username"> Capacity:</FormLabel>

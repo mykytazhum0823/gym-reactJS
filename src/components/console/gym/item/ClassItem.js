@@ -5,9 +5,27 @@ const ClassItem = (props)=>{
     const navigate = useNavigate();
     const handleEdit = ()=>{
         navigate('/console/gym/editclass', 
-        {cdocId:props.docId, cname:props.name,  cduration:props.duration, cbegins:props.begins,
-        cends: props.begins, ccapacity:props.capacity, ctrainers:props.trainers, ccustomers:props.customers});
+        {state:{cdocId:props.id, cname:props.name,  cduration:props.duration, cbegins:props.begins,
+        cends: props.ends, ccapacity:props.capacity, ctrainers:props.trainers, ccustomers:props.customers}});
+        
     }
+    const formatDate = (date)=>{
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+    
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+    
+        return [year, month, day].join('/');
+    }
+     
+    const begins =formatDate(props.begins.seconds *1000);
+    const ends = formatDate(props.ends.seconds *1000);
+
     return(
         <div className="col-md-6 col-lg-4">
         <div className="card card__course card__course__animate">
@@ -44,16 +62,16 @@ const ClassItem = (props)=>{
                                         strokeLinejoin="round"></path>
                                 </g>
                             </svg>
-                            <span className="ml-1">{`${props.begins} - ${props.ends}`}</span>
+                            <span className="ml-2" style={{marginLeft:'6px'}}>{`${begins} - ${ends}`}</span>
                         </small>
                     </div>
                 </div>
             </div>
             <div className="p-3 text-center">
-                <button type="button" className="btn btn-primary mr-2" onClick={handleEdit}>
+                <button type="button" className="btn btn-primary mr-2" style={{marginRight:'5px'}} onClick={handleEdit}>
                     Edit
                 </button>
-                <button type="button" className="btn btn-danger">
+                <button type="button" className="btn btn-danger ml-2">
                     Deactive
                 </button>
             </div>

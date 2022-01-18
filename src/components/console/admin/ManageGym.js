@@ -81,6 +81,7 @@ const ManageGym = () => {
 			});
 			setLoading(false);
 			setGyms(temp_gyms);
+			console.log(gyms);
 		})
 	}
 
@@ -117,7 +118,7 @@ const ManageGym = () => {
 					<div className="d-flex row pb-4">
 						{gyms.map((item, index)=>(
 							<GymItem name={item.name} owner={item.owner} membership={item.membership}
-								trainers={item.trainers} classes={item.classes} qrcode={item.qrcode} key={index}/>
+								trainers={item.trainers} classes={item.classes} qrcode={item.qrCode} key={index}/>
 						))}
 					</div>
 				</div>
@@ -136,6 +137,9 @@ const ManageGym = () => {
 								style={{ minWwidth: 0 }}>
 								<span className="ml-2">Gym's Add</span>
 							</a>
+							<h3 onClick={hideModal} className="modal-close">
+								x
+							</h3>
 						</div>
 						<Form onSubmit={handleSubmit}>
 							<FormGroup className="mb-3">

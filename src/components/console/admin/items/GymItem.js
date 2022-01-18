@@ -2,6 +2,7 @@ import React from 'react';
 import { wrapDisplayName } from 'recompose';
 import "../../assets/css/app.scoped.css";
 import { useNavigate } from 'react-router-dom';
+import QRCode from 'react-qr-code';
 
 const GymItem = (props)=>{
     const name = props.name;
@@ -9,18 +10,14 @@ const GymItem = (props)=>{
 
     const handleEdit = ()=>{
         navigate('/console/admin/editgym', 
-        {gqrcode:props.qrcode, gname:name, gowner:props.owner, gmembership:props.membership, 
-        gtrainers:props.trainers, gclasses:props.classes});
+        {state:{gqrcode:props.qrcode, gname:name, gowner:props.owner, gmembership:props.membership, 
+        gtrainers:props.trainers, gclasses:props.classes}});
     }
     return(
         <div className="col-md-4 col-lg-3">
             <div className="card">
-                <a  className="card-img-top">
-                    <img
-                        src="/assets/images/course_lms.jpg"
-                        style={{ width: "100%" }}
-                        alt="Card cap"
-                    />
+                <a  className="card-img-top" style={{textAlign:'center'}}>
+                     <QRCode value={props.qrcode} size='90'/>
                 </a>
 
                 <div className="p-3 text-center border-bottom">
