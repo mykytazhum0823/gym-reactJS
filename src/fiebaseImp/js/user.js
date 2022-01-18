@@ -24,7 +24,7 @@ import {
     limit
     } from 'firebase/firestore';
 
-const userType = ['','trainer', '', 'gym owner', 'admin', 'customer'];
+const userType = ['','trainer', '', 'gym', 'admin', 'customer'];
 /**
  * User Type 
  * trainer 1
