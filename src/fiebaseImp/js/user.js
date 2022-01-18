@@ -183,28 +183,29 @@ export const logOut = ()=>{
 export const loginwithGoogleAccount = ()=>{
     let email = '';
     let token = 0;
-    signInWithPopup(auth, provider)
+    return signInWithPopup(auth, provider)
     .then((result)=>{
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const accesstoken = credential.accessToken;
         const user = result.user;
-        console.log(user);
 
         token = credential.idToken;
         email = user.email;
-        const q = query(collection(db, collection_user), where("email", "==", user.email), limit(1));
+        const q = query(collection(db, collection_user), where("username", "==", user.email), limit(1));
         return getDocs(q);
     })
     .then((docs)=>{
         if(docs.size != 0)
         {
+            let profile
             docs.forEach((doc)=>{
-                return {profile:doc.data(), error:'', token: token};
+                profile = {...doc.data(), type:userType[doc.data().type]};
             })
+            return {profile:profile, error:'', token: token};
         }
         else{
             addUser(email);
-            return {profile:{username:email, type:5}, error:'', token: token};
+            return {profile:{username:email, type:userType[5]}, error:'', token: token};
         }
     })
     .catch((error) => {
