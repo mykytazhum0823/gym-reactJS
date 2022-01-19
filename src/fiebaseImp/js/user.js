@@ -77,6 +77,9 @@ const deActivatedUser = async (id) => {
     updateUser(id, usr_data);
 }
 
+export const changeUserType = (uid, type)=>{
+    updateUser(uid, {type:type});
+}
 
 export const getUsers = () => {
     return getDocs(collection(db, collection_user));

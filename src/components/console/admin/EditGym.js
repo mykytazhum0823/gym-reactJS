@@ -8,6 +8,7 @@ import { getUsers } from '../../../fiebaseImp/js/user';
 import { updateGym } from '../../../fiebaseImp/js/gym';
 import { getMemberships } from '../../../fiebaseImp/js/membership';
 import { exportComponentAsPNG } from 'react-component-export-image';
+import { changeUserType } from '../../../fiebaseImp/js/user';
 
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
@@ -113,6 +114,7 @@ const EditGym = (props)=>{
 	const [owner, setOwner] = useState(gowner?gowner : '');
 	const [membership, setMembership] = useState(gmembership? gmembership : []);
 	const [error, setError] = useState('');
+	const [success, setSuccess]  = useState('');
 
 	const [trainers, setTrainers] = useState(gtrainers?gtrainers:[]);
 	const [classes, setClasses] = useState(gclasses? gclasses:[]);
@@ -157,10 +159,12 @@ const EditGym = (props)=>{
 			if(data.success == 'success')
 			{
 				setError('');
-				navigate(-1);
-			}
+				changeUserType(owner, 3);
+				setSuccess('Successfuly updated.');
+			}	
 			else
 			{
+				setSuccess('');
 				setError(data.error);
 			}
 		})
@@ -211,8 +215,10 @@ const EditGym = (props)=>{
 									<Dropdown.Menu as={CustomMenu} onChange={(e)=>{console.log(e.target.value)}}>
 										{users.map((item, index)=>(
 											<Dropdown.Item eventKey={index} key={index} 
-											onClick={()=>{setOwner(item.id); setOwnerName(item.username)}}
-											>
+											onClick={()=>{
+												setOwner(item.id); 
+												setOwnerName(item.username);
+											}}>
 												{item.username}
 											</Dropdown.Item>
 										))}
@@ -237,6 +243,7 @@ const EditGym = (props)=>{
 									</Dropdown.Menu>
 								</Dropdown>
 							</FormGroup>
+							{(success !== '') && <Alert variant='success'>{success}</Alert>}
 							{(error !== '') && <Alert variant='danger'>{error}</Alert>}
 							<div className="form-group text-center" onClick={handleSave}>
 								<Button className="mt-3"> Save </Button>
@@ -251,7 +258,7 @@ const EditGym = (props)=>{
 						<div className="form-group text-center">
 							<Button className="mt-3" onClick={()=>{
 								exportComponentAsPNG(qrRef, {fileName:'QR CODE'});
-							}}> Print </Button>
+							}}> Download </Button>
 						</div>
 					</div>
 				</div>

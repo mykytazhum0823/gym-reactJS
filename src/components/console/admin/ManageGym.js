@@ -58,6 +58,8 @@ const ManageGym = () => {
 				{
 					setSuccess('create a new gym successfully.');
 					addNewGym();
+					hideModal();
+					setSuccess('');
 				}
 				else{
 					setError('there is an error, try again.');
@@ -142,6 +144,8 @@ const ManageGym = () => {
 							</h3>
 						</div>
 						<Form onSubmit={handleSubmit}>
+							{(error !== '') && <Alert variant='danger'>{error}</Alert>}
+							{(success !== '') && <Alert variant='success'>{success}</Alert>}
 							<FormGroup className="mb-3">
 								<FormLabel>Name</FormLabel>
 								<FormControl
@@ -166,8 +170,6 @@ const ManageGym = () => {
 									{(qrCode !== '') && <QRCode value={qrCode} size='90' className="ml-3"/>}
 								</div>
 							</FormGroup>
-							{(error !== '') && <Alert variant='danger'>{error}</Alert>}
-							{(success !== '') && <Alert variant='success'>{success}</Alert>}
                         	<Button type="submit" disabled={isValid} className='w-100 modal_btn mt-3'>REGISTER</Button>
 							<Button  className='w-100 modal_btn mt-3 mb-2 btn-danger' onClick={hideModal}>CANCEL</Button>
                     

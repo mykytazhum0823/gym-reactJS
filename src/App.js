@@ -10,7 +10,7 @@ import UserContext from "./context/UserContext";
 import { adminUser } from "./mockUser/MockUser";
 
 const App = () => {
-  const [user, setUser] = useState(adminUser);
+  const [user, setUser] = useState({});
   const value = {user, setUser};
 
   return (

@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import UserContext from '../../../../context/UserContext';
 import '../../assets/css/app.scoped.css';
 
 const Sidebar  = React.forwardRef( (props, ref)=>{
+    const {user} = useContext(UserContext);
     return(
     <div
         className="mdk-drawer  js-mdk-drawer"
@@ -21,15 +23,15 @@ const Sidebar  = React.forwardRef( (props, ref)=>{
                         <a
                             href="#"
                             className="flex d-flex align-items-center text-body text-underline-0">
-                            <span className="avatar avatar-sm mr-2">
+                            {/* <span className="avatar avatar-sm mr-2">
                                 <span className="avatar-title rounded-circle bg-soft-secondary text-muted">
                                     {props.userAvatar}
                                 </span>
-                            </span>
+                            </span> */}
                             <span className="flex d-flex flex-column">
-                                <strong>{props.userName}</strong>
+                                <strong>{user.username}</strong>
                                 <small className="text-muted text-uppercase">
-                                    {props.userRole}
+                                    {user.type == 'gym'? 'gym owner': user.type}
                                 </small>
                             </span>
                         </a>

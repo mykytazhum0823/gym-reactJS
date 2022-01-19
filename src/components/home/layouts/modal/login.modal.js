@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import {Modal, Button,FormControl, Form, FormLabel, FormGroup, Alert} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -9,7 +9,7 @@ import {
     loginWithApple,
     loginWithFacebook
     } from '../../../../fiebaseImp/js/user';
-
+import UserContext from '../../../../context/UserContext';
 
 const Styles = styled('div')`
     background: #121212;
@@ -121,6 +121,8 @@ const LoginModal  = (props)=>{
     const [token,setToken] = useState('');
     const [profile, setProfile] = useState({});
 
+    const {user, setUser}  = useContext(UserContext);
+
     useEffect(()=>{
         setShow(props.show);
     }, [props]);
@@ -138,10 +140,10 @@ const LoginModal  = (props)=>{
                 setError(data.error);
             }
             else{
-
-                navigate(`/console/${data.profile.type}`);
                 setProfile(data.profile);
+                setUser(data.profile);
                 setToken(data.token);
+                navigate(`/console/${data.profile.type}`);
             }
         });
     }
@@ -149,9 +151,10 @@ const LoginModal  = (props)=>{
     const loginWithGoogle = ()=>{
         loginwithGoogleAccount()
         .then((data)=>{
-            navigate(`/console/${data.profile.type}`);
             setProfile(data.profile);
+            setUser(data.profile);
             setToken(data.token);
+            navigate(`/console/${data.profile.type}`);
         })
     }
 
