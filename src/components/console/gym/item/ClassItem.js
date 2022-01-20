@@ -13,14 +13,20 @@ const ClassItem = (props)=>{
         var d = new Date(date),
             month = '' + (d.getMonth() + 1),
             day = '' + d.getDate(),
-            year = d.getFullYear();
+            year = d.getFullYear(),
+            hours = '' + d.getHours(),
+            mins = ''+ d.getMinutes();
     
         if (month.length < 2) 
             month = '0' + month;
         if (day.length < 2) 
             day = '0' + day;
+        if(hours.length < 2)
+            hours = '0' + hours;
+        if(mins.length < 2)
+            mins = '0' + mins;
     
-        return [year, month, day].join('/');
+        return [year, month, day].join('-') + ' ' + [hours, mins].join(':');
     }
      
     const begins =formatDate(props.begins.seconds *1000);
@@ -29,18 +35,18 @@ const ClassItem = (props)=>{
     return(
         <div className="col-md-6 col-lg-4">
         <div className="card card__course card__course__animate">
-            <a href="# " className="card-img-top">
+            {/* <a href="# " className="card-img-top">
                 <img
                     src="/assets//images/course_lms.jpg"
                     style={{ width: "100%" }}
                     alt="Card cap"
                 />
-            </a>
+            </a> */}
 
             <div className="p-3 text-center border-bottom">
                 <div className="bold mb-2">
-                    <a href=" #" className="text-body">
-                        <span className="course__title"> {props.name} </span>
+                    <a style={{textDecoration:'none'}} className="text-body">
+                        <span style={{fontSize:'20px', fontWeight:'bold'}} className="course__title"> {props.name} </span>
                     </a>
                 </div>
                 <div className="d-flex justify-content-around">
@@ -62,7 +68,10 @@ const ClassItem = (props)=>{
                                         strokeLinejoin="round"></path>
                                 </g>
                             </svg>
-                            <span className="ml-2" style={{marginLeft:'6px'}}>{`${begins} - ${ends}`}</span>
+                            <div>
+                            <p className="ml-2" style={{marginLeft:'6px',marginBottom:'4px'}}>{begins}</p>
+                            <p className="ml-2" style={{marginLeft:'6px', marginBottom:'4px'}}>{ends}</p>
+                            </div>
                         </small>
                     </div>
                 </div>

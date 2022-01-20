@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../assets/css/app.scoped.css";
 import {Modal, Form, Alert} from 'react-bootstrap';
-import { getUsers, changeUser, saveNewUser } from "../../../fiebaseImp/js/user";
+import { getTrainers, changeUser, saveNewUser } from "../../../fiebaseImp/js/user";
 import { useLocation } from "react-router-dom";
 import TrainerItem from "./item/TrainerItem";
 
@@ -32,7 +32,7 @@ const ManageTrainer = () => {
 	}
 
 	const getUsersInfo = ()=>{
-		getUsers()
+		getTrainers()
 		.then((datas)=>{
 			let temp_users  =[];
 			datas.forEach((data)=>{
@@ -70,7 +70,7 @@ const ManageTrainer = () => {
 	}
 	const addTrainer = (e)=>{
 		e.preventDefault();
-		saveNewUser(username, type, mobile, '')
+		saveNewUser(username, 1, mobile, '')
 		.then((data)=>{
 			if(data.error === '')
 			{
@@ -88,13 +88,13 @@ const ManageTrainer = () => {
 	}
 	const editTrainer = (e)=>{
 		e.preventDefault();
-		changeUser(userIndex, username, type, mobile, membership)
+		changeUser(userIndex, username, 1, mobile, membership)
 		.then((data)=>{
 			if(data.success === 'success')
 			{
 				hideModal();
 				let temp = trainers;
-				temp[tableIndex] = {docId:userIndex, username:username, type:type,mobile:mobile, membership:membership};
+				temp[tableIndex] = {docId:userIndex, username:username, type:1,mobile:mobile, membership:membership};
 				setTrainers([...temp]);
 				setSearchResult([...temp]);
 				setIsEdit(false);
@@ -162,7 +162,7 @@ const ManageTrainer = () => {
 											<tr>
 												<th>Username</th>
 												<th style={{ width: "50px" }}>Mobile</th>
-												<th style={{ width: "50px" }}>Type</th>
+												{/* <th style={{ width: "50px" }}>Type</th> */}
 												<th style={{ width: "200px" }}>Action</th>
 											</tr>
 										</thead>

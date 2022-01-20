@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import { FormControl, FormGroup, FormLabel, Dropdown, Form, Table, Button, Alert} from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import DatePicker from "react-datepicker";
+import DateTimePicker from "react-datetime-picker";
 import moment from 'moment';
 import "../assets/css/app.scoped.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { updateClass } from '../../../fiebaseImp/js/class';
+import styled from "styled-components";
 
+const Styles = styled('div')`
+	.react-datetime-picker__wrapper{
+		border: 0px !important;
+	}
+`;
 
 
 const EditClass = (props)=>{
@@ -64,6 +71,7 @@ const EditClass = (props)=>{
 			<div className="row card-group-row">
 				<div className="col-lg-12 col-md-12 card-group-row__col">
 					<div className="card card-group-row__card card-body card-body-x-lg flex-row align-items-center">
+						<Styles>
 						<Form onSubmit={handleSubmit}>
 							<FormGroup className="mb-3">
 								<FormLabel> Class Name:</FormLabel>
@@ -76,22 +84,22 @@ const EditClass = (props)=>{
 							</FormGroup>
 							<FormGroup className="mb-3">
 								<FormLabel> Start Time:</FormLabel>
-								<DatePicker 
-								selected={start}
+								<DateTimePicker 
+								value={start}
 								defaultValue=''
 								onChange={handleStart}
 								
 								placeholderText="select start time"
-								className="form-control"></DatePicker>
+								className="form-control"></DateTimePicker>
 							</FormGroup>
 							<FormGroup>
 								<FormLabel>End Time:</FormLabel>
-								<DatePicker 
-								selected={end}
+								<DateTimePicker 
+								value={end}
 								defaultValue=''
 								onChange={handleEnd}
 								placeholderText="select end time"
-								className="form-control"></DatePicker>
+								className="form-control"></DateTimePicker>
 							</FormGroup>
                             <FormGroup>
 								<FormLabel>Duration:</FormLabel>
@@ -116,6 +124,7 @@ const EditClass = (props)=>{
 								<Button className="mt-3" type='submit'> Save </Button>
 							</div>
 						</Form>
+						</Styles>
 					</div>
 				</div>
 			</div>

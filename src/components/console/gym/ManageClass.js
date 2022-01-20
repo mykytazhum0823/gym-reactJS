@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
-import '../assets/css/app.scoped.css';
 import { Form, FormControl, FormLabel, Modal, Table, Alert } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { getClasses, saveClass } from "../../../fiebaseImp/js/class";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import DateTimePicker from "react-datetime-picker";
 import ClassItem from './item/ClassItem';
+import '../assets/css/app.scoped.css';
+import styled from "styled-components";
+
+const Styles = styled('div')`
+	.react-datetime-picker__wrapper{
+		border: 0px !important;
+	}
+`;
 
 const ManageClass = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -32,11 +39,7 @@ const ManageClass = () => {
 		.then((data)=>{
 			if(data.success !== '')
 			{
-				let temp = {id:name, duration:duration, begins:begins, ends:ends, 
-				capacity:capacity, docId:data.success};
-				let temp_classes = classes;
-				temp_classes.push(temp);
-				setClasses([...temp_classes]);
+				getAllClasses();
 				hideModal();
 			}
 			else{
@@ -63,6 +66,7 @@ const ManageClass = () => {
 
 	return (
 	<React.Fragment>
+
 		<div className="mdk-drawer-layout__content page" style={{paddingTop:'130px', minHeight:minHeight}}>
 			<div className="container-fluid page__heading-container">
 				<div className="page__heading d-flex align-items-center justify-content-between mb-0">
@@ -99,6 +103,7 @@ const ManageClass = () => {
 		centered
 		show={isOpen}
 		onHide={hideModal}>
+			<Styles>
 			<div className="modal-content">
 				<div className="modal-body">
 					<div className="px-3">
@@ -134,14 +139,14 @@ const ManageClass = () => {
 							</Form.Group>
 							<Form.Group className="mb-3">
 								<FormLabel htmlFor="username"> Start Time:</FormLabel>
-								<DatePicker selected={begins} onChange={(val)=>{setBegins(val)}} 
-									className="form-control"></DatePicker>
+								<DateTimePicker value={begins} onChange={(val)=>{setBegins(val)}} 
+									className="form-control" style={{border:'0px !important'}}></DateTimePicker>
 			
 							</Form.Group>
 							<Form.Group className="mb-3">
 								<FormLabel htmlFor="username"> End Time:</FormLabel>
-								<DatePicker selected={ends} onChange={(val)=>{setEnds(val)}} 
-									className="form-control"></DatePicker>
+								<DateTimePicker value={ends} onChange={(val)=>{setEnds(val)}} 
+									className="form-control"></DateTimePicker>
 					
 							</Form.Group>
 							<Form.Group className="mb-3">
@@ -162,6 +167,7 @@ const ManageClass = () => {
 					</div>
 				</div>
 			</div>  
+			</Styles>
 		</Modal>
 	</React.Fragment>
 	);

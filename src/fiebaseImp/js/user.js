@@ -85,6 +85,12 @@ export const getUsers = () => {
     return getDocs(collection(db, collection_user));
 }
 
+export const getTrainers = ()=>{
+    const ref = collection(db, collection_user);
+    const q = query(ref, where('type','==', 1));
+    return getDocs(q);
+}
+
 export const saveNewUser = async (username,type, mobile, membership)=>{
     return addDoc(collection(db, collection_user),{
         username,
