@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Page from "./components/home/pages";
 import HomePage from "./components/home/homePage";
@@ -15,13 +15,13 @@ const App = () => {
 
   return (
     <UserContext.Provider value={value}>
-      <div className="proloader">
+      {/* <div className="proloader">
         <div className="loader_34">
           <img className="loading" alt="" />
         </div>
-      </div>
+      </div> */}
       <div className="page-wrapper">
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path='/logout' element={<Login />} />
@@ -37,7 +37,7 @@ const App = () => {
             <Route path="/featured" element={<Page.Featured />} />
             <Route path="/console/*" element={<ConsoleRoute />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </div>
     </UserContext.Provider>
   );
