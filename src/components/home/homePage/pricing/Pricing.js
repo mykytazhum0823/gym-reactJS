@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import '../../assets/css/style.scoped.css';
+import { getMemberships } from "../../../../fiebaseImp/js/membership";
+import { useLocation } from "react-router-dom";
+import PricingItem from "./PricingItem";
+
 const Pricing = () => {
+	const [memberships, setMemberships] = useState([]);
+	const {path} = useLocation();
+
+	const getAllData = ()=>{
+		getMemberships()
+		.then((datas)=>{
+			let temp_memberships = [];
+			datas.forEach((data)=>{
+				temp_memberships.push({...data.data(), id:data.id});
+			})
+			setMemberships(temp_memberships);
+		})
+	}
+
+	useEffect(()=>{
+		getAllData();
+	},[path])
+
 	return (
 		<div className="section-full p-t120 p-b90 site-bg-gray-light">
 			<div className="container">
@@ -17,92 +39,12 @@ const Pricing = () => {
 				<div className="section-content">
 					<div className="pricing-block-outer2">
 						<div className="row justify-content-center">
-							<div className="col-lg-4 col-md-6 m-b30">
-								<div className="pricing-table-2">
-									<div className="p-table-title">
-										<h4 className="wt-title">Standard</h4>
-									</div>
-									<div className="p-table-list">
-										<ul>
-											<li>Service Locker Room</li>
-											<li>Personal Trainer</li>
-											<li>Morning Slot</li>
-											<li>Yoga classes</li>
-											<li>Health Checkup</li>
-											<li>Fitness Assessment</li>
-										</ul>
-									</div>
-									<div className="p-table-price">
-										<span>$100</span>
-										<p>Per/month</p>
-									</div>
-									<div className="p-table-btn">
-										<a
-											href="about-1.html"
-											className="site-button-secondry site-btn-effect">
-											Purchase Now
-										</a>
-									</div>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-md-6 m-b30">
-								<div className="pricing-table-2">
-									<div className="p-table-title">
-										<h4 className="wt-title">Professional</h4>
-									</div>
-									<div className="p-table-list">
-										<ul>
-											<li>Service Locker Room</li>
-											<li>Personal Trainer</li>
-											<li>Morning Slot</li>
-											<li>Yoga classes</li>
-											<li>Health Checkup</li>
-											<li>Fitness Assessment</li>
-										</ul>
-									</div>
-									<div className="p-table-price">
-										<span>$150</span>
-										<p>Per/month</p>
-									</div>
-									<div className="p-table-btn">
-										<a
-											href="about-1.html"
-											className="site-button-secondry site-btn-effect">
-											Purchase Now
-										</a>
-									</div>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-md-6 m-b30">
-								<div className="pricing-table-2">
-									<div className="p-table-title">
-										<h4 className="wt-title">Ultimate</h4>
-									</div>
-									<div className="p-table-list">
-										<ul>
-											<li>Service Locker Room</li>
-											<li>Personal Trainer</li>
-											<li>Morning Slot</li>
-											<li>Yoga classes</li>
-											<li>Health Checkup</li>
-											<li>Fitness Assessment</li>
-										</ul>
-									</div>
-									<div className="p-table-price">
-										<span>$200</span>
-										<p>Per/month</p>
-									</div>
-									<div className="p-table-btn">
-										<a
-											href="about-1.html"
-											className="site-button-secondry site-btn-effect">
-											Purchase Now
-										</a>
-									</div>
-								</div>
-							</div>
+							{
+								memberships.map((item, index)=>(
+									<PricingItem name={item.name} description={item.description}
+										key={index} price={item.price}/>
+								))
+							}
 						</div>
 					</div>
 				</div>

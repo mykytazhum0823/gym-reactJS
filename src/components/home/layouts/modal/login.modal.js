@@ -143,6 +143,7 @@ const LoginModal  = (props)=>{
                 setProfile(data.profile);
                 setUser(data.profile);
                 setToken(data.token);
+                localStorage.setItem('isAuthenticated', 'true');
                 navigate(`/console/${data.profile.type}`);
             }
         });
@@ -154,6 +155,7 @@ const LoginModal  = (props)=>{
             setProfile(data.profile);
             setUser(data.profile);
             setToken(data.token);
+            localStorage.setItem('isAuthenticated', 'true');
             navigate(`/console/${data.profile.type}`);
         })
     }

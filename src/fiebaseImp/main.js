@@ -1,5 +1,5 @@
 import {initializeApp} from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore } from "firebase/firestore";
 
 const config = {
@@ -16,12 +16,18 @@ const firebase = initializeApp(config);
 export const auth = getAuth();
 export const db = getFirestore();
 
-export const useAuth = ()=>{
-    if(auth.currentUser !== null)
-    {
-        return true;
+let isLogin = false;
+
+onAuthStateChanged(auth, (user)=>{
+    if(user){
+        isLogin = true;
     }
-    return false;
+    else{
+        isLogin = false;
+    }
+});
+export const useAuth = ()=>{
+   return isLogin;
 }
 
 export default firebase;

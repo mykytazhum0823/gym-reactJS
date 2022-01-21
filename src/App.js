@@ -1,20 +1,17 @@
-import React, { Component, useState, use, useEffect } from "react";
-import { HashRouter, Routes, Route, useNavigate, Outlet, Navigate } from "react-router-dom";
-
+import React, { useState} from "react";
+import { HashRouter, Routes, Route,  Outlet, Navigate } from "react-router-dom";
 import Page from "./components/home/pages";
 import HomePage from "./components/home/homePage";
 import { Login, Signup } from "./components/console";
 import Contact from "./components/home/contact";
 import ConsoleRoute from "./components/console/console.route";
 import UserContext from "./context/UserContext";
-import { adminUser } from "./mockUser/MockUser";
-import { useAuth } from "./fiebaseImp/main";
-// import { onAuthStateChanged } from "firebase/auth";
+// import { useAuth } from "./fiebaseImp/main";
 
 
 const PrivateRoute = ()=>{
-  const navigate = useNavigate();
-  return useAuth()? <Outlet/> : <Navigate to="/"/>;
+  const isAuthenticated = localStorage.getItem('isAuthenticated');
+  return isAuthenticated? <Outlet/> : <Navigate to="/"/>;
 }
 const App = () => {
   const [user, setUser] = useState({});
@@ -30,7 +27,7 @@ const App = () => {
       <div className="page-wrapper">
         <HashRouter>
           <Routes>
-            <Route exact path="/" element={<HomePage />} />
+            <Route exact path="/" element={<HomePage />} />      
             <Route path="/" element={<PrivateRoute/>}>
               <Route  path='/logout' element={<Login />} />
               <Route  path="/signup" element={<Signup />} />

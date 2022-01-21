@@ -22,6 +22,10 @@ export const getMemberships = () => {
     return getDocs(q);
 }
 
+export const deleteMembership = async (id)=>{
+    await deleteDoc(doc(db, collection_membership, id));
+}
+
 export const saveMembership = async (name,description, price)=>{
     return addDoc(collection(db, collection_membership),{
         name,

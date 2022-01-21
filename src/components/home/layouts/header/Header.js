@@ -27,6 +27,7 @@ const Header = (props) => {
     }
     const signOut = ()=>{
         logOut();
+        localStorage.clear();
         navigate("/");
     }
 
@@ -73,24 +74,15 @@ const Header = (props) => {
                         </div>
                         <div className="header-bottom">
                             <div className="row align-items-center">
-                                <div className="col-lg-9 col-md-2 col-3 order-lg-1 order-md-2 order-2">
+                                <div className="col-lg-10 col-md-4 col-3 order-lg-1 order-md-2 order-2">
                                     <nav id="menu" className="main-menu  text-center">
-                                        <ul>
-                                            <li className="has-child">
+                                        <ul style={{display:'flex'}}>
+                                            <li className="has-child" style={{flexGrow:3}}>
                                                 <Link to="/" className="active">
                                                     Home
                                                 </Link>
+                                                
                                             </li>
-                                            {/* <li className="has-child">
-                                                <Link to="/console/admin" className="active">
-                                                    Admin
-                                                </Link>
-                                            </li>
-                                            <li className="has-child">
-                                                <Link to="/console/gym" className="active">
-                                                    Gym
-                                                </Link>
-                                            </li> */}
                                             { isHome &&
                                             <React.Fragment>
 											<li className="has-child">
@@ -104,7 +96,7 @@ const Header = (props) => {
                                                 <a onClick={(e)=>{e.preventDefault();
                                                      setSignupShow(true);
                                                      }}>
-                                                    SignUp
+                                                    Register
                                                 </a>
                                             </li>
                                             </React.Fragment>
@@ -120,20 +112,21 @@ const Header = (props) => {
                                                     </a>
                                                 </li>
                                             }
-                                    
+                                            
                                         </ul>
+                                       
                                     </nav>
                                     <div className="mobile-menu">
                                         <a href='#menu'><i className="las la-bars"></i></a>
                                     </div>
                                 </div>
-                                <div className="col-lg-3 col-md-10 col-9 order-lg-2 order-md-1 order-1">
+                                <div className="col-lg-2 col-md-8 col-9 order-lg-2 order-md-1 order-1">
                                     <div className="header-bottom-right">
                                         <div className="mobile-top-bar xl-none">
                                             <i className="las la-sliders-h"></i>
                                         </div>
 
-                                        <div className="header-btn md-none">
+                                        <div className="header-btn md-none" style={{marginLeft:'10px'}}>
                                             <Link to="/contact" className="btn v1">
                                                 Contact Us
                                             </Link>

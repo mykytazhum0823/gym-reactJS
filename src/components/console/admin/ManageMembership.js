@@ -1,23 +1,78 @@
 import React, { useState, useEffect } from "react";
 import '../assets/css/app.scoped.css';
 import { Modal, Form, FormControl, Button, Alert} from "react-bootstrap";
-import { getMemberships, saveMembership, changeMembership} from "../../../fiebaseImp/js/membership";
+import { getMemberships, saveMembership, changeMembership, deleteMembership} from "../../../fiebaseImp/js/membership";
 import { useLocation } from "react-router-dom";
 import MembershipItem from './items/MembershipItem';
+import styled from "styled-components";
+import './admin.scoped.scss';
+
+const DescriptionStyle = styled('div')`
+text-align: center;
+padding: 3px 20px;
+.delete-icon::after {
+    font-family:  var(--bs-font-sans-serif);
+    content: "x";
+    float: right;
+    cursor: pointer;
+    }
+`;
+
+
+
+const DescriptionItem = (props) =>{
+	return(
+		<DescriptionStyle>
+			{props.text}
+			<span className="delete-icon" onClick={(e)=>{
+				e.preventDefault();
+				props.deleteItem(props.id)}}/>
+		</DescriptionStyle>
+	);
+}
 
 const ManageMembership = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [memberships, setMemberships] = useState([]);
 	const [saveError, setSaveError] = useState('');
-	const path = useLocation();
-
+	const {path} = useLocation();
 	const [name, setName] = useState('')
-	const [description,setDescription] = useState('');
 	const [price, setPrice] = useState('');
 	const [id, setId] = useState('');
 	const [tableIndex, setTableIndex] = useState('');
-
 	const [isEdit, setIsEdit] = useState(false);
+
+	const [description,setDescription] = useState([]);
+	const [newItem, setNewItem] = useState('');
+
+	const createId = ()=>{
+		return (Math.random() * 1000).toFixed(0).toString();
+	}
+	const deleteDescriptionItem = (id)=>{
+		let temp = [];
+		description.forEach((item, index)=>{
+			if(item.id !== id)
+			{
+				temp.push(item);
+			}
+		})
+		console.log(temp);
+		setDescription([...temp]);
+	}
+	const addDescriptionItem = (e)=>{
+		e.preventDefault();
+		let temp = [];
+		description.forEach(item=>{
+			if(item.text !== newItem)
+			{
+				temp.push(item);
+			}
+		});
+		temp.push({text: newItem, id: createId()});
+		setDescription(temp);
+		setNewItem('');
+	}
+	
 
 	const showModal = ()=>{
 		setIsOpen(true);
@@ -51,10 +106,15 @@ const ManageMembership = () => {
 		setTableIndex(i);
 		showModal();
 	}
+
+	const removeMembership = (i)=>{
+		deleteMembership(memberships[i].id);
+		getAllData();
+	}
 	const showAddModal = ()=>{
 		setIsEdit(false);
 		setName('');
-		setDescription('');
+		setDescription([]);
 		setPrice('');
 		setSaveError('');
 		showModal();
@@ -94,13 +154,14 @@ const ManageMembership = () => {
 
 	}
 	const minHeight = window.innerHeight - 150;
+	
 	return (
 		<React.Fragment>
 			<div className="mdk-drawer-layout__content page" style={{paddingTop:'130px', minHeight:minHeight}}>
 				<div className="container-fluid page__heading-container">
 					<div className="page__heading d-flex align-items-center justify-content-between">
 						<h1 className="m-0">Membership</h1>
-						<a href="# " className="btn btn-primary ml-3">
+						<a className="btn btn-primary ml-3">
 							{" "}
 							<button
 								type="button"
@@ -115,8 +176,8 @@ const ManageMembership = () => {
 				<div className="container-fluid page__container">
 					<div className="row">
 						{memberships.map((item, index)=>(
-							<MembershipItem name={item.name} desciption={item.description} price={item.price}
-							key={index} id={index} showEdit={showEdit}/>
+							<MembershipItem name={item.name} description={item.description} price={item.price}
+							key={index} id={index} showEdit={showEdit} delete={removeMembership}/>
 						))}
 					</div>
 				</div>
@@ -160,14 +221,24 @@ const ManageMembership = () => {
 									</Form.Group>
 									<Form.Group className="mb-3">
 										<Form.Label>Description:</Form.Label>
-										<FormControl
-											type="text"
-											placeholder=""
-											name="name"
-											value={description}
-											onChange = {(e)=>{setDescription(e.target.value)}}
-											>
-										</FormControl>
+										<div className="mb-2" style={{border: '1px solid #efefef'}}>
+											{description.map((item, index)=>(
+												<DescriptionItem text={item.text} key={index}
+													id={item.id} deleteItem={deleteDescriptionItem}/>
+											))}
+										</div>
+										<div style={{display:'flex', flexDirection:'row'}}>
+											<FormControl
+												type="text"
+												placeholder=""
+												name="name"
+												value={newItem}
+												onChange = {(e)=>{setNewItem(e.target.value)}}
+												>
+											</FormControl>
+											<Button onClick={addDescriptionItem}> Add </Button>
+										</div>
+
 									</Form.Group>
 									<Form.Group className="mb-3">
 										<Form.Label>Price:</Form.Label>
