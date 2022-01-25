@@ -98,12 +98,12 @@
         Jquery mmenu
     ---------------------------------*/
 
-    $('#menu').mmenu({}, {
-        offCanvas: {
-            clone: true
-        }
-    });
-    $('#ham-menu').mmenu();
+    // $('#menu').mmenu({}, {
+    //     offCanvas: {
+    //         clone: true
+    //     }
+    // });
+    // $('#ham-menu').mmenu();
 
     /*---------------------------------
         Hero Slider 1

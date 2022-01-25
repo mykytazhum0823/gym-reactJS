@@ -187,7 +187,7 @@ export const logOut = ()=>{
  // Login with google accont
 
  const provider = new GoogleAuthProvider();
- provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+//  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
 export const loginwithGoogleAccount = ()=>{
     let email = '';
