@@ -54,7 +54,7 @@ const SignupModal = (props)=>{
         mobile === '';
 
     return(
-        <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} >
+        <Modal  show={show} onHide={handleClose} backdrop="static" keyboard={false} >
             <Styles>
             <div className="modal_main_div">
                 <Modal.Header className="modal_header">

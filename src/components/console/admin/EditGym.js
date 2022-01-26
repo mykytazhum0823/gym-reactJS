@@ -156,7 +156,7 @@ const EditGym = (props)=>{
 	const handleSave = ()=>{
 		updateGym(qrcode, name, owner, membership, trainers, classes)
 		.then((data)=>{
-			if(data.success == 'success')
+			if(data.success === 'success')
 			{
 				setError('');
 				changeUserType(owner, 3);

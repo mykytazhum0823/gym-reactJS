@@ -1,0 +1,30 @@
+
+.mm-menu_offcanvas {
+    width: 140px !important;
+    max-width: 140px !important;
+}
+.mm-wrapper_opening .mm-menu_offcanvas.mm-menu_opened~.mm-slideout {
+    transform: translate3d(140px,0,0) !important;
+}
+.mm-navbar_sticky,
+.mm-panel{
+    background-color: black !important;
+    color:white !important;
+}
+.mm-panel_opened ul
+{
+    flex-direction: column;
+}
+.mm-panel_opened li
+{
+    flex-grow: 1;
+}
+
+@media only screen and (max-width: 991px){
+.main-menu[data-v-5aa5d67e] {
+    display: show !important;
+}
+}
+.sidebar-backdrop{
+    background: transparent !important;
+}

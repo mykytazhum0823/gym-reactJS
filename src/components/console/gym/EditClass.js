@@ -111,7 +111,7 @@ const EditClass = (props)=>{
 									/>
 							</FormGroup>
 							<FormGroup>
-								<FormLabel>Duration:</FormLabel>
+								<FormLabel>Capacity:</FormLabel>
 								<FormControl
 									type="text"
 									value={capacity}

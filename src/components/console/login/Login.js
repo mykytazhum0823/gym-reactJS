@@ -38,7 +38,7 @@ const Login = () => {
 		<div className="layout-login-centered-boxed container-v1">
 			<div className="layout-login-centered-boxed__form container-v2">
 				<div className="d-flex flex-column justify-content-center align-items-center mt-2 mb-4 navbar-light">
-					<a href="index-2.html" className="text-center text-light-gray mb-4">
+					<a  className="text-center text-light-gray mb-4">
 						<h2>Vigory</h2>
 					</a>
 				</div>

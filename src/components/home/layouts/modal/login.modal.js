@@ -107,6 +107,10 @@ const Styles = styled('div')`
         }
         .sign-mode.v1 .content{
             border-right:0px;
+            padding-right:0px;
+        }
+        .sign-mode.v2{
+            padding-left: 0px;
         }
     }
 `;
@@ -172,7 +176,7 @@ const LoginModal  = (props)=>{
     
 
     return(
-        <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
+        <Modal  show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
             <Styles>
             <Modal.Header className="modal_header">
                 <Modal.Title>Login</Modal.Title>
