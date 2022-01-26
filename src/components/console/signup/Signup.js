@@ -14,7 +14,7 @@ const Signup = () => {
 		<div className="layout-login-centered-box">
 			<div className="layout-login-centered-boxed__form">
 				<div className="d-flex flex-column justify-content-center align-items-center mt-2 mb-4 navbar-light">
-					<a href="index-2.html" className="text-center text-light-gray mb-4">
+					<a  className="text-center text-light-gray mb-4">
 						<h2>Vigory</h2>
 					</a>
 				</div>
@@ -132,7 +132,7 @@ const Signup = () => {
 						</div>
 						<div className="text-center">
 							<span>Have an account?</span>{" "}
-							<Link to="/login" className="text-body text-underline">
+							<Link to='/logout' className="text-body text-underline">
 								Login
 							</Link> 
 							

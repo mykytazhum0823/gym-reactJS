@@ -2,26 +2,53 @@ import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import "./header.css";
 import '../../assets/css/style.scoped.css';
-import {Link, Outlet} from "react-router-dom";
-import useScript from "usescript-hook";
+
+import {Link} from "react-router-dom";
+import LoginModal from '../modal/login.modal';
+import SignupModal from "../modal/signup.modal";
+import { useNavigate } from "react-router-dom";
+import { logOut } from "../../../../fiebaseImp/js/user";
+import SidebarModal from "../modal/sidebar.modal";
 
 
 const Header = (props) => {
-    const [headerClass, setHeaderClass] = useState("header-wrap v1");
+    const [loginShow, setLoginShow] = useState(false);
+    const [signupShow, setSignupShow] = useState(false);
+    const [sidebarShow, setSidebarShow] = useState(false);
+    const [isHome, setIsHome] = useState(false);
+    const navigate = useNavigate();
+
     useEffect(()=>{
-        if(typeof props.sticky !== 'undefined'){
-            setHeaderClass("header-wrap v1 sticky");
-        }
-    },[props]);
+        setIsHome(props.isHome);
+    }, [props])
+
+    const closeLogin = ()=>{
+        setLoginShow(false);
+    }
+    const closeSignup = ()=>{
+        setSignupShow(false);
+    }
+    const closeSidebar = ()=>{
+        setSidebarShow(false);
+    }
+    const signOut = ()=>{
+        logOut();
+        localStorage.clear();
+        navigate("/");
+    }
+
+    const handleMobileSidebar = ()=>{
+        setSidebarShow(true);
+    }
 
 	return (
 		<React.Fragment>
-		<header className={headerClass}>
+		<header className="header-wrap v1 sticky">
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-1 col-md-4  col-5 mpx-0">
                         <div className="logo v1">
-                            <a href="index-2.html"><img  alt="Image" className="logoImg"/>
+                            <a><img  alt="Image" className="logoImg"/>
                                 <span>Vigory</span></a>
                         </div>
                     </div>
@@ -57,33 +84,67 @@ const Header = (props) => {
                         </div>
                         <div className="header-bottom">
                             <div className="row align-items-center">
-                                <div className="col-lg-9 col-md-2 col-3 order-lg-1 order-md-2 order-2">
+                                <div className="col-lg-10 col-md-4 col-3 order-lg-1 order-md-2 order-2">
                                     <nav id="menu" className="main-menu  text-center">
-                                        <ul>
-                                            <li className="has-child">
+                                        <ul style={{display:'flex'}}>
+                                            <li className="has-child" style={{flexGrow:3}}>
                                                 <Link to="/" className="active">
                                                     Home
                                                 </Link>
+                                                
                                             </li>
-											<li className="has-child">
-                                                <Link to="/login">
+                                            { isHome &&
+                                            <React.Fragment>
+											<li className="has-child login_btn">
+                                                <a onClick={(e)=>{e.preventDefault();
+                                                    console.log('show');
+                                                     setLoginShow(true);
+                                                     }}>
                                                     Login
-                                                </Link>
+                                                </a>
                                             </li>
-                                    
+                                            <li className="has-child register_btn">
+                                                <a onClick={(e)=>{e.preventDefault();
+                                                     setSignupShow(true);
+                                                     }}>
+                                                    Register
+                                                </a>
+                                            </li>
+                                            </React.Fragment>
+                                            }
+                                            {
+                                                !isHome && 
+                                                <li className="has-child">
+                                                    <a onClick={(e)=>{
+                                                        e.preventDefault();
+                                                        signOut();
+                                                        }}>
+                                                        LogOut
+                                                    </a>
+                                                </li>
+                                            }
+                                            
                                         </ul>
+                                       
                                     </nav>
                                     <div className="mobile-menu">
-                                        <a href='#menu'><i className="las la-bars"></i></a>
+                                        <a onClick={(e)=>
+                                            {
+                                                e.preventDefault();
+                                                handleMobileSidebar();
+                                            }}
+                                        >
+                                            <i className="las la-bars"></i>
+                                        </a>
                                     </div>
                                 </div>
-                                <div className="col-lg-3 col-md-10 col-9 order-lg-2 order-md-1 order-1">
+                                <div className="col-lg-2 col-md-8 col-9 order-lg-2 order-md-1 order-1">
                                     <div className="header-bottom-right">
                                         <div className="mobile-top-bar xl-none">
                                             <i className="las la-sliders-h"></i>
                                         </div>
 
-                                        <div className="header-btn md-none">
+                                        <div className="header-btn md-none" style={{marginLeft:'10px'}}>
                                             <Link to="/contact" className="btn v1">
                                                 Contact Us
                                             </Link>
@@ -97,6 +158,56 @@ const Header = (props) => {
                 </div>
             </div>
         </header>
+        <LoginModal  show={loginShow} handleCloseLogin={closeLogin}/>
+        <SignupModal  show={signupShow} handleCloseSignup={closeSignup}/>
+        <SidebarModal show={sidebarShow} handleCloseSidebar={closeSidebar}>
+            <ul style={{display:'flex'}}>
+                <li className="has-child">
+                    <Link to="/" className="active"
+                        onClick={()=>{
+                            closeSidebar();
+                        }}
+                    >
+                        Home
+                    </Link>
+                    
+                </li>
+                { isHome &&
+                <React.Fragment>
+                <li className="has-child login_btn">
+                    <a onClick={(e)=>{
+                            e.preventDefault();
+                            setLoginShow(true);
+                            closeSidebar();
+                            }}>
+                        Login
+                    </a>
+                </li>
+                <li className="has-child register_btn">
+                    <a onClick={(e)=>{
+                            e.preventDefault();
+                            setSignupShow(true);
+                            closeSidebar();
+                            }}>
+                        Register
+                    </a>
+                </li>
+                </React.Fragment>
+                }
+                {
+                    !isHome && 
+                    <li className="has-child">
+                        <a onClick={(e)=>{
+                            e.preventDefault();
+                            signOut();
+                            }}>
+                            LogOut
+                        </a>
+                    </li>
+                }
+                
+            </ul>
+        </SidebarModal>
 		</React.Fragment>
 	);
 };

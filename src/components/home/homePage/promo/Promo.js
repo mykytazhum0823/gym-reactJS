@@ -1,5 +1,31 @@
 import React from "react";
 import '../../assets/css/style.scoped.css';
+import styled from 'styled-components';
+
+const Styles = styled('div')`
+	padding: 0px 20px;
+	.promo-content{
+		padding:10px 20px 10px;
+	}
+	.promo-icon{
+		width:40px !important; 
+		height:40px !important;
+	}
+	.promo-icon i{
+		font-size: 30px !important;
+	}
+	.promo-text{
+		margin-top:10px !important;
+	}
+	.promo-text h5{
+		font-size:18px;
+	}
+	.promo-content{
+		padding:1about-wrap0px 20px !important;
+	}
+
+`
+
 const Promo = () => {
 	return (
 		<section className="promo-wrap v1">
@@ -74,6 +100,7 @@ const Promo = () => {
 						</div>
 					</div>
 				</div>
+				
 			</div>
 		</section>
 	);

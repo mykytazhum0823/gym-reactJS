@@ -6539,7 +6539,7 @@ input.qtyminus {
     float: right;
   }
 
-  .main-menu {
+  #menu {
     display: none;
   }
 
@@ -17382,5 +17382,8 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   h2.wt-title {
     font-size: 30px;
     letter-spacing: 1px;
+  }
+  .hero-content{
+    overflow-y:unset !important;
   }
 }

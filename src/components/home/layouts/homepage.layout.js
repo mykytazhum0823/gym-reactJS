@@ -20,7 +20,7 @@ const HomepageLayout = ({ children }) => {
 
   return (
     <div className="homepage-wrapper">
-      <Header />
+      <Header isHome={true}/>
       {children}
       <Footer />
     </div>

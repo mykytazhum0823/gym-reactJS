@@ -10,7 +10,7 @@ const SidebarInfo ={
         userRole:'ADMIN',
         dropdownMenu : [
             {name: 'Dashboard', to:'/console/admin'},
-            {name:'logout', to:'/login'}
+            {name:'logout', to:'/logout'}
         ],
         menu:[
             {icon: <DashboardIcon/>, name:'Dashboard', to:'/console/admin'},
@@ -26,7 +26,7 @@ const SidebarInfo ={
         userRole:'membership Name',
         dropdownMenu:[
             {name:'Edit Profile', to:'/console/customer/edit'},
-            {name:'Logout', to:'/login'}
+            {name:'Logout', to:'/logout'}
         ],
         menu:[
             {icon:<EnrollIcon/>, name:'Enroll ClassName', to:'/console/customer'},
@@ -39,7 +39,7 @@ const SidebarInfo ={
         userRole:'GYM',
         dropdownMenu:[
             {name:'Dashboard', to:'/console/gym'},
-            {name:'Logout', to:'/login'}
+            {name:'Logout', to:'/logout'}
         ],
         menu:[
             {icon:<DashboardIcon/>, name:'Dashboard', to:'/console/gym'},
@@ -54,7 +54,7 @@ const SidebarInfo ={
         userRole:'Name',
         dropdownMenu:[
             {name:'Edit Profile', to:'/console/trainer'},
-            {name:'Logout', to:'/login'}
+            {name:'Logout', to:'/logout'}
         ],
         menu:[
             {icon:<EditProfileIcon/>, name:'Edit Profile', to:'/console/trainer'},

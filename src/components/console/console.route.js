@@ -15,6 +15,8 @@ import Membership from './customer/Membership';
 import ManageClass from './gym/ManageClass';
 import ManageTrainer from "./gym/ManageTrainer";
 import Reporting from './gym/Reporting';
+import EditGym from "./admin/EditGym";
+import EditClass from "./gym/EditClass";
 
 const ConsoleRoute = () => {
   return (
@@ -27,6 +29,7 @@ const ConsoleRoute = () => {
           <Route path="membership" element={<ManageMembership />} />
           <Route path="user" element={<ManageUser />} />
           <Route path="reporting" element={<AdminReporting/>} />
+          <Route path="editgym" element={<EditGym/>}/>
         </Route>
         <Route path="trainer">
           <Route index element={<EditAccountTrainer />} />
@@ -42,6 +45,7 @@ const ConsoleRoute = () => {
           <Route path="class" element={<ManageClass />} />
           <Route path="trainer" element={<ManageTrainer />} />
           <Route path="report" element={<Reporting />} />
+          <Route path="editclass" element={<EditClass/>}/>
         </Route>
       </Route>
     </Routes>

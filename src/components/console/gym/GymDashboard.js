@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import '../assets/css/app.scoped.css';
 
 const GymDashboard = () => {
+	const minHeight = window.innerHeight - 150;
 	return (
-	<div className="mdk-drawer-layout__content page" style={{paddingTop:'130px'}}>
+	<div className="mdk-drawer-layout__content page" style={{paddingTop:'130px', minHeight:minHeight}}>
 		<div className="container-fluid page__heading-container">
 			<div className="page__heading d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
 				<h1 className="m-lg-0">Dashboard</h1>

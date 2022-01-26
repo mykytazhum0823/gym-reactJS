@@ -3,8 +3,10 @@ import '../assets/css/app.scoped.css';
 import { Table } from "react-bootstrap";
 
 const Payout = () => {
+	const minHeight = window.innerHeight - 150;
+
 	return (
-	<div className="mdk-drawer-layout__content page" style={{paddingTop:'130px'}}>
+	<div className="mdk-drawer-layout__content page" style={{paddingTop:'130px', minHeight:minHeight}}>
 		<div className="container-fluid page__heading-container">
 			<div className="page__heading d-flex align-items-center justify-content-between">
 				<h1 className="m-0">Payout</h1>
