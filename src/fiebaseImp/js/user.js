@@ -1,8 +1,8 @@
 import firebase, {auth, db} from '../main';
-import { 
-    createUserWithEmailAndPassword, 
-    signInWithEmailAndPassword, 
-    GoogleAuthProvider, 
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    GoogleAuthProvider,
     FacebookAuthProvider,
     OAuthProvider,
     signInWithPopup,
@@ -10,14 +10,14 @@ import {
     RecaptchaVerifier,
     signInWithPhoneNumber
     } from 'firebase/auth';
-import { 
+import {
     collection,
-    doc, 
+    doc,
     addDoc,
-    updateDoc, 
-    setDoc, 
-    getDocs, 
-    getDoc, 
+    updateDoc,
+    setDoc,
+    getDocs,
+    getDoc,
     deleteDoc,
     query,
     where,
@@ -26,7 +26,7 @@ import {
 
 const userType = ['','trainer', '', 'gym', 'admin', 'customer'];
 /**
- * User Type 
+ * User Type
  * trainer 1
  * gym owner 3
  * admin 4
@@ -66,13 +66,13 @@ const deleteUser = async (id) => {
 
 const isActivatedUser = async (id) => {
     const usr = await getUser(id);
-    const usr_data = usr.data(); 
+    const usr_data = usr.data();
     return usr.activated;
 }
 
 const deActivatedUser = async (id) => {
     const usr = await getUser(id);
-    const usr_data = usr.data(); 
+    const usr_data = usr.data();
     usr_data.activated = !usr_data.activated;
     updateUser(id, usr_data);
 }
@@ -269,54 +269,53 @@ export const loginwithGoogleAccount = ()=>{
 
 // Login with Apple
 
-// const appleProvider = new OAuthProvider('apple.com');
-// appleProvider.addScope('email');
-// appleProvider.addScope('name');
+const appleProvider = new OAuthProvider('apple.com');
 
-// export const loginWithApple = () => {
-//     let token = '';
-//     let email = '';
 
-//     signInWithPopup(auth, appleProvider)
-//         .then((result) => {
-//             const user = result.user;
+export const loginWithApple = () => {
+    let token = '';
+    let email = '';
 
-//             // Apple credential
-//             const credential = OAuthProvider.credentialFromResult(result);
-//             const accessToken = credential.accessToken;
-//             console.log(user.toJSON())
+     signInWithPopup(auth, appleProvider)
+         .then((result) => {
+             const user = result.user;
 
-//             token = credential.idToken;
-//             email = user.email;
-//             const q = query(collection(db, collection_user), where("email", "==", user.email), limit(1));
-//             return getDocs(q);
-//         })
-//         .then((docs)=>{
-//             if(docs.size != 0)
-//             {
-//                 docs.forEach((doc)=>{
-//                     return {profile:doc.data(), error:'', token: token};
-//                 })
-//             }
-//             else{
-//                 addUser(email);
-//                 return {profile:{username:email, type:5}, error:'', token: token};
-//             }
-//         })
-//         .catch((error) => {
-//             // Handle Errors here.
-//             const errorCode = error.code;
-//             const errorMessage = error.message;
-//             // The email of the user's account used.
-//             const email = error.email;
-//             // The credential that was used.
-//             const credential = OAuthProvider.credentialFromError(error);
-//             console.log(error);
+            // Apple credential
+            const credential = OAuthProvider.credentialFromResult(result);
+            const accessToken = credential.accessToken;
+            console.log(user.toJSON())
 
-//             return {profile:'', error: error.message, token:''};
-//         });
+            token = credential.idToken;
+            email = user.email;
+            const q = query(collection(db, collection_user), where("email", "==", user.email), limit(1));
+            return getDocs(q);
+        })
+        .then((docs)=>{
+            if(docs.size != 0)
+            {
+                docs.forEach((doc)=>{
+                    return {profile:doc.data(), error:'', token: token};
+                })
+            }
+            else{
+                addUser(email);
+                return {profile:{username:email, type:5}, error:'', token: token};
+            }
+        })
+        .catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.email;
+            // The credential that was used.
+            const credential = OAuthProvider.credentialFromError(error);
+            console.log(error);
 
-// }
+            return {profile:'', error: error.message, token:''};
+        });
+
+}
 
 // Login with Phone
 
