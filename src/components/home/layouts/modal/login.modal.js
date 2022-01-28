@@ -165,8 +165,7 @@ const LoginModal  = (props)=>{
     }
 
     const appleLogin = ()=>{
-        loginWithApple()
-            .then((data)=>{
+        loginWithApple().then((data)=>{
                 setProfile(data.profile);
                 setUser(data.profile);
                 setToken(data.token);
