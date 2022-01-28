@@ -270,7 +270,8 @@ export const loginwithGoogleAccount = ()=>{
 // Login with Apple
 
 const appleProvider = new OAuthProvider('apple.com');
-
+appleProvider.addScope('email');
+appleProvider.addScope('name');
 
 export const loginWithApple = () => {
     let token = '';
