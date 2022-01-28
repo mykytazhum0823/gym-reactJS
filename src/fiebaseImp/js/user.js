@@ -182,53 +182,6 @@ export const logOut = ()=>{
 }
 
 
- ///------Login with Social Account -------------
-
- // Login with google accont
-
- const provider = new GoogleAuthProvider();
-//  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-
-export const loginwithGoogleAccount = ()=>{
-    let email = '';
-    let token = 0;
-    return signInWithPopup(auth, provider)
-    .then((result)=>{
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const accesstoken = credential.accessToken;
-        const user = result.user;
-
-        token = credential.idToken;
-        email = user.email;
-        const q = query(collection(db, collection_user), where("username", "==", user.email), limit(1));
-        return getDocs(q);
-    })
-    .then((docs)=>{
-        if(docs.size != 0)
-        {
-            let profile
-            docs.forEach((doc)=>{
-                profile = {...doc.data(), type:userType[doc.data().type]};
-            })
-            return {profile:profile, error:'', token: token};
-        }
-        else{
-            addUser(email);
-            return {profile:{username:email, type:userType[5]}, error:'', token: token};
-        }
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        console.log(error);
-        return {profile:'', error: error.message, token:''};
-      });
-}
-
-// Login with facebook
-// const fb_provider = new FacebookAuthProvider();
 
 // export const loginWithFacebook = ()=>{
 //     let email = '';
@@ -240,82 +193,43 @@ export const loginwithGoogleAccount = ()=>{
 //         const accesstoken = credential.accessToken;
 //         console.log(user.toJSON())
 
-//         email = user.email;
-//         token = credential.idToken;
-//         const q = query(collection(db, collection_user), where("email", "==", user.email), limit(1));
-//         return getDocs(q);
-//     })
-//     .then((docs)=>{
-//         if(docs.size != 0)
-//         {
-//             docs.forEach((doc)=>{
-//                 return {profile:doc.data(), error:'', token: token};
-//             })
-//         }
-//         else{
-//             addUser(email);
-//             return {profile:{username:email, type:5}, error:'', token: token};
-//         }
-//     })
-//     .catch((error) => {
-//         const errorCode = error.code;
-//         const errorMessage = error.message;
-//         const email = error.email;
-//         const credential = FacebookAuthProvider.credentialFromError(error);
-//         console.log(error);
-//         return {profile:'', error: error.message, token:''};
-//     });
-// }
 
-// Login with Apple
-
-const appleProvider = new OAuthProvider('apple.com');
-appleProvider.addScope('email');
-appleProvider.addScope('name');
-
-export const loginWithApple = () => {
-    let token = '';
+export const socialLoginWithPopUp = (provider) => {
     let email = '';
-
-     signInWithPopup(auth, appleProvider)
-         .then((result) => {
-             const user = result.user;
-
-            // Apple credential
-            const credential = OAuthProvider.credentialFromResult(result);
-            const accessToken = credential.accessToken;
-            console.log(user.toJSON())
+    let token = 0;
+    return signInWithPopup(auth, provider)
+        .then((result)=>{
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const accesstoken = credential.accessToken;
+            const user = result.user;
 
             token = credential.idToken;
             email = user.email;
-            const q = query(collection(db, collection_user), where("email", "==", user.email), limit(1));
+            const q = query(collection(db, collection_user), where("username", "==", user.email), limit(1));
             return getDocs(q);
         })
         .then((docs)=>{
             if(docs.size != 0)
             {
+                let profile
                 docs.forEach((doc)=>{
-                    return {profile:doc.data(), error:'', token: token};
+                    profile = {...doc.data(), type:userType[doc.data().type]};
                 })
+                return {profile:profile, error:'', token: token};
             }
             else{
                 addUser(email);
-                return {profile:{username:email, type:5}, error:'', token: token};
+                return {profile:{username:email, type:userType[5]}, error:'', token: token};
             }
         })
         .catch((error) => {
-            // Handle Errors here.
             const errorCode = error.code;
             const errorMessage = error.message;
-            // The email of the user's account used.
             const email = error.email;
-            // The credential that was used.
-            const credential = OAuthProvider.credentialFromError(error);
+            const credential = GoogleAuthProvider.credentialFromError(error);
             console.log(error);
-
             return {profile:'', error: error.message, token:''};
         });
-
 }
 
 // Login with Phone
